@@ -1,6 +1,5 @@
 # normalization
 ĩ	ĩ
-
 # length markers
 tʃː	tːʃ
 tsː	tːs
@@ -25,14 +24,91 @@ uu	uː
 i̯	j
 u̯	w
 dː̤	d̤ː
-
-
 # ejectives and laterals rewritten
-tˡˀ	tɬʼ
-tˀ	tʼ
-tsˀ	tsʼ
-tʃˀ	tʃʼ
+tˡˀ	tɬˀ
 tˡ	tɬ
-kˀ	kʼ
+# order of symbols and the like
+tswʰ	tsʰʷ
+mβ	βm
+vɾ	
+ɾˡ	ɺ
+ⁿǀ	nǀ
+ɡʷ	ⁿɡʷ
+æu	ɛu
 
-
+# prenasalization: simplify the annotation
+dʑɥ	dʑᶣ
+lɥ	lᶣ
+mbʲ	ᵐbʲ
+mb̥	ᵐb̥
+mph	ᵐpʰ
+mpʰ	ᵐpʰ
+ndʲ	ⁿdʲ
+nd̥	ⁿd̥
+ntʰ	ⁿtʰ
+nð	ⁿð
+nǀ	ⁿǀ
+nǁ	ⁿǁ
+nǂ	ⁿǂ
+nǃ	ⁿǃ
+nɡǀ	ⁿɡǀ	
+nɡǁ	ⁿɡǁ
+nɡǂ	ⁿɡǂ
+nɡǃ	ⁿɡǃ
+n̥s	ⁿ̥s
+n̪t̪	ⁿ̪t̪
+pɦ	pʱ
+sɥ	sᶣ
+tɕɥ	tɕᶣ
+tɦ	tʱ
+tʃɦ	tʃʱ
+tˀˡ	tˡˀ
+t̪s̪ɦ	t̪s̪ʱ
+wɦ	wʱ
+ŋgw	ᵑɡʷ
+ŋkh	ᵑkʰ
+ŋkʰ	ᵑkʰ
+ŋɡw	ᵑɡʷ
+ŋɡ̥	ɡ̥
+ǀn̥	ǀⁿ̥
+ǁn̥	ǁⁿ̥
+ǂn̥	ǂⁿ̥
+ǃn̥	ǃⁿ̥
+ɕɥ	ɕᶣ
+ɱ̥f	ᶬf
+ɲɥ	ɲᶣ
+ɲ̥cʃ	ᶮcʃ
+ɲ̥ʃ	ᶮʃ
+ɳɖɽ	ᶮɖɽ
+ʈⁿ	ʈᶯ
+ʔb	ˀb
+ʔd	ˀd
+ʔj	ˀj
+ʔk	ˀk
+ʔl	ˀl
+ʔm	ˀm
+ʔn	ˀn
+ʔp	ˀp
+ʔt	ˀt
+ʔw	ˀw
+ʘn̥	ʘⁿ̥
+ᵐbʷ	ᵐbʷ
+ᵐd	ᵐd
+ᵐdz	ᵐdz
+ᵐdʒ	ᵐdʒ
+ᵐk͡p	ᵐkp
+ᵐl	ᵐl
+ᵐt	ᵐt
+ᵐts	ᵐts
+ᵐtʃ	ᵐtʃ
+ᵐɡ	ᵐɡ
+ᵐɡ͡b	ᵐɡb
+ᵐɬ	ᵐɬ
+ᵐɲ	ᵐɲ
+ᵐʃ	ᵐʃ
+ⁿdʷ	ⁿdʷ
+ⁿtʃʷ	ⁿtʃʷ
+ⁿɡʷ	ⁿɡʷ
+kʰ	ᵑkʰ
+ɡʷ	ᵑɡʷ
+bzʷ	ⁿzʷ

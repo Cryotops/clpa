@@ -1,0 +1,1197 @@
+ID	CLPA	PBASE	TYPE	PLACE	MANNER	VOICE	MODIFICATIONS	OLD_ID
+c001	n̟	n̟	consonant	advanced_alveolar	nasal	voiced	plain	1
+c002	n̟ʲ	n̟ʲ	consonant	advanced_alveolar	nasal	voiced	palatalized	2
+c003	r̟	r̟	consonant	advanced_alveolar	trill	voiced	plain	3
+c004	r̟ʲ	r̟ʲ	consonant	advanced_alveolar	trill	voiced	palatalized	4
+c005	l̟ʲ	l̟ʲ	consonant	advanced_lateral	lateral_approximant	voiced	palatalized	5
+c006	l̟	l̟	consonant	advanced_lateral	lateral_approximant	voiced	plain	6
+c007	ⁿts	ⁿts	consonant	alveolar	affricate	voiceless	prenasalized	7
+c008	tzˀ	tzʼ	consonant	alveolar	affricate	voiceless_to_voiced	glottalized	8
+c009	ts̀	ts̀	consonant	alveolar	affricate	voiceless	tense	9
+c010	tsʰʷ	tswʰ,tsʰʷ	consonant	alveolar	affricate	voiceless	aspirated_labialized	10
+c011	dzʰ	dzʰ	consonant	alveolar	affricate	voiced	aspirated	11
+c012	ⁿtsˀ	ⁿtsʼ	consonant	alveolar	affricate	voiceless	glottalized_prenasalized	12
+c013	tsʰ	tsʰ	consonant	alveolar	affricate	voiceless	aspirated	13
+c014	dzʲ	dzʲ	consonant	alveolar	affricate	voiced	palatalized	14
+c015	ts	ts	consonant	alveolar	affricate	voiceless	plain	15
+c016	tsˀ	tsʼ	consonant	alveolar	affricate	voiceless	glottalized	16
+c017	tsjʰ	tsjʰ	consonant	alveolar	affricate	voiceless	aspirated_palatalized	17
+c018	tz	tz	consonant	alveolar	affricate	voiceless_to_voiced	plain	18
+c019	dzʷ	dzʷ	consonant	alveolar	affricate	voiced	labialized	19
+c020	dz	dz	consonant	alveolar	affricate	voiced	plain	20
+c021	ᵐts	ts	consonant	alveolar	affricate	voiceless	labial_prenasalized	21
+c022	tsˀʷ	tsʼʷ	consonant	alveolar	affricate	voiceless	glottalized_labialized	23
+c023	dzˀ	dzʼ	consonant	alveolar	affricate	voiced	glottalized	24
+c024	tsʲ	tsʲ	consonant	alveolar	affricate	voiceless	palatalized	25
+c025	tːs		consonant	alveolar	affricate	voiceless_long	plain	26
+c026	ⁿdz	ⁿdz	consonant	alveolar	affricate	voiced	prenasalized	27
+c027	ᵐdz	dz	consonant	alveolar	affricate	voiced	labial_prenasalized	28
+c028	tsʷ	tsʷ	consonant	alveolar	affricate	voiceless	labialized	29
+c029	ɹː	ɹː	consonant	alveolar	approximant	voiced_long	plain	30
+c030	ɹ	ɹ	consonant	alveolar	approximant	voiced	plain	31
+c031	nkǃ	nkǃ	consonant	alveolar	click	voiceless	alveolar_prenasalized	32
+c032	gǃ	ɡǃ	consonant	alveolar	click	voiced	plain	33
+c033	ǃ	ǃ	consonant	alveolar	click	voiceless	plain	34
+c034	ǃʔ	ǃʔ	consonant	alveolar	click	voiceless	glottalized	35
+c035	ǃx	ǃx	consonant	alveolar	click	voiceless	x_accompaniment	36
+c036	ǃqʰ	ǃqʰ	consonant	alveolar	click	voiceless	aspirated_q_accompaniment	37
+c037	ǃkxʔ	ǃkxʔ	consonant	alveolar	click	voiceless	glottalized_kx_accompaniment	38
+c038	gǃkx	ɡǃkx	consonant	alveolar	click	voiced	kx_accompaniment	39
+c039	ǃq	ǃq	consonant	alveolar	click	voiceless	q_accompaniment	40
+c040	gǃʰ	ɡǃʰ	consonant	alveolar	click	voiced	aspirated	41
+c041	ʔʘn	ʔʘn	consonant	alveolar	click	voiceless	glottalized_prenasalized	42
+c042	ǃr	ǃr	consonant	alveolar	click	voiceless	r_accompaniment	43
+c043	lǃ	lǃ	consonant	alveolar	click	voiced	l_accompaniment	44
+c044	ǃt	ǃt	consonant	alveolar	click	voiceless	t_accompaniment	45
+c045	ǃʰ	ǃʰ	consonant	alveolar	click	voiceless	aspirated	46
+c046	ǃʃ	ǃʃ	consonant	alveolar	click	voiceless	S_accompaniment	47
+c047	ⁿǃ	nǃ	consonant	alveolar	click	voiceless	prenasalized	48
+c048	ǃⁿ̥	ǃn̥	consonant	alveolar	click	voiceless	voiceless_nasalized	49
+c049	gǃx	ɡǃx	consonant	alveolar	click	voiced	x_accompaniment	50
+c050	mǃG	mǃG	consonant	alveolar	click	voiceless	labial_prenasalized_G_accompaniment	51
+c051	ǃqʔ	ǃqʔ	consonant	alveolar	click	voiceless	glottalized_q_accompaniment	52
+c052	ʔǃn	ʔǃn	consonant	alveolar	click	voiceless	nasalized_preglottalized	53
+c053	ǃs	ǃs	consonant	alveolar	click	voiceless	s_accompaniment	54
+c054	ǃn	ǃn	consonant	alveolar	click	voiceless	nasalized	55
+c055	ǃd	ǃd	consonant	alveolar	click	voiceless	d_accompaniment	56
+c056	ⁿgǃ	nɡǃ	consonant	alveolar	click	voiced	prenasalized	57
+c057	ǃʒ	ǃʒ	consonant	alveolar	click	voiceless	Z_accompaniment	58
+c058	ǃz	ǃz	consonant	alveolar	click	voiceless	z_accompaniment	59
+c059	tʼ	t',tʼ	consonant	alveolar	ejective	voiceless	plain	60
+c060	tʼʷ	tʼʷ	consonant	alveolar	ejective	voiceless	labialized	62
+c061	dʼ	dʼ	consonant	alveolar	ejective	voiced	plain	63
+c062	ɾʲ	ɾʲ	consonant	alveolar	flap	voiced	palatalized	64
+c063	ɾˤ	ɾˤ	consonant	alveolar	flap	voiced	pharyngealized	65
+c064	ɾ	ɾ	consonant	alveolar	flap	voiced	plain	66
+c065	ɾ̃	ɾ̃	consonant	alveolar	flap	voiced	nasalized	67
+c066	ⁿz	ⁿz	consonant	alveolar	fricative	voiced	prenasalized	68
+c067	s̀	s̀	consonant	alveolar	fricative	voiceless	tense	69
+c068	š	š	consonant	alveolar	fricative	voiceless	trilled	70
+c069	sʰ	sʰ	consonant	alveolar	fricative	voiceless	aspirated	71
+c070	sː	sː	consonant	alveolar	fricative	voiceless_long	plain	72
+c071	zʰ		consonant	alveolar	fricative	voiced	aspirated	73
+c072	nzʷ	nzʷ	consonant	alveolar	fricative	voiced	labialized_prenasalized	74
+c073	ʃˀʷ	ʃʼʷ	consonant	alveolar	fricative	voiceless	glottalized_labialized	75
+c074	sˀ	sʼ	consonant	alveolar	fricative	voiceless	glottalized	76
+c075	z̤	z̤	consonant	alveolar	fricative	breathy	plain	77
+c076	sˠ	sˠ	consonant	alveolar	fricative	voiceless	velarized	78
+c077	sʷ	sʷ	consonant	alveolar	fricative	voiceless	labialized	79
+c078	z	z	consonant	alveolar	fricative	voiced	plain	80
+c079	zʷ	zʷ	consonant	alveolar	fricative	voiced	labialized	81
+c080	sᶣ	sɥ	consonant	alveolar	fricative	voiceless	labiopalatalized	82
+c081	zˤ	zˤ	consonant	alveolar	fricative	voiced	pharyngealized	83
+c082	zʲ	zʲ	consonant	alveolar	fricative	voiced	palatalized	84
+c083	ⁿ̥s	n̥s	consonant	alveolar	fricative	voiceless	voiceless_prenasalized	85
+c084	sˤ	sˤ	consonant	alveolar	fricative	voiceless	pharyngealized	86
+c085	ⁿs	ⁿs	consonant	alveolar	fricative	voiceless	prenasalized	87
+c086	zˀ	zʼ	consonant	alveolar	fricative	voiced	glottalized	88
+c087	s	s	consonant	alveolar	fricative	voiceless	plain	89
+c088	sʲ	sʲ	consonant	alveolar	fricative	voiceless	palatalized	90
+c089	ɗʷ	ɗʷ	consonant	alveolar	implosive	voiced	labialized	91
+c090	ɗ̥		consonant	alveolar	implosive	voiced	devoiced	92
+c091	ɗ	ɗ	consonant	alveolar	implosive	voiced	plain	93
+c092	n̏	n̏	consonant	alveolar	nasal	voiced	heavy	94
+c093	n̥	n̥	consonant	alveolar	nasal	voiceless	plain	95
+c094	nˀ	n’	consonant	alveolar	nasal	voiced	glottalized	96
+c095	n̩	n̩	consonant	alveolar	nasal	voiced	syllabic	97
+c096	nʰ	nʰ	consonant	alveolar	nasal	voiced	aspirated	98
+c097	n̤	n̤	consonant	alveolar	nasal	breathy	plain	99
+c098	nʷ	nʷ	consonant	alveolar	nasal	voiced	labialized	100
+c099	nʲ	nʲ	consonant	alveolar	nasal	voiced	palatalized	101
+c100	ˀn	ʔn	consonant	alveolar	nasal	voiced	preglottalized	102
+c101	nˤː	nˤː	consonant	alveolar	nasal	voiced_long	pharyngealized	103
+c102	nˤ	nˤ	consonant	alveolar	nasal	voiced	pharyngealized	104
+c103	n̂	n̂	consonant	alveolar	nasal	voiced	lax	105
+c104	nː	nː	consonant	alveolar	nasal	voiced_long	plain	106
+c105	n	n	consonant	alveolar	nasal	voiced	plain	107
+c106	ˀd	ʔd	consonant	alveolar	stop	voiced	preglottalized	108
+c107	d̥	d̥	consonant	alveolar	stop	devoiced	plain	109
+c108	t̂	t̂	consonant	alveolar	stop	voiceless	lenis	110
+c109	tʲˀ	tʲʼ	consonant	alveolar	stop	voiceless	glottalized_palatalized	111
+c110	dˠ	dˠ	consonant	alveolar	stop	voiced	velarized	112
+c111	ⁿd̥	nd̥	consonant	alveolar	stop	devoiced	prenasalized	113
+c112	ᵐt	t	consonant	alveolar	stop	voiceless	labial_prenasalized	114
+c113	tʲ	tʲ	consonant	alveolar	stop	voiceless	palatalized	115
+c114	tʱ	tɦ	consonant	alveolar	stop	voiceless	voiced_aspirated	116
+c115	ⁿd	ⁿd	consonant	alveolar	stop	voiced	prenasalized	117
+c116	d̥ʰ		consonant	alveolar	stop	devoiced	aspirated	118
+c117	d̤		consonant	alveolar	stop	breathy	plain	119
+c118	t	t	consonant	alveolar	stop	voiceless	plain	120
+c119	tˡ		consonant	alveolar	stop	voiceless	lateral	121
+c120	tˡˀ		consonant	alveolar	stop	voiceless	lateral_glottalized	122
+c121	tⁿ	tⁿ	consonant	alveolar	stop	voiceless	postnasalized	123
+c122	ⁿdʷ	ⁿdʷ	consonant	alveolar	stop	voiced	labialized_prenasalized	124
+c123	ᵐd	d	consonant	alveolar	stop	voiced	labial_prenasalized	125
+c124	dʰ	dʰ	consonant	alveolar	stop	voiced	aspirated	126
+c125	ˀt	ʔt	consonant	alveolar	stop	voiceless	preglottalized	127
+c126	dˤ	dˤ	consonant	alveolar	stop	voiced	pharyngealized	128
+c127	dʲ	dʲ	consonant	alveolar	stop	voiced	palatalized	129
+c128	tː	tː	consonant	alveolar	stop	voiceless_long	plain	130
+c129	dʷ	dʷ	consonant	alveolar	stop	voiced	labialized	131
+c130	t̀	t̀	consonant	alveolar	stop	voiceless	tense	132
+c131	dː		consonant	alveolar	stop	voiced_long	plain	133
+c132	tˤ	tˤ	consonant	alveolar	stop	voiceless	pharyngealized	134
+c133	tʲʰ	tʲʰ	consonant	alveolar	stop	voiceless	aspirated_palatalized	135
+c134	d̏	d̏	consonant	alveolar	stop	voiced	heavy	136
+c135	tʷ	tʷ	consonant	alveolar	stop	voiceless	labialized	137
+c136	tʰ	tʰ	consonant	alveolar	stop	voiceless	aspirated	138
+c137	d̤ː		consonant	alveolar	stop	breathy_long	plain	139
+c138	ⁿt	ⁿt	consonant	alveolar	stop	voiceless	prenasalized	140
+c139	d̂	d̂	consonant	alveolar	stop	voiced	lenis	141
+c140	ⁿdʲ	ⁿdʲ	consonant	alveolar	stop	voiced	palatalized_prenasalized	142
+c141	tr	tr	consonant	alveolar	stop	voiceless	rhotic	143
+c142	ⁿtʰ	ⁿtʰ	consonant	alveolar	stop	voiceless	aspirated_prenasalized	144
+c143	d	d	consonant	alveolar	stop	voiced	plain	145
+c144	dˡ		consonant	alveolar	stop	voiced	lateral	146
+c145	tʰʷ	tʰʷ	consonant	alveolar	stop	voiceless	aspirated_labialized	147
+c146	tˠ	tˠ	consonant	alveolar	stop	voiceless	velarized	148
+c147	d̀	d̀	consonant	alveolar	stop	voiced	tense	149
+c148	ŋtw	ŋtw	consonant	alveolar	stop	voiceless	labialized_velar_prenasalized	150
+c149	rˀ	rʼ	consonant	alveolar	trill	voiced	glottalized	151
+c150	ⁿr	ⁿr	consonant	alveolar	trill	voiced	prenasalized	152
+c151	r	r	consonant	alveolar	trill	voiced	plain	153
+c152	r̩		consonant	alveolar	trill	voiced	syllabic	154
+c153	r̥	r̥	consonant	alveolar	trill	voiceless	plain	155
+c154	rˤː	rˤː	consonant	alveolar	trill	voiced_long	pharyngealized	156
+c155	rʰ	rʰ	consonant	alveolar	trill	voiced	aspirated	157
+c156	ř	ř	consonant	alveolar	trill	voiced	strident	158
+c157	r̥ʰ	r̥ʰ	consonant	alveolar	trill	voiceless	aspirated	159
+c158	rˤ	rˤ	consonant	alveolar	trill	voiced	pharyngealized	160
+c159	r̃	r̃	consonant	alveolar	trill	voiced	nasalized	161
+c160	rː	rː	consonant	alveolar	trill	voiced_long	plain	162
+c161	rʷ	rʷ	consonant	alveolar	trill	voiced	labialized	163
+c162	rʲ	rʲ	consonant	alveolar	trill	voiced	palatalized	164
+c163	tɕᶣ	tɕɥ	consonant	alveolar_to_alveolopalatal	affricate	voiceless	labiopalatalized	165
+c164	ⁿdβ	ⁿdβ	consonant	alveolar_to_bilabial	affricate	voiced	prenasalized	166
+c165	dβ	dβ	consonant	alveolar_to_bilabial	affricate	voiced	plain	167
+c166	tɸʰ	tɸʰ	consonant	alveolar_to_bilabial	affricate	voiceless	aspirated	168
+c167	ⁿtɸ	ⁿtɸ	consonant	alveolar_to_bilabial	affricate	voiceless	prenasalized	169
+c168	tθˀ	tθʼ	consonant	alveolar_to_dental	affricate	voiceless	glottalized	170
+c169	dð	dð	consonant	alveolar_to_interdental	affricate	voiced	plain	171
+c170	tθ	tθ	consonant	alveolar_to_interdental	affricate	voiceless	plain	172
+c171	tçʰ	tçʰ	consonant	alveolar_to_palatal	affricate	voiceless	aspirated	173
+c172	tç	tç	consonant	alveolar_to_palatal	affricate	voiceless	plain	174
+c173	dʝ	dʝ	consonant	alveolar_to_palatal	affricate	voiced	plain	175
+c174	dʐ	dʐ	consonant	alveolar_to_retroflex	affricate	voiced	plain	176
+c175	tʂ	tʂ	consonant	alveolar_to_retroflex	affricate	voiceless	plain	177
+c176	tʂʰ		consonant	alveolar_to_retroflex	affricate	voiceless	aspirated	178
+c177	tʂˀ	tʂʼ	consonant	alveolar_to_retroflex	affricate	voiceless	glottalized	179
+c178	dɣw	dɣw	consonant	alveolar_to_velar	affricate	voiced	labialized	180
+c179	tx	tx	consonant	alveolar_to_velar	affricate	voiceless	plain	181
+c180	dx	dx	consonant	alveolar_to_velar	affricate	voiced_to_voiceless	plain	182
+c181	dzˀkxʼ	dzʼkxʼ	consonant	alveolar_to_velar	affricate_to_affricate	voiced_to_voiceless	glottalized	183
+c182	tsˀkxʼ	tsʼkxʼ	consonant	alveolar_to_velar	affricate_to_affricate	voiceless	glottalized	184
+c183	tsx	tsx	consonant	alveolar_to_velar	affricate_to_fricative	voiceless	plain	185
+c184	dzɣw	dzɣw	consonant	alveolar_to_velar	affricate_to_fricative	voiced	labialized	186
+c185	dzx	dzx	consonant	alveolar_to_velar	affricate_to_fricative	voiced_to_voiceless	plain	187
+c186	tskʷ	ts͡kʷ	consonant	alveolar_to_velar	affricate_to_stop	voiceless	labialized	188
+c187	tʼkxˀ	tʼkxʼ	consonant	alveolar_to_velar	ejective_to_affricate	voiceless	glottalized	189
+c188	dʼkxˀ	dʼkxʼ	consonant	alveolar_to_velar	ejective_to_affricate	voiced_to_voiceless	glottalized	190
+c189	zʷɣw	zʷ͡ɣw	consonant	alveolar_to_velar	fricative	voiced	labialized_labialized	191
+c190	zɣw	z͡ɣw	consonant	alveolar_to_velar	fricative	voiced	labialized	192
+c191	skʷ	s͡kʷ	consonant	alveolar_to_velar	fricative_to_stop	voiceless	labialized	193
+c192	nŋw	nŋw	consonant	alveolar_to_velar	nasal	voiced	labialized	194
+c193	rɣw	r͡ɣw	consonant	alveolar_to_velar	trill_to_affricate	voiced	labialized	195
+c194	dʑᶣ	dʑɥ	consonant	alveolopalatal	affricate	voiced	labiopalatalized	196
+c195	dʑ	dʑ	consonant	alveolopalatal	affricate	voiced	plain	197
+c196	tːʃ		consonant	postalveolar	affricate	voiceless_long	plain	198
+c197	tɕʰ	tɕʰ	consonant	alveolopalatal	affricate	voiceless	aspirated	199
+c198	tɕ	tɕ	consonant	alveolopalatal	affricate	voiceless	plain	200
+c199	tːʃː	tːʃː	consonant	alveolopalatal	affricate	voiceless_extra_long	plain	201
+c200	tːɕ	tːʃ	consonant	alveolopalatal	affricate	voiceless_long	plain	202
+c201	ʑ	ʑ	consonant	alveolopalatal	fricative	voiced	plain	203
+c202	ɕ	ɕ	consonant	alveolopalatal	fricative	voiceless	plain	204
+c203	ɕᶣ	ɕɥ	consonant	alveolopalatal	fricative	voiceless	labiopalatalized	205
+c204	ɕʰ	ɕʰ	consonant	alveolopalatal	fricative	voiceless	aspirated	206
+c205	pɸ	pɸ	consonant	bilabial	affricate	voiceless	plain	207
+c206	ʘx	ʘx	consonant	bilabial	click	voiceless	x_accompaniment	208
+c207	ʘ	ʘ	consonant	bilabial	click	voiceless	plain	209
+c208	ʘq	ʘq	consonant	bilabial	click	voiceless	q_accompaniment	210
+c209	gʘx	ɡʘx	consonant	bilabial	click	voiced	x_accompaniment	211
+c210	gʘkx	ɡʘkx	consonant	bilabial	click	voiced	kx_accompaniment	212
+c211	ʘqʔ	ʘqʔ	consonant	bilabial	click	voiceless	glottalized_q_accompaniment	213
+c212	p<	p<	consonant	bilabial	click	voiceless	pulmonic_ingressive	214
+c213	ʘn	ʘn	consonant	bilabial	click	voiceless	nasalized	215
+c214	gʘ	ɡʘ	consonant	bilabial	click	voiced	plain	216
+c215	mʘG	mʘG	consonant	bilabial	click	voiceless	labial_prenasalized_G_accompaniment	217
+c216	ʘqʰ	ʘqʰ	consonant	bilabial	click	voiceless	aspirated_q_accompaniment	218
+c217	gʘʰ	ɡʘʰ	consonant	bilabial	click	voiced	aspirated	219
+c218	ʘⁿ̥	ʘn̥	consonant	bilabial	click	voiceless	voiceless_nasalized	220
+c219	ʘʔ	ʘʔ	consonant	bilabial	click	voiceless	glottalized	221
+c220	ʘkxʔ	ʘkxʔ	consonant	bilabial	click	voiceless	glottalized_kx_accompaniment	222
+c221	ʘʰ	ʘʰ	consonant	bilabial	click	voiceless	aspirated	223
+c222	pʼ	pʼ	consonant	bilabial	ejective	voiceless	plain	224
+c223	pʼˤ	pʼˤ	consonant	bilabial	ejective	voiceless	pharyngealized	225
+c224	ɸ	ɸ	consonant	bilabial	fricative	voiceless	plain	226
+c225	β	β	consonant	bilabial	fricative	voiced	plain	227
+c226	ᵐv	v	consonant	bilabial	fricative	voiced	prenasalized	228
+c227	ɓ	ɓ	consonant	bilabial	implosive	voiced	plain	229
+c228	ɓ̥	ɓ̥	consonant	bilabial	implosive	voiceless	plain	230
+c229	ɓʷ	ɓʷ	consonant	bilabial	implosive	voiced	labialized	231
+c230	ɓ̥ˠ	ɓ̥ˠ	consonant	bilabial	implosive	voiceless	velarized	232
+c231	ˀm	ʔm	consonant	bilabial	nasal	voiced	preglottalized	233
+c232	mˠ	mˠ	consonant	bilabial	nasal	voiced	velarized	234
+c233	m̩	m̩	consonant	bilabial	nasal	voiced	syllabic	235
+c234	mˤ	mˤ	consonant	bilabial	nasal	voiced	pharyngealized	236
+c235	m̥	m̥	consonant	bilabial	nasal	voiceless	plain	237
+c236	mʷ	mʷ	consonant	bilabial	nasal	voiced	labialized	238
+c237	mˡ	mˡ	consonant	bilabial	nasal	voiced	lateral	239
+c238	m̥ʰ	m̥ʰ	consonant	bilabial	nasal	voiceless	aspirated	240
+c239	m	m	consonant	bilabial	nasal	voiced	plain	241
+c240	mʲ	mʲ	consonant	bilabial	nasal	voiced	palatalized	242
+c241	m̏	m̏	consonant	bilabial	nasal	voiced	heavy	243
+c242	mː	mː	consonant	bilabial	nasal	voiced_long	plain	244
+c243	mʰ	mʰ	consonant	bilabial	nasal	voiced	aspirated	245
+c244	m̤	m̤	consonant	bilabial	nasal	breathy	plain	246
+c245	m̂	m̂	consonant	bilabial	nasal	voiced	lenis	247
+c246	m<	m<	consonant	bilabial	nasal	voiced	pulmonic_ingressive	248
+c247	mˀ	mʼ	consonant	bilabial	nasal	voiced	glottalized	249
+c248	βm	mβ,βm	consonant	bilabial	nasal_spirant	voiced	plain	250
+c249	ˀb	ʔb	consonant	bilabial	stop	voiced	preglottalized	252
+c250	b̀	b̀	consonant	bilabial	stop	voiced	tense	253
+c251	ᵐpˀ	pʼ	consonant	bilabial	stop	voiceless	glottalized_prenasalized	254
+c252	ᵐb	b	consonant	bilabial	stop	voiced	prenasalized	255
+c253	b̏	b̏	consonant	bilabial	stop	voiced	heavy	256
+c254	b	b	consonant	bilabial	stop	voiced	plain	257
+c255	pʱ	pɦ	consonant	bilabial	stop	voiceless	voiced_aspirated	258
+c256	pᵐ	p	consonant	bilabial	stop	voiceless	postnasalized	259
+c257	pʷ	pʷ	consonant	bilabial	stop	voiceless	labialized	260
+c258	b*	b*	consonant	bilabial	stop	voiced	lax	261
+c259	pː	pː	consonant	bilabial	stop	voiceless_long	plain	262
+c260	p*	p*	consonant	bilabial	stop	voiceless	lax	263
+c261	pʰ	pʰ	consonant	bilabial	stop	voiceless	aspirated	264
+c262	ᵐbʷ	bʷ	consonant	bilabial	stop	voiced	labialized_prenasalized	265
+c263	bʲ	bʲ	consonant	bilabial	stop	voiced	palatalized	266
+c264	pˠ	pˠ	consonant	bilabial	stop	voiceless	velarized	267
+c265	pʲʰ	pʲʰ	consonant	bilabial	stop	voiceless	aspirated_palatalized	268
+c266	bʰ	bʰ	consonant	bilabial	stop	voiced	aspirated	269
+c267	bˀ	bʼ	consonant	bilabial	stop	voiced	glottalized	270
+c268	b̂	b̂	consonant	bilabial	stop	voiced	lenis	271
+c269	pʷˀ	pʷʼ	consonant	bilabial	stop	voiceless	glottalized_labialized	272
+c270	pʲ	pʲ	consonant	bilabial	stop	voiceless	palatalized	273
+c271	bˤ	bˤ	consonant	bilabial	stop	voiced	pharyngealized	274
+c272	ᵐbʲ	bʲ	consonant	bilabial	stop	voiced	palatalized_prenasalized	275
+c273	ᵐpʰ	pʰ	consonant	bilabial	stop	voiceless	aspirated_prenasalized	276
+c274	bˡ	bˡ	consonant	bilabial	stop	voiced	lateral	277
+c275	ᵐp	p	consonant	bilabial	stop	voiceless	prenasalized	278
+c276	bʷ	bʷ	consonant	bilabial	stop	voiced	labialized	279
+c277	ᵐb̥	mb̥	consonant	bilabial	stop	devoiced	prenasalized	280
+c278	b̤		consonant	bilabial	stop	breathy	plain	281
+c279	pˤ	pˤ	consonant	bilabial	stop	voiceless	pharyngealized	282
+c280	b̥	b̥	consonant	bilabial	stop	devoiced	plain	283
+c281	bː	bː	consonant	bilabial	stop	voiced_long	plain	284
+c282	pʰʷ	pʰʷ	consonant	bilabial	stop	voiceless	aspirated_labialized	285
+c283	b̥ʰ		consonant	bilabial	stop	devoiced	aspirated	286
+c284	ˀp	ʔp	consonant	bilabial	stop	voiceless	preglottalized	287
+c285	pˡ	pˡ	consonant	bilabial	stop	voiceless	lateral	288
+c286	p̀	p̀	consonant	bilabial	stop	voiceless	tense	289
+c287	ᵑb	b	consonant	bilabial	stop	voiced	velar_prenasalized	290
+c288	p	p	consonant	bilabial	stop	voiceless	plain	291
+c289	ʙ	ʙ	consonant	bilabial	trill	voiced	plain	292
+c290	bz	bz	consonant	bilabial_to_alveolar	affricate	voiced	plain	293
+c291	ps	ps	consonant	bilabial_to_alveolar	affricate	voiceless	plain	294
+c292	mnl	mnl	consonant	bilabial_to_alveolar	nasal	voiced	lateral	295
+c293	pt	p͡t	consonant	bilabial_to_alveolar	stop	voiceless	plain	296
+c294	bd	b͡d	consonant	bilabial_to_alveolar	stop	voiced	plain	297
+c295	pts	p͡ts	consonant	bilabial_to_alveolar	stop_to_affricate	voiceless	plain	298
+c296	bdz	b͡dz	consonant	bilabial_to_alveolar	stop_to_affricate	voiced	plain	299
+c297	bɗ	b͡ɗ	consonant	bilabial_to_alveolar	stop_to_implosive	voiced	plain	300
+c298	bɮ	bɮ	consonant	bilabial_to_lateral	affricate	voiced	plain	301
+c299	pʃˀ	pʃʼ	consonant	bilabial_to_postalveolar	affricate	voiceless	glottalized	302
+c300	bʒ	bʒ	consonant	bilabial_to_postalveolar	affricate	voiced	plain	303
+c301	pʃʰ	pʃʰ	consonant	bilabial_to_postalveolar	affricate	voiceless	aspirated	304
+c302	bdʒ	b͡dʒ	consonant	bilabial_to_postalveolar	stop_to_affricate	voiced	plain	305
+c303	btʃ	b͡tʃ	consonant	bilabial_to_postalveolar	stop_to_affricate	voiced_to_voiceless	plain	306
+c304	mŋ	m͡ŋ	consonant	bilabial_to_velar	nasal	voiced	plain	307
+c305	bg	b͡ɡ	consonant	bilabial_to_velar	stop	voiced	plain	308
+c306	pk	p͡k	consonant	bilabial_to_velar	stop	voiceless	plain	309
+c307	t̪s̪ʰʷ	t̪s̪ʰʷ	consonant	dental	affricate	voiceless	aspirated_labialized	310
+c308	t̪s̪ː	t̪s̪ː	consonant	dental	affricate	voiceless_long	plain	311
+c309	t̪s̪	t̪s̪	consonant	dental	affricate	voiceless	plain	312
+c310	t̪s̪ʱ	t̪s̪ɦ	consonant	dental	affricate	voiceless	voiced_aspirated	313
+c311	d̪z̪ʷ	d̪z̪ʷ	consonant	dental	affricate	voiced	labialized	314
+c312	t̺s̺ʲ	t̺s̺ʲ	consonant	dental	affricate	voiceless	palatalized	315
+c313	d̪z̪ʲ	d̪z̪ʲ	consonant	dental	affricate	voiced	palatalized	316
+c314	d̪z̪	d̪z̪	consonant	dental	affricate	voiced	plain	317
+c315	t̪s̪ʰ	t̪s̪ʰ	consonant	dental	affricate	voiceless	aspirated	318
+c316	t̪s̪ˀ	t̪s̪ʼ	consonant	dental	affricate	voiceless	glottalized	319
+c317	ǀs	ǀs	consonant	dental	click	voiceless	affricative	320
+c318	ʔǀn	ʔǀn	consonant	dental	click	voiceless	nasalized_preglottalized	321
+c319	nkǀ	nkǀ	consonant	dental	click	voiceless	alveolar_prenasalized_k_accompaniment	322
+c320	ⁿǀ	nǀ,ⁿǀ	consonant	dental	click	voiceless	prenasalized	323
+c321	ǀⁿ̥	ǀn̥	consonant	dental	click	voiceless	voiceless_nasalized	324
+c322	mǀG	mǀG	consonant	dental	click	voiceless	labial_prenasalized_G_accompaniment	325
+c323	ǀʰ	ǀʰ	consonant	dental	click	voiceless	aspirated	326
+c324	ǀkxʔ	ǀkxʔ	consonant	dental	click	voiceless	glottalized_kx_accompaniment	327
+c325	gǀ	ɡǀ	consonant	dental	click	voiced	plain	328
+c326	ǀqʔ	ǀqʔ	consonant	dental	click	voiceless	glottalized_q_accompaniment	329
+c327	ⁿgǀ	nɡǀ	consonant	dental	click	voiced	prenasalized	330
+c328	gǀkx	ɡǀkx	consonant	dental	click	voiced	kx_accompaniment	331
+c329	ǀʔ	ǀʔ	consonant	dental	click	voiceless	glottalized	332
+c330	gǀʰ	ɡǀʰ	consonant	dental	click	voiced	aspirated	333
+c331	ǀⁿ	ǀn	consonant	dental	click	voiceless	nasalized	335
+c332	ǀx	ǀx	consonant	dental	click	voiceless	x_accompaniment	336
+c333	gǀx	ɡǀx	consonant	dental	click	voiced	x_accompaniment	337
+c334	ǀqʰ	ǀqʰ	consonant	dental	click	voiceless	aspirated_q_accompaniment	338
+c335	ǀq	ǀq	consonant	dental	click	voiceless	q_accompaniment	339
+c336	ǀ	ǀ	consonant	dental	click	voiceless	plain	340
+c337	t̪ʼ	t̪ʼ	consonant	dental	ejective	voiceless	plain	341
+c338	n̪t̪ʼ	n̪t̪ʼ	consonant	dental	ejective	voiceless	prenasalized	342
+c339	ɾ̪ˤ	ɾ̪ˤ	consonant	dental	flap	voiced	pharyngealized	343
+c340	ɾ̪	ɾ̪	consonant	dental	flap	voiced	plain	344
+c341	z̪ˤː	z̪ˤː	consonant	dental	fricative	voiced_long	pharyngealized	345
+c342	z̪ː	z̪ː	consonant	dental	fricative	voiced_long	plain	346
+c343	s̪ˀ	s̪ʼ	consonant	dental	fricative	voiceless	glottalized	347
+c344	s̪ˤ	s̪ˤ	consonant	dental	fricative	voiceless	pharyngealized	348
+c345	z̪ʲ	z̪ʲ	consonant	dental	fricative	voiced	palatalized	349
+c346	z̪	z̪	consonant	dental	fricative	voiced	plain	350
+c347	n̪z̪	n̪z̪	consonant	dental	fricative	voiced	prenasalized	351
+c348	s̪ː	s̪ː	consonant	dental	fricative	voiceless_long	plain	352
+c349	s̪ˤː	s̪ˤː	consonant	dental	fricative	voiceless_long	pharyngealized	353
+c350	z̪ˤ	z̪ˤ	consonant	dental	fricative	voiced	pharyngealized	354
+c351	s̪ʲ	s̪ʲ	consonant	dental	fricative	voiceless	palatalized	355
+c352	s̪	s̪	consonant	dental	fricative	voiceless	plain	356
+c353	ɗ̪	ɗ̪	consonant	dental	implosive	voiced	plain	357
+c354	l̪ː	l̪ː	consonant	dental	lateral_approximant	voiced_long	plain	358
+c355	l̪ˀ	l̪ʼ	consonant	dental	lateral_approximant	voiced	glottalized	359
+c356	l̪ˤ	l̪ˤ	consonant	dental	lateral_approximant	voiced	pharyngealized	360
+c357	l̪ˤː	l̪ˤː	consonant	dental	lateral_approximant	voiced_long	pharyngealized	361
+c358	l̪	l̪	consonant	dental	lateral_approximant	voiced	plain	362
+c359	l̪ʰ	l̪ʰ	consonant	dental	lateral_approximant	voiced	aspirated	363
+c360	l̪ʲ	l̪ʲ	consonant	dental	lateral_approximant	voiced	palatalized	364
+c361	l̪θ	l̪θ	consonant	dental	lateral_approximant_to_fricative	voiced_to_voiceless	plain	365
+c362	n̪ʰ	n̪ʰ	consonant	dental	nasal	voiced	aspirated	366
+c363	n̪ʲ	n̪ʲ	consonant	dental	nasal	voiced	palatalized	367
+c364	n̪	n̪	consonant	dental	nasal	voiced	plain	368
+c365	n̪ː	n̪ː	consonant	dental	nasal	voiced_long	plain	369
+c366	n̪ˀ	n̪ʼ	consonant	dental	nasal	voiced	glottalized	370
+c367	d̪	d̪	consonant	dental	stop	voiced	plain	371
+c368	ⁿd̪	ⁿd̪	consonant	dental	stop	voiced	prenasalized	372
+c369	t̪̀	t̪̀	consonant	dental	stop	voiceless	tense	373
+c370	t̪ˤː	t̪ˤː	consonant	dental	stop	voiceless_long	pharyngealized	374
+c371	t̪ʷ	t̪ʷ	consonant	dental	stop	voiceless	labialized	375
+c372	t̪ʲ	t̪ʲ	consonant	dental	stop	voiceless	palatalized	376
+c373	ⁿ̪t̪	n̪t̪	consonant	dental	stop	voiceless	prenasalized	377
+c374	t̪ˤ	t̪ˤ	consonant	dental	stop	voiceless	pharyngealized	378
+c375	d̪ˤ	d̪ˤ	consonant	dental	stop	voiced	pharyngealized	379
+c376	d̪ː	d̪ː	consonant	dental	stop	voiced_long	plain	380
+c377	d̪ʰ	d̪ʰ	consonant	dental	stop	voiced	aspirated	381
+c378	t̪	t̪	consonant	dental	stop	voiceless	plain	382
+c379	t̪ʰ	t̪ʰ	consonant	dental	stop	voiceless	aspirated	383
+c380	t̪ⁿ	t̪ⁿ	consonant	dental	stop	voiceless	postnasalized	384
+c381	d̪ʲ	d̪ʲ	consonant	dental	stop	voiced	palatalized	385
+c382	t̪ː	t̪ː	consonant	dental	stop	voiceless_long	plain	386
+c383	d̪ˤː	d̪ˤː	consonant	dental	stop	voiced_long	pharyngealized	387
+c384	r̪ʲ	r̪ʲ	consonant	dental	trill	voiced	palatalized	388
+c385	r̪	r̪	consonant	dental	trill	voiced	plain	389
+c386	s̪v	s̪v	consonant	dental_to_labiodental	fricative	voiceless_to_voiced	plain	390
+c387	z̪v	z̪v	consonant	dental_to_labiodental	fricative	voiced	plain	391
+c388	t̪c	t̪͡c	consonant	dental_to_palatal	stop	voiceless	plain	392
+c389	d̪ʒ	d̪ʒ	consonant	dental_to_postalveolar	affricate	voiced	plain	393
+c390	t̪ʃ	t̪ʃ	consonant	dental_to_postalveolar	affricate	voiceless	plain	394
+c391	t̪k	t̪͡k	consonant	dental_to_velar	stop	voiceless	plain	395
+c392	ʜ	ʜ	consonant	epiglottal	fricative	voiceless	plain	396
+c393	ʡ	ʡ	consonant	epiglottal	fricative	voiced	plain	397
+c394	ʢ	ʢ	consonant	epiglottal	stop	voiceless	plain	398
+c395	hˤ	hˤ	consonant	glottal	fricative	voiceless	pharyngealized	399
+c396	ɦʲ	ɦʲ	consonant	glottal	fricative	voiced	palatalized	400
+c397	ɦ	ɦ	consonant	glottal	fricative	voiced	plain	401
+c398	hʷː	hʷː	consonant	glottal	fricative	voiceless_long	labialized	402
+c399	ɦʷ	ɦʷ	consonant	glottal	fricative	voiced	labialized	403
+c400	h̃	h̃	consonant	glottal	fricative	voiceless	nasalized	404
+c401	h	h	consonant	glottal	fricative	voiceless	plain	405
+c402	hʲ	hʲ	consonant	glottal	fricative	voiceless	palatalized	406
+c403	hʷ	hʷ	consonant	glottal	fricative	voiceless	labialized	407
+c404	ɦ̃	ɦ̃	consonant	glottal	fricative	voiced	nasalized	408
+c405	ʔ	ʔ	consonant	glottal	stop	voiceless	plain	409
+c406	ʔʷ	ʔʷ	consonant	glottal	stop	voiceless	labialized	410
+c407	ʔˤ	ʔˤ	consonant	glottal	stop	voiceless	pharyngealized	411
+c408	d̪ð	d̪ð	consonant	interdental	affricate	voiced	plain	412
+c409	t̪θ	t̪θ	consonant	interdental	affricate	voiceless	plain	413
+c410	ɾð	ɾð	consonant	interdental	flap	voiced	plain	414
+c411	ðʲ	ðʲ	consonant	interdental	fricative	voiced	palatalized	415
+c412	ⁿð	nð	consonant	interdental	fricative	voiced	prenasalized	416
+c413	θ	θ	consonant	interdental	fricative	voiceless	plain	417
+c414	ðˤ	ðˤ	consonant	interdental	fricative	voiced	pharyngealized	418
+c415	ð	ð	consonant	interdental	fricative	voiced	plain	419
+c416	ðˠ	ðˠ	consonant	interdental	fricative	voiced	velarized	420
+c417	θˀ	θʼ	consonant	interdental	fricative	voiceless	glottalized	421
+c418	ðn	ðn	consonant	interdental	nasal_spirant	voiceless	plain	422
+c419	pv	pv	consonant	labiodental	affricate	voiceless_to_voiced	plain	423
+c420	pf	pf	consonant	labiodental	affricate	voiceless	plain	424
+c421	pfʰ	pfʰ	consonant	labiodental	affricate	voiceless	aspirated	425
+c422	bv	bv	consonant	labiodental	affricate	voiced	plain	426
+c423	ʋ*	ʋ*	consonant	labiodental	approximant	voiced	lax	427
+c424	ʋ	ʋ	consonant	labiodental	approximant	voiced	plain	428
+c425	ʋʰ	ʋʰ	consonant	labiodental	approximant	voiced	aspirated	429
+c426	ʋʲ	ʋʲ	consonant	labiodental	approximant	voiced	palatalized	430
+c427	ʋ̃	ʋ̃	consonant	labiodental	approximant	voiced	nasalized	431
+c428		vɾ,	consonant	labiodental	flap	voiced	plain	433
+c429	vʲ	vʲ	consonant	labiodental	fricative	voiced	palatalized	434
+c430	fʲ	fʲ	consonant	labiodental	fricative	voiceless	palatalized	435
+c431	v̥	v̥	consonant	labiodental	fricative	devoiced	plain	436
+c432	ᵐf	f	consonant	labiodental	fricative	voiceless	prenasalized	437
+c433	vː		consonant	labiodental	fricative	voiced_long	plain	438
+c434	vʷ	vʷ	consonant	labiodental	fricative	voiced	labialized	439
+c435	vˡ	vˡ	consonant	labiodental	fricative	voiced	lateral	440
+c436	vˤ	vˤ	consonant	labiodental	fricative	voiced	pharyngealized	441
+c437	fˡ	fˡ	consonant	labiodental	fricative	voiceless	lateral	442
+c438	fˀ	fʼ	consonant	labiodental	fricative	voiceless	glottalized	443
+c439	fː	fː	consonant	labiodental	fricative	voiceless_long	plain	444
+c440	v̤	v̤	consonant	labiodental	fricative	breathy	plain	445
+c441	ṽʲ	ṽʲ	consonant	labiodental	fricative	voiced	nasalized_palatalized	446
+c442	ᶬf	ɱ̥f	consonant	labiodental	fricative	voiceless	voiceless_prenasalized	447
+c443	fˤ	fˤ	consonant	labiodental	fricative	voiceless	pharyngealized	448
+c444	vʰ	vʰ	consonant	labiodental	fricative	voiced	aspirated	449
+c445	fʷ	fʷ	consonant	labiodental	fricative	voiceless	labialized	450
+c446	v	v	consonant	labiodental	fricative	voiced	plain	451
+c447	f	f	consonant	labiodental	fricative	voiceless	plain	452
+c448	ɱ	ɱ	consonant	labiodental	nasal	voiced	plain	453
+c449	v̌	v̌	consonant	labiodental	trill	voiced	plain	454
+c450	fʃ	fʃ	consonant	labiodental_to_postalveolar	fricative	voiceless	plain	455
+c451	bʝ	b͡ʝ	consonant	labiopalatal	affricate	voiced	plain	456
+c452	bç	b͡ç	consonant	labiopalatal	affricate	voiced_to_voiceless	plain	457
+c453	ɥ	ɥ	consonant	labiopalatal	approximant	voiced	plain	458
+c454	ɥ̥	ɥ̥	consonant	labiopalatal	approximant	voiceless	plain	459
+c455	w̃	w̃	consonant	labiovelar	approximant	voiced	nasalized	460
+c456	wʱ	wɦ	consonant	labiovelar	approximant	voiced	voiced_aspirated	461
+c457	w	w	consonant	labiovelar	approximant	voiced	plain	462
+c458	w*	w*	consonant	labiovelar	approximant	voiced	lax	463
+c459	wˤ	wˤ	consonant	labiovelar	approximant	voiced	pharyngealized	464
+c460	wː	wː	consonant	labiovelar	approximant	voiced_long	plain	465
+c461	wʰ	wʰ	consonant	labiovelar	approximant	voiced	aspirated	466
+c462	ˀw	ʔw	consonant	labiovelar	approximant	voiced	preglottalized	467
+c463	wˀ	wʼ	consonant	labiovelar	approximant	voiced	glottalized	468
+c464	ʍ	ʍ	consonant	labiovelar	approximant	voiceless	plain	469
+c465	wʲ	wʲ	consonant	labiovelar	approximant	voiced	palatalized	470
+c466	ɣβ	ɣ͡β	consonant	labiovelar	fricative	voiced	plain	471
+c467	xɸ	x͡ɸ	consonant	labiovelar	fricative	voiceless	plain	472
+c468	ɠɓ	ɠ͡ɓ	consonant	labiovelar	implosive	voiced	plain	473
+c469	o̯	o̯	consonant	labiovelar	mid_approximant	voiced	plain	474
+c470	ŋmʲ	ŋ͡mʲ	consonant	labiovelar	nasal	voiced	palatalized	475
+c471	ŋm	ŋ͡m	consonant	labiovelar	nasal	voiced	plain	476
+c472	ĝb̂	ɡ̂͡b̂	consonant	labiovelar	stop	voiced	lenis	477
+c473	ᵐgb	ɡ͡b	consonant	labiovelar	stop	voiced	labial_prenasalized	478
+c474	ᵑgb	ɡ͡b	consonant	labiovelar	stop	voiced	velar_prenasalized	479
+c475	ᵐkp	k͡p	consonant	labiovelar	stop	voiceless	labial_prenasalized	480
+c476	kp	k͡p	consonant	labiovelar	stop	voiceless	plain	481
+c477	pkʰ	p͡kʰ	consonant	labiovelar	stop	voiceless	aspirated	482
+c478	k̂p̂	k̂͡p̂	consonant	labiovelar	stop	voiceless	lenis	483
+c479	gbʲ	ɡ͡bʲ	consonant	labiovelar	stop	voiced	palatalized	484
+c480	kpʲ	k͡pʲ	consonant	labiovelar	stop	voiceless	palatalized	485
+c481	gb	ɡ͡b	consonant	labiovelar	stop	voiced	plain	486
+c482	gp	ɡ͡p	consonant	labiovelar	stop	voiced_to_voiceless	plain	487
+c483	kpʷ	k͡pʷ	consonant	labiovelar	stop	voiceless	labialized	488
+c484	ᵑᵐgb	ɡ͡b	consonant	labiovelar	stop	voiced	prenasalized	489
+c485	gbʷ	ɡ͡bʷ	consonant	labiovelar	stop	voiced	labialized	490
+c486	gɓ	ɡ͡ɓ	consonant	labiovelar	stop_to_implosive	voiced	plain	491
+c487	t̻s̻	t̻s̻	consonant	laminal_alveolar	affricate	voiceless	plain	492
+c488	s̻ˤ	s̻ˤ	consonant	laminal_alveolar	fricative	voiceless	pharyngealized	493
+c489	z̻ˤ	z̻ˤ	consonant	laminal_alveolar	fricative	voiced	pharyngealized	494
+c490	s̻	s̻	consonant	laminal_alveolar	fricative	voiceless	plain	495
+c491	z̻	z̻	consonant	laminal_alveolar	fricative	voiced	plain	496
+c492	n̻	n̻	consonant	laminal_alveolar	nasal	voiced	plain	497
+c493	d̻	d̻	consonant	laminal_alveolar	stop	voiced	plain	498
+c494	d̻ʑ	d̻ʑ	consonant	laminal_alveolar_to_alveolopalatal	affricate	voiced	plain	499
+c495	t̻ɕʰ	t̻ɕʰ	consonant	laminal_alveolar_to_alveolopalatal	affricate	voiceless	aspirated	500
+c496	t̻ɕ	t̻ɕ	consonant	laminal_alveolar_to_alveolopalatal	affricate	voiceless	plain	501
+c497	t̻ɕˀ	t̻ɕʼ	consonant	laminal_alveolar_to_alveolopalatal	affricate	voiceless	glottalized	502
+c498	d̻ʒ̻	d̻ʒ̻	consonant	laminal_alveolar_to_laminal_postalveolar	affricate	voiced	plain	503
+c499	t̻ʃ̻	t̻ʃ̻	consonant	laminal_postalveolar	affricate	voiceless	plain	504
+c500	ʃ̥ʷ	ʃ̥ʷ	consonant	laminal_postalveolar	fricative	voiceless	labialized	505
+c501	ʒ̥ʷ	ʒ̥ʷ	consonant	laminal_postalveolar	fricative	voiced	labialized	506
+c502	ʒ̥	ʒ̥	consonant	laminal_postalveolar	fricative	voiced	plain	507
+c503	tɬˀ	tɬʼ	consonant	lateral	affricate	voiceless	glottalized	508
+c504	ⁿtɬ	ⁿtɬ	consonant	lateral	affricate	voiceless	prenasalized	509
+c505	tɬʰ	tɬʰ	consonant	lateral	affricate	voiceless	aspirated	510
+c506	tɬ	tɬ	consonant	lateral	affricate	voiceless	plain	511
+c507	ⁿdɮ	ⁿdɮ	consonant	lateral	affricate	voiced	prenasalized	512
+c508	ǁkxʔ	ǁkxʔ	consonant	lateral	click	voiceless	glottalized_kx_accompaniment	513
+c509	ǁ	ǁ	consonant	lateral	click	voiceless	plain	514
+c510	ǁqʔ	ǁqʔ	consonant	lateral	click	voiceless	glottalized_q_accompaniment	515
+c511	ʔǁn	ʔǁn	consonant	lateral	click	voiceless	glottalized_prenasalized	516
+c512	ǁʰ	ǁʰ	consonant	lateral	click	voiceless	aspirated	517
+c513	ǁʔ	ǁʔ	consonant	lateral	click	voiceless	glottalized	518
+c514	gǁkx	ɡǁkx	consonant	lateral	click	voiced	kx_accompaniment	519
+c515	gǁx	ɡǁx	consonant	lateral	click	voiced	x_accompaniment	520
+c516	mǁG	mǁG	consonant	lateral	click	voiced	labial_prenasalized_G_accompaniment	521
+c517	ǁⁿ̥	ǁn̥	consonant	lateral	click	voiced	voiceless_nasalized	522
+c518	ǁqʰ	ǁqʰ	consonant	lateral	click	voiceless	aspirated_q_accompaniment	523
+c519	ǁx	ǁx	consonant	lateral	click	voiceless	x_accompaniment	524
+c520	ⁿǁ	nǁ	consonant	lateral	click	voiceless	prenasalized	525
+c521	ǁq	ǁq	consonant	lateral	click	voiceless	q_accompaniment	526
+c522	ǁn	ǁn	consonant	lateral	click	voiced	nasalized	527
+c523	gǁʰ	ɡǁʰ	consonant	lateral	click	voiced	aspirated	528
+c524	gǁ	ɡǁ	consonant	lateral	click	voiced	plain	529
+c525	ⁿgǁ	nɡǁ	consonant	lateral	click	voiced	prenasalized	530
+c526	ɺ	ɺ,ɾˡ	consonant	lateral	flap	voiced	plain	531
+c527	ⁿɬ	ⁿɬ	consonant	lateral	fricative	voiceless	prenasalized	533
+c528	ɬʷ	ɬʷ	consonant	lateral	fricative	voiceless	labialized	534
+c529	ɬ̀	ɬ̀	consonant	lateral	fricative	voiceless	tense	535
+c530	ᵐɬ	ɬ	consonant	lateral	fricative	voiceless	labial_prenasalized	536
+c531	ⁿɮ	ⁿɮ	consonant	lateral	fricative	voiced	prenasalized	537
+c532	ɬː		consonant	lateral	fricative	voiceless_long	plain	538
+c533	ɮ	ɮ	consonant	lateral	fricative	voiced	plain	539
+c534	ɬ	ɬ	consonant	lateral	fricative	voiceless	plain	540
+c535	ɬˀ	ɬʼ	consonant	lateral	fricative	voiceless	glottalized	541
+c536	lˤ	lˤ	consonant	lateral	lateral_approximant	voiced	pharyngealized	542
+c537	l̩	l̩	consonant	lateral	lateral_approximant	voiced	syllabic	543
+c538	l̥	l̥	consonant	lateral	lateral_approximant	voiceless	plain	544
+c539	lː	lː	consonant	lateral	lateral_approximant	voiced_long	plain	545
+c540	lʲ	lʲ	consonant	lateral	lateral_approximant	voiced	palatalized	546
+c541	lʰ	lʰ	consonant	lateral	lateral_approximant	voiced	aspirated	547
+c542	l̥ʰ	l̥ʰ	consonant	lateral	lateral_approximant	voiceless	aspirated	548
+c543	lˠ	lˠ	consonant	lateral	lateral_approximant	voiced	velarized	549
+c544	l̤	l̤	consonant	lateral	lateral_approximant	breathy	plain	550
+c545	lᶣ	lɥ	consonant	lateral	lateral_approximant	voiced	labiopalatalized	551
+c546	lʲː		consonant	lateral	lateral_approximant	voiced_long	palatalized	552
+c547	ᵐl	l	consonant	lateral	lateral_approximant	voiced	labial_prenasalized	553
+c548	l	l	consonant	lateral	lateral_approximant	voiced	plain	554
+c549	lˠʷ	lˠʷ	consonant	lateral	lateral_approximant	voiced	labialized_velarized	555
+c550	lˀ	lʼ	consonant	lateral	lateral_approximant	voiced	glottalized	556
+c551	ˀl	ʔl	consonant	lateral	lateral_approximant	voiced	preglottalized	557
+c552	lʷ	lʷ	consonant	lateral	lateral_approximant	voiced	labialized	558
+c553	l̃	l̃	consonant	lateral	lateral_approximant	voiced	nasalized	559
+c554	tlˀ	tlʼ	consonant	lateral	stop	voiceless	glottalized	560
+c555	ⁿdl	ⁿdl	consonant	lateral	stop	voiced	prenasalized	561
+c556	tlʰ	tlʰ	consonant	lateral	stop	voiceless	aspirated	562
+c557	dl	dl	consonant	lateral	stop	voiced	plain	563
+c558	ⁿdlˀ	ⁿdlʼ	consonant	lateral	stop	voiced	glottalized_prenasalized	564
+c559	tl	tl	consonant	lateral	stop	voiceless	plain	565
+c560	cçˀ	cçʼ	consonant	palatal	affricate	voiceless	glottalized	566
+c561	cçʰ	cçʰ	consonant	palatal	affricate	voiceless	aspirated	567
+c562	cç	cç	consonant	palatal	affricate	voiceless	plain	568
+c563	ɟʝ	ɟʝ	consonant	palatal	affricate	voiced	plain	569
+c564	j	j	consonant	palatal	approximant	voiced	plain	570
+c565	jʷ	jʷ	consonant	palatal	approximant	voiced	labialized	571
+c566	jˀ	jʼ	consonant	palatal	approximant	voiced	glottalized	572
+c567	jʰ	jʰ	consonant	palatal	approximant	voiced	aspirated	573
+c568	ĵ	ĵ	consonant	palatal	approximant	voiced	lenis	574
+c569	j̥	j̥	consonant	palatal	approximant	voiceless	plain	575
+c570	j̃	j̃	consonant	palatal	approximant	voiced	nasalized	576
+c571	ˀj	ʔj	consonant	palatal	approximant	voiced	preglottalized	577
+c572	jː	jː	consonant	palatal	approximant	voiced_long	plain	578
+c573	cʼ	cʼ	consonant	palatal	ejective	voiceless	plain	579
+c574	ʝ	ʝ	consonant	palatal	fricative	voiced	plain	580
+c575	çʷ	çʷ	consonant	palatal	fricative	voiceless	labialized	581
+c576	ʝˀ	ʝʼ	consonant	palatal	fricative	voiced	glottalized	582
+c577	ç	ç	consonant	palatal	fricative	voiceless	plain	583
+c578	ʄ̥	ʄ̥	consonant	palatal	implosive	voiceless	plain	584
+c579	ʄ	ʄ	consonant	palatal	implosive	voiced	plain	585
+c580	ʎ̥	ʎ̥	consonant	palatal	lateral_approximant	voiceless	plain	586
+c581	ʎː		consonant	palatal	lateral_approximant	voiced_long	plain	587
+c582	ʎ	ʎ	consonant	palatal	lateral_approximant	voiced	plain	588
+c583	e̯	e̯	consonant	palatal	mid_approximant	voiced	plain	589
+c584	ɲᶣ	ɲɥ	consonant	palatal	nasal	voiced	labiopalatalized	590
+c585	ɲ̊		consonant	palatal	nasal	voiced	devoiced	591
+c586	ᵐɲ	ɲ	consonant	palatal	nasal	voiced	labial_prenasalized	592
+c587	ɲː	ɲː	consonant	palatal	nasal	voiced_long	plain	593
+c588	ɲ̥	ɲ̥	consonant	palatal	nasal	voiceless	plain	594
+c589	ɲ	ɲ	consonant	palatal	nasal	voiced	plain	595
+c590	ɲʰ	ɲʰ	consonant	palatal	nasal	voiced	aspirated	596
+c591	ɲ̥ʰ	ɲ̥ʰ	consonant	palatal	nasal	voiceless	aspirated	597
+c592	cː		consonant	palatal	stop	voiceless_long	plain	598
+c593	cʷ	cʷ	consonant	palatal	stop	voiceless	labialized	599
+c594	cˤ	cˤ	consonant	palatal	stop	voiceless	pharyngealized	600
+c595	c	c	consonant	palatal	stop	voiceless	postnasalized	601
+c596	ɟʷ	ɟʷ	consonant	palatal	stop	voiced	labialized	602
+c597	ɟʰ	ɟʰ	consonant	palatal	stop	voiced	aspirated	603
+c598	cʰ	cʰ	consonant	palatal	stop	voiceless	aspirated	604
+c599	ᵑc	c	consonant	palatal	stop	voiceless	velar_prenasalized	605
+c600	c	c	consonant	palatal	stop	voiceless	plain	606
+c601	ɟ̥	ɟ̥	consonant	palatal	stop	devoiced	plain	607
+c602	ⁿc	ⁿc	consonant	palatal	stop	voiceless	prenasalized	608
+c603	ɟ	ɟ	consonant	palatal	stop	voiced	plain	609
+c604	ⁿɟ	ⁿɟ	consonant	palatal	stop	voiced	prenasalized	610
+c605	cɕ	cɕ	consonant	palatal_to_alveolopalatal	affricate	voiceless	plain	611
+c606	ɟʑ	ɟʑ	consonant	palatal_to_alveolopalatal	affricate	voiced	plain	612
+c607	cɕʰ	cɕʰ	consonant	palatal_to_alveolopalatal	affricate	voiceless	aspirated	613
+c608	cɕˀ	cɕʼ	consonant	palatal_to_alveolopalatal	affricate	voiceless	glottalized	614
+c609	c̀ɕ	c̀ɕ	consonant	palatal_to_alveolopalatal	affricate	voiceless	tense	615
+c610	ɲn̪	ɲ͡n̪	consonant	palatal_to_dental	nasal	voiced	plain	616
+c611	ᶮcʃ	ɲ̥cʃ	consonant	palatal_to_postalveolar	affricate	voiceless	voiceless_prenasalized	617
+c612	cʃ	cʃ	consonant	palatal_to_postalveolar	affricate	voiceless	plain	618
+c613	ɧ		consonant	palatal_to_velar	fricative	voiceless	plain	619
+c614	ɲŋ	ɲ͡ŋ	consonant	palatal_to_velar	nasal	voiced	plain	620
+c615	ɲŋw	ɲ͡ŋw	consonant	palatal_to_velar	nasal	voiced	labialized	621
+c616	ǂʰ	ǂʰ	consonant	palatoalveolar	click	voiceless	aspirated	622
+c617	ǂn	ǂn	consonant	palatoalveolar	click	voiceless	nasalized	623
+c618	mǂG	mǂG	consonant	palatoalveolar	click	voiceless	labial_prenasalized_G_accompaniment	624
+c619	gǂx	ɡǂx	consonant	palatoalveolar	click	voiced	x_accompaniment	625
+c620	ǂⁿ̥	ǂn̥	consonant	palatoalveolar	click	voiceless	voiceless_nasalized	626
+c621	ǂx	ǂx	consonant	palatoalveolar	click	voiceless	x_accompaniment	627
+c622	ǂq	ǂq	consonant	palatoalveolar	click	voiceless	q_accompaniment	628
+c623	gǂ	ɡǂ	consonant	palatoalveolar	click	voiced	plain	629
+c624	ǂqʔ	ǂqʔ	consonant	palatoalveolar	click	voiceless	glottalized_q_accompaniment	630
+c625	ⁿǂ	nǂ	consonant	palatoalveolar	click	voiceless	prenasalized	631
+c626	ǂʔ	ǂʔ	consonant	palatoalveolar	click	voiceless	glottalized	632
+c627	ǂkxʔ	ǂkxʔ	consonant	palatoalveolar	click	voiceless	glottalized_kx_accompaniment	633
+c628	ǂqʰ	ǂqʰ	consonant	palatoalveolar	click	voiceless	aspirated_q_accompaniment	634
+c629	ⁿgǂ	nɡǂ	consonant	palatoalveolar	click	voiced	prenasalized	635
+c630	gǂkx	ɡǂkx	consonant	palatoalveolar	click	voiced	kx_accompaniment	636
+c631	ǂ	ǂ	consonant	palatoalveolar	click	voiceless	plain	637
+c632	ʔǂn	ʔǂn	consonant	palatoalveolar	click	voiceless	nasalized_preglottalized	638
+c633	gǂʰ	ɡǂʰ	consonant	palatoalveolar	click	voiced	aspirated	639
+c634	ʕʷ	ʕʷ	consonant	pharyngeal	fricative	voiced	labialized	640
+c635	ʕ	ʕ	consonant	pharyngeal	fricative	voiced	plain	641
+c636	ħ	ħ	consonant	pharyngeal	fricative	voiceless	plain	642
+c637	ʕˀ	ʕʼ	consonant	pharyngeal	fricative	voiced	glottalized	643
+c638	ʕˀʷ	ʕʼʷ	consonant	pharyngeal	fricative	voiced	glottalized_labialized	644
+c639	ħʷ	ħʷ	consonant	pharyngeal	fricative	voiceless	labialized	645
+c640	N̩	N̩	consonant	placeless	nasal	voiced	syllabic	646
+c641	N?	N?	consonant	placeless	nasal	voiced	plain	647
+c642	tʃˤ	tʃˤ	consonant	postalveolar	affricate	voiceless	pharyngealized	648
+c643	ᵐtʃ	tʃ	consonant	postalveolar	affricate	voiceless	labial_prenasalized	649
+c644	tʃʷˀ	tʃʷʼ	consonant	postalveolar	affricate	voiceless	glottalized_labialized	650
+c645	tʃ	tʃ	consonant	postalveolar	affricate	voiceless	plain	651
+c646	tʃˀ	tʃʼ	consonant	postalveolar	affricate	voiceless	glottalized	652
+c647	tʃ̀	tʃ̀	consonant	postalveolar	affricate	voiceless	tense	653
+c648	tʃʰʷ	tʃʰʷ	consonant	postalveolar	affricate	voiceless	aspirated_labialized	654
+c649	dʒ	dʒ	consonant	postalveolar	affricate	voiced	plain	655
+c650	ⁿtʃʰʷ	ⁿtʃʰʷ	consonant	postalveolar	affricate	voiceless	aspirated_labialized_prenasalized	656
+c651	ᵐdʒ	dʒ	consonant	postalveolar	affricate	voiced	labial_prenasalized	657
+c652	tʃʷ	tʃʷ	consonant	postalveolar	affricate	voiceless	labialized	658
+c653	tʃʱ	tʃɦ	consonant	postalveolar	affricate	voiceless	voiced_aspirated	659
+c654	ⁿtʃ	ⁿtʃ	consonant	postalveolar	affricate	voiceless	prenasalized	660
+c655	tʃʰ	tʃʰ	consonant	postalveolar	affricate	voiceless	aspirated	661
+c656	dːʒ	dːʒ	consonant	postalveolar	affricate	voiced_long	plain	662
+c657	dʒʲ	dʒʲ	consonant	postalveolar	affricate	voiced	palatalized	663
+c658	tʃʲ	tʃʲ	consonant	postalveolar	affricate	voiceless	palatalized	664
+c659	ⁿtʃʷ	ⁿtʃʷ	consonant	postalveolar	affricate	voiceless	labialized_prenasalized	665
+c660	dʒʷ	dʒʷ	consonant	postalveolar	affricate	voiced	labialized	666
+c661	dʒʰ	dʒʰ	consonant	postalveolar	affricate	voiced	aspirated	667
+c662	ⁿtʃˀ	ⁿtʃʼ	consonant	postalveolar	affricate	voiceless	glottalized_prenasalized	668
+c663	ⁿdʒ	ⁿdʒ	consonant	postalveolar	affricate	voiced	prenasalized	669
+c664	ʒː	ʒː	consonant	postalveolar	fricative	voiced_long	plain	670
+c665	ʃʷ	ʃʷ	consonant	postalveolar	fricative	voiceless	labialized	671
+c666	ʒʰ	ʒʰ	consonant	postalveolar	fricative	voiced	aspirated	672
+c667	ʒʷ	ʒʷ	consonant	postalveolar	fricative	voiced	labialized	673
+c668	ᵐʃ	ʃ	consonant	postalveolar	fricative	voiceless	labial_prenasalized	674
+c669	ⁿʒ	ⁿʒ	consonant	postalveolar	fricative	voiced	prenasalized	675
+c670	ʃʲ	ʃʲ	consonant	postalveolar	fricative	voiceless	palatalized	676
+c671	ᶮʃ	ɲ̥ʃ	consonant	postalveolar	fricative	voiceless	voiceless_prenasalized	677
+c672	ʃː	ʃː	consonant	postalveolar	fricative	voiceless_long	plain	678
+c673	ʃˀ	ʃʼ	consonant	postalveolar	fricative	voiceless	glottalized	679
+c674	ʃ̀	ʃ̀	consonant	postalveolar	fricative	voiceless	tense	680
+c675	ʒ̤	ʒ̤	consonant	postalveolar	fricative	breathy	plain	681
+c676	ʒʲ	ʒʲ	consonant	postalveolar	fricative	voiced	palatalized	682
+c677	ʃ	ʃ	consonant	postalveolar	fricative	voiceless	plain	683
+c678	ⁿʃ	ⁿʃ	consonant	postalveolar	fricative	voiceless	prenasalized	684
+c679	ʒ	ʒ	consonant	postalveolar	fricative	voiced	plain	685
+c680	ʃtʃ	ʃtʃ	consonant	postalveolar	fricative_to_affricate	voiceless	plain	686
+c681	ɗʒ	ɗʒ	consonant	postalveolar	implosive_affricate	voiced	plain	687
+c682	dʒɣʷ	dʒ͡ɣʷ	consonant	postalveolar_to_velar	affricate_to_fricative	voiced	labialized	688
+c683	tʃk	tʃ͡k	consonant	postalveolar_to_velar	affricate_to_stop	voiceless	plain	689
+c684	tʃkʷ	tʃ͡kʷ	consonant	postalveolar_to_velar	affricate_to_stop	voiceless	labialized	690
+c685	dʒg	dʒ͡ɡ	consonant	postalveolar_to_velar	affricate_to_stop	voiced	plain	691
+c686	ʒɣw	ʒ͡ɣw	consonant	postalveolar_to_velar	fricative	voiced	labialized	692
+c687	ʃkʷ	ʃ͡kʷ	consonant	postalveolar_to_velar	fricative_to_stop	voiceless	labialized	693
+c688	s̞	s̞	consonant	retracted_alveolar	fricative	voiceless	plain	694
+c689	n̞s̞	n̞s̞	consonant	retracted_alveolar	fricative	voiceless	prenasalized	695
+c690	n̞	n̞	consonant	retracted_alveolar	nasal	voiced	plain	696
+c691	ʈʂʰ	ʈʂʰ	consonant	retroflex	affricate	voiceless	aspirated	697
+c692	ɖʐ	ɖʐ	consonant	retroflex	affricate	voiced	plain	698
+c693	ʈʂ	ʈʂ	consonant	retroflex	affricate	voiceless	plain	699
+c694	ʈʂˀ	ʈʂʼ	consonant	retroflex	affricate	voiceless	glottalized	700
+c695	ɻ	ɻ	consonant	retroflex	approximant	voiced	plain	701
+c696	ɽʰ	ɽʰ	consonant	retroflex	flap	voiced	aspirated	702
+c697	ɽ	ɽ	consonant	retroflex	flap	voiced	plain	703
+c698	ʂʰ	ʂʰ	consonant	retroflex	fricative	voiceless	aspirated	704
+c699	ʂ	ʂ	consonant	retroflex	fricative	voiceless	plain	705
+c700	ʐ	ʐ	consonant	retroflex	fricative	voiced	plain	706
+c701	ɖ˞	ɖ˞	consonant	retroflex	implosive	voiceless	plain	707
+c702	ɭ	ɭ	consonant	retroflex	lateral_approximant	voiced	plain	708
+c703	ɭː		consonant	retroflex	lateral_approximant	voiced_long	plain	709
+c704	ɳʷ	ɳʷ	consonant	retroflex	nasal	voiced	labialized	710
+c705	ɳ	ɳ	consonant	retroflex	nasal	voiced	plain	711
+c706	ɳː		consonant	retroflex	nasal	voiced_long	plain	712
+c707	ɖː		consonant	retroflex	stop	voiced_long	plain	713
+c708	ɖ̤		consonant	retroflex	stop	breathy	plain	714
+c709	ʈʲʰ	ʈʲʰ	consonant	retroflex	stop	voiceless	aspirated_palatalized	715
+c710	ɖʰ	ɖʰ	consonant	retroflex	stop	voiced	aspirated	716
+c711	ʈ	ʈ	consonant	retroflex	stop	voiceless	plain	717
+c712	ⁿɖ	ⁿɖ	consonant	retroflex	stop	voiced	prenasalized	718
+c713	ʈᶯ	ʈⁿ	consonant	retroflex	stop	voiceless	postnasalized	719
+c714	ɖɽ	ɖɽ	consonant	retroflex	stop	voiced	rhotic	720
+c715	ɖ	ɖ	consonant	retroflex	stop	voiced	plain	721
+c716	ᶮɖɽ	ɳɖɽ	consonant	retroflex	stop	voiced	prenasalized_rhotic	722
+c717	ʈɽ	ʈɽ	consonant	retroflex	stop	voiceless	rhotic	723
+c718	ʈʲ	ʈʲ	consonant	retroflex	stop	voiceless	palatalized	724
+c719	ʈʰ	ʈʰ	consonant	retroflex	stop	voiceless	aspirated	725
+c720	ʈː		consonant	retroflex	stop	voiceless_long	plain	726
+c721	ɖʲ	ɖʲ	consonant	retroflex	stop	voiced	palatalized	727
+c722	qχ	qχ	consonant	uvular	affricate	voiceless	plain	728
+c723	qɰ	qɰ	consonant	uvular	approximant	voiced	plain	729
+c724	qʼˤʷ	qʼˤʷ	consonant	uvular	ejective	voiceless	pharyngealized_labialized	730
+c725	qʼʲ	qʼʲ	consonant	uvular	ejective	voiceless	palatalized	731
+c726	qʼ	qʼ	consonant	uvular	ejective	voiceless	plain	732
+c727	qʼʷ	qʼʷ	consonant	uvular	ejective	voiceless	labialized	733
+c728	qʼˤ	qʼˤ	consonant	uvular	ejective	voiceless	pharyngealized	734
+c729	ʁː	ʁː	consonant	uvular	fricative	voiced_long	plain	735
+c730	ʁˤ	ʁˤ	consonant	uvular	fricative	voiced	pharyngealized	736
+c731	χʷ	χʷ	consonant	uvular	fricative	voiceless	labialized	737
+c732	χˤʷ	χˤʷ	consonant	uvular	fricative	voiceless	pharyngealized_labialized	738
+c733	ʁ	ʁ	consonant	uvular	fricative	voiced	plain	739
+c734	χʲ	χʲ	consonant	uvular	fricative	voiceless	palatalized	740
+c735	ʁʷ	ʁʷ	consonant	uvular	fricative	voiced	labialized	741
+c736	χ̀	χ̀	consonant	uvular	fricative	voiceless	tense	742
+c737	χ̀ʷ	χ̀ʷ	consonant	uvular	fricative	voiceless	labialized_tense	743
+c738	ʁʲ	ʁʲ	consonant	uvular	fricative	voiced	palatalized	744
+c739	ʁˤʷ	ʁˤʷ	consonant	uvular	fricative	voiced	pharyngealized_labialized	745
+c740	χː	χː	consonant	uvular	fricative	voiceless_long	plain	746
+c741	χˤ	χˤ	consonant	uvular	fricative	voiceless	pharyngealized	747
+c742	χ	χ	consonant	uvular	fricative	voiceless	plain	748
+c743	ʛ	ʛ	consonant	uvular	implosive	voiced	plain	749
+c744	ɴˀ	ɴʼ	consonant	uvular	nasal	voiced	glottalized	750
+c745	ɴ		consonant	uvular	nasal	voiced	syllabic	751
+c746	ɴ̩	ɴ	consonant	uvular	nasal	voiced	plain	752
+c747	qˤ	qˤ	consonant	uvular	stop	voiceless	pharyngealized	753
+c748	ɢˤ	ɢˤ	consonant	uvular	stop	voiced	pharyngealized	754
+c749	qʲ	qʲ	consonant	uvular	stop	voiceless	palatalized	755
+c750	qː	qː	consonant	uvular	stop	voiceless_long	plain	756
+c751	q	q	consonant	uvular	stop	voiceless	plain	757
+c752	qʷː	qʷː	consonant	uvular	stop	voiceless_long	labialized	758
+c753	qʰ	qʰ	consonant	uvular	stop	voiceless	aspirated	759
+c754	qʷ	qʷ	consonant	uvular	stop	voiceless	labialized	760
+c755	qʰʷ	qʰʷ	consonant	uvular	stop	voiceless	aspirated_labialized	761
+c756	qˤˀ	qˤʼ	consonant	uvular	stop	voiceless	pharyngealized_glottalized	762
+c757	ɢ	ɢ	consonant	uvular	stop	voiced	plain	763
+c758	qˤʷ	qˤʷ	consonant	uvular	stop	voiceless	pharyngealized_labialized	764
+c759	qʷˀ	qʷʼ	consonant	uvular	stop	voiceless	glottalized_labialized	765
+c760	ʀˀ	ʀʼ	consonant	uvular	trill	voiced	glottalized	766
+c761	ʀ	ʀ	consonant	uvular	trill	voiced	plain	767
+c762	kxʰ	kxʰ	consonant	velar	affricate	voiceless	aspirated	768
+c763	ŋkxˀ	ŋkxʼ	consonant	velar	affricate	voiceless	glottalized_prenasalized	769
+c764	kxˀ	kxʼ	consonant	velar	affricate	voiceless	glottalized	770
+c765	gkxˀ	ɡkx’	consonant	velar	affricate	voiced_to_voiceless	glottalized	771
+c766	ɰ	ɰ	consonant	velar	approximant	voiced	plain	772
+c767	ɰˀ	ɰʼ	consonant	velar	approximant	voiced	glottalized	773
+c768	kʼʷ	kʼʷ	consonant	velar	ejective	voiceless	labialized	774
+c769	kʼʲ	kʼʲ	consonant	velar	ejective	voiceless	palatalized	775
+c770	kʼ	kʼ	consonant	velar	ejective	voiceless	plain	776
+c771	xʰ	xʰ	consonant	velar	fricative	voiceless	aspirated	777
+c772	x	x	consonant	velar	fricative	voiceless	plain	778
+c773	ɣʰ	ɣʰ	consonant	velar	fricative	voiced	aspirated	779
+c774	ɣ	ɣ	consonant	velar	fricative	voiced	plain	780
+c775	ɣː	ɣː	consonant	velar	fricative	voiced_long	plain	781
+c776	ɣʲ	ɣʲ	consonant	velar	fricative	voiced	palatalized	782
+c777	xˀ	xʼ	consonant	velar	fricative	voiceless	glottalized	783
+c778	x̀ʷ	x̀ʷ	consonant	velar	fricative	voiceless	labialized_tense	784
+c779	ɣˀ	ɣʼ	consonant	velar	fricative	voiced	glottalized	785
+c780	xː	xː	consonant	velar	fricative	voiceless_long	plain	786
+c781	xʷ	xʷ	consonant	velar	fricative	voiceless	labialized	787
+c782	ɣʷ	ɣʷ	consonant	velar	fricative	voiced	labialized	788
+c783	xʲ	xʲ	consonant	velar	fricative	voiceless	palatalized	789
+c784	x̀	x̀	consonant	velar	fricative	voiceless	tense	790
+c785	ɣ̀	ɣ̀	consonant	velar	fricative	voiced	tense	791
+c786	ɠ	ɠ	consonant	velar	implosive	voiced	plain	792
+c787	ɠ̥	ɠ̥	consonant	velar	implosive	voiceless	plain	793
+c788	ɠʷ	ɠʷ	consonant	velar	implosive	voiced	labialized	794
+c789	ɠʲ	ɠʲ	consonant	velar	implosive	voiced	palatalized	795
+c790	ʟ	ʟ	consonant	velar	lateral_approximant	voiced	plain	796
+c791	ŋʰ	ŋʰ	consonant	velar	nasal	voiced	aspirated	797
+c792	ŋ̍		consonant	velar	nasal	voiced	syllabic	798
+c793	ŋ̊ʰ	ŋ̥ʰ	consonant	velar	nasal	voiceless	aspirated	799
+c794	ŋˀ	ŋʼ	consonant	velar	nasal	voiced	glottalized	800
+c795	ŋ	ŋ	consonant	velar	nasal	voiced	plain	801
+c796	ŋ̊	ŋ̥	consonant	velar	nasal	voiceless	plain	802
+c797	ŋʷ	ŋʷ	consonant	velar	nasal	voiced	labialized	803
+c798	ŋː	ŋː	consonant	velar	nasal	voiced_long	plain	804
+c799	ᵑkʰ	kʰ	consonant	velar	stop	voiceless	aspirated_prenasalized	805
+c800	ⁿk	ⁿk	consonant	velar	stop	voiced	alveolar_prenasalized	806
+c801	ⁿgʷ	ⁿɡʷ,ɡʷ	consonant	velar	stop	voiced	labialized_prenasalized	807
+c802	kʰʲ	kʰʲ	consonant	velar	stop	voiceless	aspirated_palatalized	808
+c803	gˤ	ɡˤ	consonant	velar	stop	voiced	pharyngealized	809
+c804	kˤ	kˤ	consonant	velar	stop	voiceless	pharyngealized	810
+c805	k̀	k̀	consonant	velar	stop	voiceless	tense	811
+c806	g̥ʰ		consonant	velar	stop	devoiced	aspirated	812
+c807	k̀ʷ	k̀ʷ	consonant	velar	stop	voiceless	labialized_tense	813
+c808	gʷ	ɡʷ	consonant	velar	stop	voiced	labialized	814
+c809	ᵑg	ɡ	consonant	velar	stop	voiced	prenasalized	815
+c810	kʷˀ	kʷʼ	consonant	velar	stop	voiceless	glottalized_labialized	816
+c811	ˀk	ʔk	consonant	velar	stop	voiceless	preglottalized	817
+c812	gʲ	ɡʲ	consonant	velar	stop	voiced	palatalized	818
+c813	kʰ	kʰ	consonant	velar	stop	voiceless	aspirated	820
+c814	kʷː	kʷː	consonant	velar	stop	voiceless_long	labialized	821
+c815	kʰʷ	kʰʷ	consonant	velar	stop	voiceless	aspirated_labialized	822
+c816	klˀ	klʼ	consonant	velar	stop	voiceless	glottalized_lateral	823
+c817	g̥	ɡ̥	consonant	velar	stop	devoiced	plain	824
+c818	ᵑk	k	consonant	velar	stop	voiceless	prenasalized	825
+c819	gː	ɡː	consonant	velar	stop	voiced_long	plain	826
+c820	gʷː	ɡʷː	consonant	velar	stop	voiced_long	labialized	827
+c821	kʷɦ	kʷɦ	consonant	velar	stop	voiceless	labialized_voiced_aspirated	828
+c822	kᵑ	k	consonant	velar	stop	voiceless	postnasalized	829
+c823	ĝ	ɡ̂	consonant	velar	stop	voiced	lenis	830
+c824	g	ɡ	consonant	velar	stop	voiced	plain	831
+c825	kː	kː	consonant	velar	stop	voiceless_long	plain	832
+c826	ᵐg	ɡ	consonant	velar	stop	voiced	labial_prenasalized	833
+c827	kʷ	kʷ	consonant	velar	stop	voiceless	labialized	834
+c828	g̤		consonant	velar	stop	breathy	plain	835
+c829	gʰ	ɡʰ	consonant	velar	stop	voiced	aspirated	836
+c830	kʲ	kʲ	consonant	velar	stop	voiceless	palatalized	837
+c831	k	k	consonant	velar	stop	voiceless	plain	838
+c832	k̂	k̂	consonant	velar	stop	voiceless	lenis	839
+c833	ᵑg̥	ŋɡ̥	consonant	velar	stop	devoiced	prenasalized	840
+c834	kf	kf	consonant	velar_to_labiodental	affricate	voiced_to_voiceless	plain	841
+v001	ʉ̟ː	ʉ̟ː	vowel	advanced_central_rounded	high	plain	long	842
+v002	a+	a+	vowel	advanced_central_unrounded	low	plain	plain	843
+v003	ə̟	ə̟	vowel	advanced_central_unrounded	mid	plain	plain	844
+v004	əː	əː	vowel	advanced_central_unrounded	mid	plain	long	845
+v005	i̟	i̟	vowel	advanced_front_unrounded	high	plain	plain	846
+v006	ũː	ũː	vowel	back_rounded	high	nasalized	long	847
+v007	ṳˀ	ṳʔ	vowel	back_rounded	high	glottalized	breathy	848
+v008	ṳː	ṳː	vowel	back_rounded	high	plain	breathy_long	849
+v009	uˤˀ	uˤʔ	vowel	back_rounded	high	pharyngealized_glottalized	plain	850
+v010	ʮ		vowel	back_rounded	high	with_frication	plain	851
+v011	ṵː	ṵː	vowel	back_rounded	high	plain	creaky_long	852
+v012	ṳ̃ˤ	ṳ̃ˤ	vowel	back_rounded	high	pharyngealized_nasalized	breathy	853
+v013	uˀ	uʔ	vowel	back_rounded	high	glottalized	plain	854
+v014	ũˀ	ũʔ	vowel	back_rounded	high	glottalized_nasalized	plain	855
+v015	uʔu	uʔu	vowel	back_rounded	high	interrupted	plain	856
+v016	uˤ	uˤ	vowel	back_rounded	high	pharyngealized	plain	857
+v017	ṵ	ṵ	vowel	back_rounded	high	plain	creaky	858
+v018	uːː	uːː	vowel	back_rounded	high	plain	extra_long	859
+v019	uː	uː	vowel	back_rounded	high	plain	long	860
+v020	ṳ	ṳ	vowel	back_rounded	high	plain	breathy	861
+v021	ṳˤ	ṳˤ	vowel	back_rounded	high	pharyngealized	breathy	862
+v022	ũʔũ	ũʔũ	vowel	back_rounded	high	interrupted_nasalized	plain	863
+v023	u̞	u̞	vowel	back_rounded	high	RTR	plain	864
+v024	u̥	u̥	vowel	back_rounded	high	plain	voiceless	865
+v025	ũ	ũ	vowel	back_rounded	high	nasalized	plain	866
+v026	ũˤ	ũˤ	vowel	back_rounded	high	pharyngealized_nasalized	plain	867
+v027	u	u	vowel	back_rounded	high	plain	plain	868
+d001	u̯o	u̯o	diphtong	back_rounded	high_glide_to_higher_mid	plain	plain	869
+d002	ṳo̤	ṳo̤	diphtong	back_rounded	high_to_higher_mid	plain	breathy	870
+d003	uo	uo	diphtong	back_rounded	high_to_higher_mid	plain	plain	871
+d004	uɔ	uɔ	diphtong	back_rounded	high_to_lower_mid	plain	plain	872
+v028	õː	õː	vowel	back_rounded	higher_mid	nasalized	long	873
+v029	o̥	o̥	vowel	back_rounded	higher_mid	plain	voiceless	874
+v030	o̤	o̤	vowel	back_rounded	higher_mid	plain	breathy	875
+v031	õʔ	õʔ	vowel	back_rounded	higher_mid	interrupted_nasalized	plain	876
+v032	o̰		vowel	back_rounded	higher_mid	plain	creaky	877
+v033	o̞	o̞	vowel	back_rounded	higher_mid	RTR	plain	878
+v034	oˤ	oˤ	vowel	back_rounded	higher_mid	pharyngealized	plain	879
+v035	oː	oː	vowel	back_rounded	higher_mid	plain	long	880
+v036	o̤ˀ	o̤ʔ	vowel	back_rounded	higher_mid	glottalized	breathy	881
+v037	omf	omf	vowel	back_rounded	higher_mid	muffled	plain	882
+v038	õ	õ	vowel	back_rounded	higher_mid	nasalized	plain	883
+v039	õⁿ	õⁿ	vowel	back_rounded	higher_mid	postnasalized	plain	884
+v040	õ̤ˤ	õ̤ˤ	vowel	back_rounded	higher_mid	pharyngealized_nasalized	breathy	885
+v041	ŏ	ŏ	vowel	back_rounded	higher_mid	plain	extra_short	886
+v042	o	o	vowel	back_rounded	higher_mid	plain	plain	887
+v043	oːː	oːː	vowel	back_rounded	higher_mid	plain	extra_long	888
+v044	o̤ˤ	o̤ˤ	vowel	back_rounded	higher_mid	pharyngealized	breathy	889
+v045	õ̰		vowel	back_rounded	higher_mid	nasalized	creaky	890
+v046	õ̤	õ̤	vowel	back_rounded	higher_mid	nasalized	breathy	891
+v047	õ̤ˀ	õ̤ʔ	vowel	back_rounded	higher_mid	glottalized_nasalized	breathy	892
+v048	oˀ	oʔ	vowel	back_rounded	higher_mid	glottalized	plain	893
+v049	oʔo	oʔo	vowel	back_rounded	higher_mid	interrupted	plain	894
+v050	õˤ	õˤ	vowel	back_rounded	higher_mid	pharyngealized_nasalized	plain	895
+v051	o̤ː	o̤ː	vowel	back_rounded	higher_mid	plain	breathy_long	896
+d005	o̯u	o̯u	diphtong	back_rounded	higher_mid_glide_to_high	plain	plain	897
+d006	ou	ou	diphtong	back_rounded	higher_mid_to_high	plain	plain	898
+d007	oʊ	oʊ	diphtong	back_rounded	higher_mid_to_lower_high	plain	plain	899
+v052	ɒ	ɒ	vowel	back_rounded	low	plain	plain	900
+v053	ɒː	ɒː	vowel	back_rounded	low	plain	long	901
+v054	ɒ̃		vowel	back_rounded	low	nasalized	plain	902
+v055	ʊ̥	ʊ̥	vowel	back_rounded	lower_high	plain	voiceless	903
+v056	ʊ	ʊ	vowel	back_rounded	lower_high	plain	plain	904
+v057	ʊ̃	ʊ̃	vowel	back_rounded	lower_high	nasalized	plain	905
+v058	ʊ̃ː	ʊ̃ː	vowel	back_rounded	lower_high	nasalized	long	906
+v059	ʊ̘	ʊ̘	vowel	back_rounded	lower_high	ATR	plain	907
+v060	ṳ̃	ṳ̃	vowel	back_rounded	lower_high	nasalized	breathy	908
+v061	ʊː	ʊː	vowel	back_rounded	lower_high	plain	long	909
+d008	ʊɔ	ʊɔ	diphtong	back_rounded	lower_high_to_lower_mid	plain	plain	910
+v062	ɔ̤ː		vowel	back_rounded	lower_mid	plain	long_breathy	911
+v063	ɔ̤		vowel	back_rounded	lower_mid	plain	breathy	912
+v064	ɔˀ	ɔʔ	vowel	back_rounded	lower_mid	glottalized	plain	913
+v065	ɔː	ɔː	vowel	back_rounded	lower_mid	plain	long	914
+v066	ɔ̃	ɔ̃	vowel	back_rounded	lower_mid	nasalized	plain	915
+v067	ɔ	ɔ	vowel	back_rounded	lower_mid	plain	plain	916
+v068	ɔ̃ˀ	ɔ̃ʔ	vowel	back_rounded	lower_mid	glottalized_nasalized	plain	917
+v069	ɔ̥	ɔ̥	vowel	back_rounded	lower_mid	plain	voiceless	918
+v070	ɔ̘	ɔ̘	vowel	back_rounded	lower_mid	ATR	plain	919
+v071	ɔ̰		vowel	back_rounded	lower_mid	plain	creaky	920
+v072	ɔ̃ː	ɔ̃ː	vowel	back_rounded	lower_mid	nasalized	long	921
+d009	ɔu		diphtong	back_rounded	lower_mid_to_high	plain	plain	922
+v073	u̝ː	u̝ː	vowel	back_rounded	raised_high	plain	long	923
+v074	u̝	u̝	vowel	back_rounded	raised_high	plain	plain	924
+v075	õ̝	õ̝	vowel	back_rounded	raised_higher_mid	nasalized	plain	925
+v076	o̝ː	o̝ː	vowel	back_rounded	raised_higher_mid	plain	long	926
+v077	o̝	o̝	vowel	back_rounded	raised_higher_mid	plain	plain	927
+v078	ɔ̝ː	ɔ̝ː	vowel	back_rounded	raised_lower_mid	plain	long	928
+v079	ɔ̝	ɔ̝	vowel	back_rounded	raised_lower_mid	plain	plain	929
+d010	ua	ua	diphtong	back_rounded_to_central_unrounded	high_to_low	plain	plain	930
+d011	uə	uə	diphtong	back_rounded_to_central_unrounded	high_to_mid	plain	plain	931
+d012	o̯a	o̯a	diphtong	back_rounded_to_central_unrounded	higher_mid_glide_to_low	plain	plain	932
+d013	oə	oə	diphtong	back_rounded_to_central_unrounded	higher_mid_to_mid	plain	plain	933
+d014	əo	əo	diphtong	back_rounded_to_central_unrounded	mid_to_higher_mid	plain	plain	934
+d015	oi	oi	diphtong	back_rounded_to_front	higher_mid_to_high	plain	plain	935
+d016	ui	ui	diphtong	back_rounded_to_front_unrounded	high	plain	plain	936
+d017	ʊʏ̯	ʊʏ̯	diphtong	back_rounded_to_front_unrounded	lower_high_to_high_glide	plain	plain	937
+d018	ɔi	ɔi	diphtong	back_rounded_to_front_unrounded	lower_mid_to_high	plain	plain	938
+d019	ɔi̯	ɔi̯	diphtong	back_rounded_to_front_unrounded	lower_mid_to_high_glide	plain	plain	939
+d020	uw	uw	diphtong	back_rounded_to_labiovelar	high_to_glide	plain	plain	940
+d021	oj	oj	diphtong	back_rounded_to_palatal	higher_mid_to_glide	plain	plain	941
+d022	ɔj	ɔj	diphtong	back_rounded_to_palatal	lower_mid_to_glide	plain	plain	942
+v080	ɯ̃	ɯ̃	vowel	back_unrounded	high	nasalized	plain	943
+v081	ɯ	ɯ	vowel	back_unrounded	high	plain	plain	944
+v082	ɿ		vowel	back_unrounded	high	with_frication	plain	945
+v083	ɯː	ɯː	vowel	back_unrounded	high	plain	long	946
+v084	ɤ	ɤ	vowel	back_unrounded	higher_mid	plain	plain	947
+v085	ɤ̃		vowel	back_unrounded	higher_mid	nasalized	plain	948
+v086	ɤː	ɤː	vowel	back_unrounded	higher_mid	plain	long	949
+v087	ɑ̃ː		vowel	back_unrounded	low	nasalized	long	950
+v088	ɑ̃	ɑ̃	vowel	back_unrounded	low	nasalized	plain	951
+v089	ɑ	ɑ	vowel	back_unrounded	low	plain	plain	952
+v090	ɑ̤ː		vowel	back_unrounded	low	plain	breathy_long	953
+v091	ɑː	ɑː	vowel	back_unrounded	low	plain	long	954
+v092	ʌ̆	ʌ̆	vowel	back_unrounded	lower_mid	plain	extra_short	955
+v093	ʌː	ʌː	vowel	back_unrounded	lower_mid	plain	long	956
+v094	ʌ̃	ʌ̃	vowel	back_unrounded	lower_mid	nasalized	plain	957
+v095	ʌ̃ː	ʌ̃ː	vowel	back_unrounded	lower_mid	nasalized	long	958
+v096	ʌ̤	ʌ̤	vowel	back_unrounded	lower_mid	plain	breathy	959
+v097	ʌ	ʌ	vowel	back_unrounded	lower_mid	plain	plain	960
+v098	ʌ̤ː	ʌ̤ː	vowel	back_unrounded	lower_mid	plain	breathy_long	961
+v099	ʌ̝	ʌ̝	vowel	back_unrounded	raised_lower_mid	plain	plain	962
+d023	ɑu		diphtong	back_unrounded_to_back_rounded	low_to_high	plain	plain	963
+d024	ɯə	ɯə	diphtong	back_unrounded_to_central	high_to_mid	plain	plain	964
+d025	uj	uj	diphtong	back_unrounded_to_palatal	high_to_glide	plain	plain	965
+v100	ʉː		vowel	central_rounded	high	plain	long	966
+v101	ʯ		vowel	central_rounded	high	with_frication	plain	967
+v102	ʉ	ʉ	vowel	central_rounded	high	plain	plain	968
+v103	ʉ̃ⁿ	ʉ̃ⁿ	vowel	central_rounded	high	postnasalized	plain	969
+v104	ɵ	ɵ	vowel	central_rounded	higher_mid	plain	plain	970
+v105	ɵː		vowel	central_rounded	higher_mid	plain	long	971
+v106	ɞ	ʚ	vowel	central_rounded	lower_mid	plain	plain	972
+v107	ɨ̤ː		vowel	central_unrounded	high	plain	breathy_long	974
+v108	ɨ˞	ɨ˞	vowel	central_unrounded	high	retroflex	plain	975
+v109	ɨː	ɨː	vowel	central_unrounded	high	plain	long	976
+v110	ʅ		vowel	central_unrounded	high	with_frication	plain	977
+v111	ɨ̃	ɨ̃	vowel	central_unrounded	high	nasalized	plain	978
+v112	ɨ̃ʔɨ̃	ɨ̃ʔɨ̃	vowel	central_unrounded	high	interrupted_nasalized	plain	979
+v113	ɨ̃ː	ɨ̃ː	vowel	central_unrounded	high	nasalized	long	980
+v114	ɨʔɨ	ɨʔɨ	vowel	central_unrounded	high	interrupted	plain	981
+v115	ɨ̤		vowel	central_unrounded	high	plain	breathy	982
+v116	ɨ	ɨ	vowel	central_unrounded	high	plain	plain	983
+v117	ɨːː	ɨːː	vowel	central_unrounded	high	plain	extra_long	984
+v118	ɐ̯		vowel	central_unrounded	higher_low	plain	consonantal	985
+v119	ɐ	ɐ	vowel	central_unrounded	higher_low	plain	plain	986
+v120	ɐ̃		vowel	central_unrounded	higher_low	nasalized	plain	987
+v121	ɐː	ɐː	vowel	central_unrounded	higher_low	plain	long	988
+v122	ɘ	ɘ	vowel	central_unrounded	higher_mid	plain	plain	989
+v123	ãˀ	ãʔ	vowel	central_unrounded	low	glottalized_nasalized	plain	990
+v124	aʔa	aʔa	vowel	central_unrounded	low	interrupted	plain	991
+v125	ãː	ãː	vowel	central_unrounded	low	nasalized	long	992
+v126	ă	ă	vowel	central_unrounded	low	plain	extra_short	993
+v127	aˀ	aʔ	vowel	central_unrounded	low	glottalized	plain	994
+v128	a̰	a̰	vowel	central_unrounded	low	plain	creaky	995
+v129	ãˤ	ãˤ	vowel	central_unrounded	low	pharyngealized_nasalized	plain	996
+v130	a	a	vowel	central_unrounded	low	plain	plain	997
+v131	a̤	a̤	vowel	central_unrounded	low	plain	breathy	998
+v132	ãʔã	ãʔã	vowel	central_unrounded	low	interrupted_nasalized	plain	999
+v133	a̰ː	a̰ː	vowel	central_unrounded	low	plain	creaky_long	1000
+v134	a̤ː		vowel	central_unrounded	low	plain	breathy_long	1001
+v135	ã̤ˀ	ã̤ʔ	vowel	central_unrounded	low	glottalized_nasalized	breathy	1002
+v136	ḁ	ḁ	vowel	central_unrounded	low	plain	voiceless	1003
+v137	aː	aː	vowel	central_unrounded	low	plain	long	1004
+v138	a̤ˤ	a̤ˤ	vowel	central_unrounded	low	pharyngealized	breathy	1005
+v139	ã̤	ã̤	vowel	central_unrounded	low	nasalized	breathy	1006
+v140	aˤˀ	aˤʔ	vowel	central_unrounded	low	pharyngealized_glottalized	plain	1007
+v141	aːː	aːː	vowel	central_unrounded	low	plain	extra_long	1008
+v142	a̠	a̠	vowel	central_unrounded	low	ATR	plain	1009
+v143	ãⁿ	ãⁿ	vowel	central_unrounded	low	postnasalized	plain	1010
+v144	ã̤ˤ	ã̤ˤ	vowel	central_unrounded	low	pharyngealized_nasalized	breathy	1011
+v145	aˤ	aˤ	vowel	central_unrounded	low	pharyngealized	plain	1012
+v146	a̤ˀ	a̤ʔ	vowel	central_unrounded	low	glottalized	breathy	1013
+v147	ã	ã	vowel	central_unrounded	low	nasalized	plain	1014
+v148	ɨ̞	ɨ̞	vowel	central_unrounded	lower_high	plain	plain	1015
+v149	ɜ	ɜ	vowel	central_unrounded	lower_mid	plain	plain	1016
+v150	ɜː	ɜː	vowel	central_unrounded	lower_mid	plain	long	1017
+v151	a̞	a̞	vowel	central_unrounded	lowered_low	plain	plain	1018
+v152	ə̠		vowel	central_unrounded	mid	retracted	plain	1019
+v153	ə̃	ə̃	vowel	central_unrounded	mid	nasalized	plain	1020
+v154	ə̃ː	ə̃ː	vowel	central_unrounded	mid	nasalized	long	1021
+v155	ə	ə	vowel	central_unrounded	mid	plain	plain	1022
+v156	əˤ	əˤ	vowel	central_unrounded	mid	pharyngealized	plain	1023
+v157	ə̃˞		vowel	central_unrounded	mid	retroflex_nasalized	plain	1024
+v158	ə̤		vowel	central_unrounded	mid	plain	breathy	1025
+v159	ə˞	ə˞	vowel	central_unrounded	mid	retroflex	plain	1026
+v160	ə̤ː		vowel	central_unrounded	mid	plain	breathy_long	1027
+v161	ə̆	ə̆	vowel	central_unrounded	mid	plain	extra_short	1028
+v162	a̝	a̝	vowel	central_unrounded	raised_low	plain	plain	1029
+v163	a̝ː	a̝ː,a̪ː	vowel	central_unrounded	raised_low	plain	long	1031
+v164	ə̝	ə̝	vowel	central_unrounded	raised_mid	plain	plain	1032
+d026	au	au	diphtong	central_unrounded_to_back_rounded	low_to_high	plain	plain	1033
+d027	ao	ao	diphtong	central_unrounded_to_back_rounded	low_to_higher_mid	plain	plain	1034
+d028	aʊ	aʊ	diphtong	central_unrounded_to_back_rounded	low_to_lower_high	plain	plain	1035
+d029	əu	əu	diphtong	central_unrounded_to_back_rounded	mid_to_high	plain	plain	1036
+d030	ai	ai	diphtong	central_unrounded_to_front	low_to_high	plain	plain	1037
+d031	ai̯	ai̯	diphtong	central_unrounded_to_front	low_to_high_glide	plain	plain	1038
+d032	aɪ	aɪ	diphtong	central_unrounded_to_front	low_to_lower_high	plain	plain	1039
+d033	ɛi̯	ɛi̯	diphtong	central_unrounded_to_front	lower_mid_to_high_glide	plain	plain	1040
+d034	ə̯i	ə̯i	diphtong	central_unrounded_to_front	mid_glide_to_high	plain	plain	1041
+d035	əi	əi	diphtong	central_unrounded_to_front	mid_to_high	plain	plain	1042
+d036	əe	əe	diphtong	central_unrounded_to_front	mid_to_higher_mid	plain	plain	1043
+d037	aj	aj	diphtong	central_unrounded_to_palatal	low_to_glide	plain	plain	1044
+d038	aʉ	aʉ	diphtong	central_unrounded_to_rounded	low_to_high	plain	plain	1045
+v165	ỹ	ỹ	vowel	front_rounded	high	nasalized	plain	1046
+v166	y	y	vowel	front_rounded	high	plain	plain	1047
+v167	ỹː		vowel	front_rounded	high	nasalized	long	1048
+v168	yː	yː	vowel	front_rounded	high	plain	long	1049
+v169	øː	øː	vowel	front_rounded	higher_mid	plain	long	1050
+v170	ø̆	ø̆	vowel	front_rounded	higher_mid	plain	extra_short	1051
+v171	ø	ø	vowel	front_rounded	higher_mid	plain	plain	1052
+v172	ɶː		vowel	front_rounded	low	plain	long	1053
+v173	ʏ	ʏ	vowel	front_rounded	lower_high	plain	plain	1054
+v174	ʏː		vowel	front_rounded	lower_high	plain	long	1055
+v175	œ̃	œ̃	vowel	front_rounded	lower_mid	nasalized	plain	1056
+v176	œː	œː	vowel	front_rounded	lower_mid	plain	long	1057
+v177	œ̃ː		vowel	front_rounded	lower_mid	nasalized	long	1058
+v178	œ	œ	vowel	front_rounded	lower_mid	plain	plain	1059
+d039	œu	œu	diphtong	front_rounded_to_back	lower_mid_to_high	plain	plain	1060
+d040	øə	øə	diphtong	front_rounded_to_central_unrounded	higher_mid_to_mid	plain	plain	1061
+d041	yi	yi	diphtong	front_rounded_to_unrounded	high	plain	plain	1062
+d042	œi	œi	diphtong	front_rounded_to_unrounded	lower_mid_to_high	plain	plain	1063
+v179	i̺	i̺	vowel	front_unrounded	high	apical	plain	1064
+v180	iːː	iːː	vowel	front_unrounded	high	plain	extra_long	1065
+v181	ĩː	ĩː	vowel	front_unrounded	high	nasalized	long	1066
+v182	iˤ	iˤ	vowel	front_unrounded	high	pharyngealized	plain	1067
+v183	iː	iː	vowel	front_unrounded	high	plain	long	1068
+v184	i̤ː	i̤ː	vowel	front_unrounded	high	plain	breathy_long	1069
+v185	i̞	i̞	vowel	front_unrounded	high	RTR	plain	1070
+v186	ĩʔĩ	ĩʔĩ	vowel	front_unrounded	high	interrupted_nasalized	plain	1071
+v187	i̤		vowel	front_unrounded	high	nasalized	breathy	1072
+v188	i̥	i̥	vowel	front_unrounded	high	plain	voiceless	1073
+v189	iʔi	iʔi	vowel	front_unrounded	high	interrupted	plain	1074
+v190	iˀ	iʔ	vowel	front_unrounded	high	glottalized	plain	1075
+v191	i	i	vowel	front_unrounded	high	plain	plain	1076
+v192	ḭː	ḭː	vowel	front_unrounded	high	plain	creaky_long	1077
+v193	ĩ	ĩ	vowel	front_unrounded	high	nasalized	plain	1078
+v194	ḭ	ḭ	vowel	front_unrounded	high	plain	creaky	1079
+v195	ĩˀ	ĩʔ	vowel	front_unrounded	high	glottalized_nasalized	plain	1080
+v196	ĩ̤	i̤	vowel	front_unrounded	high	plain	breathy	1081
+d043	i̯e	i̯e	diphtong	front_unrounded	high_glide_to_higher_mid	plain	plain	1082
+d044	ie	ie	diphtong	front_unrounded	high_to_higher_mid	plain	plain	1083
+d045	i̤e̤	i̤e̤	diphtong	front_unrounded	high_to_higher_mid	plain	breathy	1084
+d046	iɛ	iɛ	diphtong	front_unrounded	high_to_lower_mid	plain	plain	1085
+v197	æ̃	æ̃	vowel	front_unrounded	higher_low	nasalized	plain	1086
+v198	æ	æ	vowel	front_unrounded	higher_low	plain	plain	1087
+v199	æː	æː	vowel	front_unrounded	higher_low	plain	long	1088
+v200	e	e	vowel	front_unrounded	higher_mid	plain	plain	1089
+v201	ẽ	ẽ	vowel	front_unrounded	higher_mid	nasalized	plain	1090
+v202	eː	eː	vowel	front_unrounded	higher_mid	plain	long	1091
+v203	e̥	e̥	vowel	front_unrounded	higher_mid	plain	voiceless	1092
+v204	ḛ		vowel	front_unrounded	higher_mid	plain	creaky	1093
+v205	eˀ	eʔ	vowel	front_unrounded	higher_mid	glottalized	plain	1094
+v206	emf	emf	vowel	front_unrounded	higher_mid	muffled	plain	1095
+v207	ẽː	ẽː	vowel	front_unrounded	higher_mid	nasalized	long	1096
+v208	eːː	eːː	vowel	front_unrounded	higher_mid	plain	extra_long	1097
+v209	ẽʔẽ	ẽʔẽ	vowel	front_unrounded	higher_mid	interrupted_nasalized	plain	1098
+v210	ẽ̤ː		vowel	front_unrounded	higher_mid	nasalized	breathy_long	1099
+v211	e̤	e̤	vowel	front_unrounded	higher_mid	plain	breathy	1100
+v212	eʔe	eʔe	vowel	front_unrounded	higher_mid	interrupted	plain	1101
+v213	ẽ̤	ẽ̤	vowel	front_unrounded	higher_mid	nasalized	breathy	1102
+v214	eˤ	eˤ	vowel	front_unrounded	higher_mid	pharyngealized	plain	1103
+v215	ẽⁿ	ẽⁿ	vowel	front_unrounded	higher_mid	postnasalized	plain	1104
+v216	e̤ː	e̤ː	vowel	front_unrounded	higher_mid	plain	breathy_long	1105
+v217	e̞	e̞	vowel	front_unrounded	higher_mid	RTR	plain	1106
+d047	ei	ei	diphtong	front_unrounded	higher_mid_to_high	plain	plain	1107
+d048	eɪ	eɪ	diphtong	front_unrounded	higher_mid_to_lower_high	plain	plain	1108
+v218	ɪ̃	ɪ̃	vowel	front_unrounded	lower_high	nasalized	plain	1109
+v219	ɪ	ɪ	vowel	front_unrounded	lower_high	plain	plain	1110
+v220	ɪ̥	ɪ̥	vowel	front_unrounded	lower_high	plain	voiceless	1111
+v221	ɪː	ɪː	vowel	front_unrounded	lower_high	plain	long	1112
+v222	ɪ̃ː	ɪ̃ː	vowel	front_unrounded	lower_high	nasalized	long	1113
+v223	ɪ̘	ɪ̘	vowel	front_unrounded	lower_high	ATR	plain	1114
+d049	ɪɛ	ɪɛ	diphtong	front_unrounded	lower_high_to_lower_mid	plain	plain	1115
+v224	ɛ̤		vowel	front_unrounded	lower_mid	plain	breathy	1116
+v225	ɛː	ɛː	vowel	front_unrounded	lower_mid	plain	long	1117
+v226	ɛ̃ː	ɛ̃ː	vowel	front_unrounded	lower_mid	nasalized	long	1118
+v227	ɛ̘	ɛ̘	vowel	front_unrounded	lower_mid	ATR	plain	1119
+v228	ɛˀ	ɛʔ	vowel	front_unrounded	lower_mid	glottalized	plain	1120
+v229	ɛ	ɛ	vowel	front_unrounded	lower_mid	plain	plain	1121
+v230	ɛ̃ˀ	ɛ̃ʔ	vowel	front_unrounded	lower_mid	glottalized_nasalized	plain	1122
+v231	ɛ̃	ɛ̃	vowel	front_unrounded	lower_mid	nasalized	plain	1123
+v232	ɛ̰		vowel	front_unrounded	lower_mid	plain	creaky	1124
+v233	ɛ̥	ɛ̥	vowel	front_unrounded	lower_mid	plain	voiceless	1125
+v234	æ̞	æ̞	vowel	front_unrounded	lowered_higher_low	plain	plain	1126
+v235	ɛ̞	ɛ̞	vowel	front_unrounded	lowered_lower_mid	plain	plain	1127
+v236	i̝	i̝	vowel	front_unrounded	raised_high	plain	plain	1128
+v237	i̝ː	i̝ː	vowel	front_unrounded	raised_high	plain	long	1129
+v238	e̝ː	e̝ː	vowel	front_unrounded	raised_higher_mid	plain	long	1130
+v239	ẽ̝	ẽ̝	vowel	front_unrounded	raised_higher_mid	nasalized	plain	1131
+v240	e̝	e̝	vowel	front_unrounded	raised_higher_mid	plain	plain	1132
+d050	i̯o	i̯o	diphtong	front_unrounded_to_back_rounded	high_glide_to_higher_mid	plain	plain	1133
+d051	e̯o	e̯o	diphtong	front_unrounded_to_back_rounded	higher_mid_glide_to_higher_mid	plain	plain	1134
+d052	eu	eu	diphtong	front_unrounded_to_back_rounded	higher_mid_to_high	plain	plain	1135
+d053	ɛu		diphtong	front_unrounded_to_back_rounded	lower_mid_to_high	plain	plain	1137
+d054	ia	ia	diphtong	front_unrounded_to_central	high_to_low	plain	plain	1138
+d055	iə	iə	diphtong	front_unrounded_to_central	high_to_mid	plain	plain	1139
+d056	e̯a	e̯a	diphtong	front_unrounded_to_central	higher_mid_glide_to_low	plain	plain	1140
+d057	eə	eə	diphtong	front_unrounded_to_central	higher_mid_to_mid	plain	plain	1141
+d058	æɨ		diphtong	front_unrounded_to_central	higher_low_to_high	plain	plain	1142
+d059	ɛi		diphtong	front_unrounded	lower_mid_to_high	plain	plain	1143
+d060	ij	ij	diphtong	front_unrounded_to_palatal	high_to_glide	plain	plain	1144
+d061	ej	ej	diphtong	front_unrounded_to_palatal	higher_mid_to_glide	plain	plain	1145
+d062	je	je	diphtong	palatal_to_front_unrounded	glide_to_higher_mid	plain	plain	1146
+d063	jeː	jeː	diphtong	palatal_to_front_unrounded	glide_to_higher_mid	plain	long	1147
+d064	jẽ	jẽ	diphtong	palatal_to_front_unrounded	glide_to_higher_mid	nasalized	plain	1148
+t001	²		tone	flat	low			1149
+t002	²²		tone	flat	low	low		1150
+t003	²³		tone	rise	low	mid		1151
+t004	²¹		tone	fall	low	low		1152
+t005	²¹²		tone	fall-rise	low	low	low	1153
+t006	²¹³		tone	fall-rise	low	low	mid	1154
+t007	²¹⁴		tone	fall-rise	low	low	high	1155
+t008	²⁴		tone	rise	low	high		1156
+t009	²⁴²		tone	rise-fall	low	high	low	1157
+t010	³		tone	flat	mid			1158
+t011	³²		tone	fall	mid	low		1159
+t012	³²⁴		tone	fall-rise	mid	low	high	1160
+t013	³³		tone	flat	mid	mid		1161
+t014	³¹		tone	fall	mid	low		1162
+t015	³¹³		tone	fall-rise	mid	low	mid	1163
+t016	³⁴		tone	rise	mid	high		1164
+t017	³⁵		tone	rise	mid	high		1165
+t018	¹		tone	flat	low			1166
+t019	¹²		tone	rise	low	low		1167
+t020	¹³		tone	rise	low	mid		1168
+t021	¹¹		tone	flat	low	low		1169
+t022	¹⁵		tone	rise	low	high		1170
+t023	⁰		tone	zero				1171
+t024	⁰²		tone	rise	low	low		1172
+t025	⁰⁴		tone	rise	low	high		1173
+t026	⁴		tone	flat	high			1174
+t027	⁴²		tone	fall	high	low		1175
+t028	⁴³		tone	fall	high	mid		1176
+t029	⁴¹		tone	fall	high	low		1177
+t030	⁴⁴		tone	flat	high	high		1178
+t031	⁴⁴³		tone	fall	high	mid		1179
+t032	⁴⁴⁵		tone	rise	high	high		1180
+t033	⁴⁵		tone	rise	high	high		1181
+t034	⁴⁵⁴		tone	rise-fall	high	high	high	1182
+t035	⁵		tone	flat	high			1183
+t036	⁵²		tone	fall	high	low		1184
+t037	⁵³		tone	fall	high	mid		1185
+t038	⁵¹		tone	fall	high	low		1186
+t039	⁵¹³		tone	fall-rise	high	low	mid	1187
+t040	⁵⁴		tone	fall	high	high		1188
+t041	⁵⁵		tone	flat	high	high		1189
+m-001	_		marker	word_boundary				1190
+m-002	∼		marker	nasal_vowel				1191
+m-003	+		marker	morpheme_boundary				1192
+v241	ɶ	ɶ	vowel	front_rounded	low	plain	plain	1193
+c835	ʰc		consonant	palatal	stop	voiceless	preaspirated	1194
+c836	ʰt		consonant	alveolar	stop	voiceless	preaspirated	1195
+c837	ʰk		consonant	velar	stop	voiceless	preaspirated	1196
+v242	ø̰		vowel	front_rounded	higher_mid	plain	creaky	1197
+v243	øˀ		vowel	front_rounded	higher_mid	plain	glottalized	1198
+v244	yˀ		vowel	front_rounded	high	plain	glottalized	1199
+v245	æˀ		vowel	front_unrounded	higher_low	plain	glottalized	1200
+v246	œˀ		vowel	front_rounded	lower_mid	plain	glottalized	1201
+v247	ɑˀ		vowel	back_unrounded	low	plain	glottalized	1202
+v248	ɶˀ		vowel	front_rounded	low	plain	glottalized	1203
+v249	ɒˀ		vowel	back_rounded	low	plain	glottalized	1204
+c838	ʁˀ		consonant	uvular	fricative	voiced	glottalized	1205
+c839	ðˀ		consonant	interdental	fricative	voiced	glottalized	1206

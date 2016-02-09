@@ -42,17 +42,50 @@ def load_whitelist():
     Basic function to load the CLPA whitelist.
     """
     whitelist = {}
-    with codecs.open(local_path('clpa.tsv'), 'r', 'utf-8') as handle:
+    visited_descriptions = {}
+    visited_sources = {}
+    with codecs.open(local_path('clpa.test.tsv'), 'r', 'utf-8') as handle:
         head = False
         for line in handle:
             if line.strip():
                 if not head:
                     head = line.split('\t')
                 else:
-                    items = line.split('\t')
-                    source = items[1]
-                    target = items
+                    if not line.startswith('#'):
+                        items = line.split('\t')
+                        idx = items[0]
+                        source = items[1]
+                        target = items
+                        description = tuple(items[3:-1])
+                        
+                        try:
+                            visited_sources[source] += [(idx,description)]
+                        except KeyError:
+                            visited_sources[source] = [(idx, description)]
+
+                        try:
+                            visited_descriptions[description] += [(idx, source)]
+                        except KeyError:
+                            visited_descriptions[description] = [(idx, source)]
+
+                    
                     whitelist[source] = dict(zip(head, target))
+
+    for key,vals in visited_sources.items():
+        if len(vals) > 1:
+            print('[WARNING] Key «{0}» has {1} elements!'.format(key, len(vals)))
+            for val in vals:
+                print('...ID {0} ({1})'.format(val[0], ' '.join(val[1])))
+            print('')
+            input()
+    for key,vals in visited_descriptions.items():
+        if len(vals) > 1 and 'tone' not in key:
+            print('[WARNING] Description «{0}» has {1} elements!'.format(' '.join(key), len(vals)))
+            for val in vals:
+                print('...ID {0} ({1})'.format(val[0], val[1]))
+            print('')
+            input()
+
 
     return whitelist
 
@@ -63,6 +96,7 @@ def load_alias(path):
     """
     if not os.path.isfile(path):
         path = local_path(path) 
+    print(path)
     
     alias = {}
     with codecs.open(path, 'r', 'utf-8') as handle:
@@ -115,7 +149,7 @@ def find_token(token, whitelist, alias, explicit, patterns, delete):
         if new_token in whitelist:
             return new_token
         else:
-            raise ValueError("Explicit list does not point to whitelist")
+            raise ValueError("Explicit list does not point to whitelist with sound «{0}»".format(new_token))
 
     # forth run, pattern matching
     for source, target in patterns.items():
@@ -160,13 +194,16 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
     # patterns are regexes which are difficult to state in separation
     patterns = load_alias('patterns.tsv')
 
+    # accents
+    accents = "ˈˌ'"
+
     # now, load teh wordlist
     wordlist = load_wordlist(path, sep=sep, comment=comment)
 
     # check for rules
     if rules:
         rules = load_alias(rules)
-        for k,val in wordlist.items():
+        for k,val in [(a,b) for a,b in wordlist.items() if a != 0]:
             tokens = []
             for t in val['TOKENS'].split(' '):
                 nt = rules[t] if t in rules else t
@@ -182,13 +219,18 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
         tokens = wordlist[key][column]
         
         for token in tokens.split(' '):
+            accent = ''
+            if token[0] in accents:
+                accent = token[0]
+                token = token[1:]
+
             if token in whitelist or token in sounds:
                 try:
                     sounds[token]['frequency'] += 1
                 except KeyError:
                     sounds[token] = {}
                     sounds[token]['frequency'] = 1
-                    sounds[token]['clpa'] = token
+                    sounds[token]['clpa'] = accent + token
                     sounds[token]['id'] = whitelist[token]['ID']
 
             else:
@@ -197,7 +239,7 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
                 sounds[token] = {}
                 sounds[token]['frequency'] = 1
                 if check:
-                    sounds[token]['clpa'] = check
+                    sounds[token]['clpa'] = accent + check
                     sounds[token]['id'] = whitelist[check]['ID']
                     errors['convertable'] += 1
                 else:
@@ -217,7 +259,12 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
         new_tokens = []
         idxs = []
         for token in tokens.split(' '):
-            new_tokens += [sounds[token]['clpa']]
+            accent = ''
+            if token[0] in accents:
+                accent = token[0]
+                token = token[1:]
+
+            new_tokens += [accent + sounds[token]['clpa']]
             idxs += [sounds[token]['id']]
         wordlist[key]['CLPA_TOKENS'] = ' '.join(new_tokens)
         wordlist[key]['CLPA_IDS'] = ' '.join(idxs)

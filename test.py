@@ -24,7 +24,7 @@ if __name__ == '__main__':
     print("---------------")
     for k in sorted(sounds):
         if k == sounds[k]['clpa']:
-            print('[{0}] Missing sound «{1}» (frequency: {2}) not known to GIPA.'.format(
+            print('[{0}] Existing sound «{1}» (frequency: {2}) not known to CLPA.'.format(
                idx,
                k, sounds[k]['frequency']))
             idx += 1
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     idx = 1
     for k in sorted(sounds):
         if sounds[k]['clpa'] == '?':
-            print('[{0}] Missing sound «{1}» (frequency: {2}) not known to GIPA.'.format(
+            print('[{0}] Missing sound «{1}» (frequency: {2}) not known to CLPA.'.format(
                idx,
                k, sounds[k]['frequency']))
             idx += 1
@@ -47,8 +47,11 @@ if __name__ == '__main__':
     # write them also to file!
     outfile = codecs.open(argv[1].replace('.tsv', '.converted.tsv'), 'w', 'utf-8')
     for k in sorted(sounds):
-        if k != sounds[k]['clpa'] and sounds[k]['clpa'] != '?':
-            print('[{0}] Sound «{1}» (frequency: {2}) is equivalent to «{3}» in GIPA'.format(
+        check = sounds[k]['clpa']
+        if sounds[k]['clpa'][0] in "'ˌˈ":
+            check = sounds[k]['clpa'][1:]
+        if k != check and check != '?':
+            print('[{0}] Sound «{1}» (frequency: {2}) is equivalent to «{3}» in CLPA'.format(
                         idx,
                         k,
                         sounds[k]['frequency'],

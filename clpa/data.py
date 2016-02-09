@@ -216,6 +216,7 @@ miscbs = [
  'glottalized_palatalized',
  'glottalized_prenasalized',
  'glottalized_q_accompaniment',
+ 'preaspirated',
  'heavy',
  'high',
  'kx_accompaniment',
