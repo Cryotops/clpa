@@ -583,10 +583,10 @@ c581	ʎː		consonant	palatal	lateral_approximant	voiced_long	plain	587
 c582	ʎ	ʎ	consonant	palatal	lateral_approximant	voiced	plain	588
 c583	e̯	e̯	consonant	palatal	mid_approximant	voiced	plain	589
 c584	ɲᶣ	ɲɥ	consonant	palatal	nasal	voiced	labiopalatalized	590
-c585	ɲ̊		consonant	palatal	nasal	voiced	devoiced	591
+c585	n̥ʲ		consonant	alveolar	nasal	voiceless	palatalized	591
 c586	ᵐɲ	ɲ	consonant	palatal	nasal	voiced	labial_prenasalized	592
 c587	ɲː	ɲː	consonant	palatal	nasal	voiced_long	plain	593
-c588	ɲ̥	ɲ̥	consonant	palatal	nasal	voiceless	plain	594
+c588	ɲ̊	ɲ̥	consonant	palatal	nasal	voiceless	plain	594
 c589	ɲ	ɲ	consonant	palatal	nasal	voiced	plain	595
 c590	ɲʰ	ɲʰ	consonant	palatal	nasal	voiced	aspirated	596
 c591	ɲ̥ʰ	ɲ̥ʰ	consonant	palatal	nasal	voiceless	aspirated	597
@@ -1178,9 +1178,9 @@ t038	⁵¹		tone	fall	high	low		1186
 t039	⁵¹³		tone	fall-rise	high	low	mid	1187
 t040	⁵⁴		tone	fall	high	high		1188
 t041	⁵⁵		tone	flat	high	high		1189
-m-001	_		marker	word_boundary				1190
-m-002	∼		marker	nasal_vowel				1191
-m-003	+		marker	morpheme_boundary				1192
+m001	_		marker	word_boundary				1190
+m002	∼		marker	nasal_vowel				1191
+m003	+		marker	morpheme_boundary				1192
 v241	ɶ	ɶ	vowel	front_rounded	low	plain	plain	1193
 c835	ʰc		consonant	palatal	stop	voiceless	preaspirated	1194
 c836	ʰt		consonant	alveolar	stop	voiceless	preaspirated	1195

@@ -23,13 +23,14 @@ maximal degree of comparability across lexical datasets.
 
 ## The initial dataset
 
-Our initial dataset (file clpa/clpa.tsv) currently consists of 1192 symbols, including consonants,
-vowels, diphtongs, tones, and three markers (for word and morpheme boundaries).
-The original data is inspired by the IPA description used in the P-Base
-project, and we mostly follow their symbol conventions, but we added tone
-letters and symbols which were missing in their inventory.
+Our initial dataset (file clpa/clpa.tsv) currently consists of 1192 symbols,
+including consonants, vowels, diphtongs, tones, and three markers (for word and
+morpheme boundaries).  The original data is inspired by the IPA description
+used in the P-Base project, and we mostly follow their symbol conventions, but
+we added tone letters and symbols which were missing in their inventory.
 
-Additionally, the dataset contains sets of instructions for conversion of symbols which do not occur in our whitelist. Here, we distinguish between:
+Additionally, the dataset contains sets of instructions for conversion of
+symbols which do not occur in our whitelist. Here, we distinguish between:
 
 * explitic mappings (clpa/explicit.tsv), which are explicit mappings of input segments with output segments, which are taken in full. As an example, consider [ʔʲ] which we map to [ʔj], or [uu], which we map to [uː].
 * alias symbols (clpa/alias.tsv), which are one-to-more mappings of symbols of length 1 in unicode, and are regularly applied to a symbol if we can't find it in our whitelist. As an example, consider [ʦ] which we map to [ts].
@@ -47,4 +48,13 @@ python3 test.py INPUTFILE.tsv
 
 in the shell. Your inputfile should be a tab-separated file in [LingPy-Wordlist format](http://lingpy.org/tutorial/lingpy.basic.wordlist.html), with your phonetic sequences being represented as space-segmented values in a column "TOKENS" of the input file. This is a mere proof-of-concept at the moment, and the script will be further enhanced. 
 
+## The CLPA "Feature Set"
 
+We should not take this feature set too literally, but we try to define each segment in CLPA by providing
+features which are largely inspired by the IPA. In this we follow the idea of the [Fonetikode](https://github.com/ddediu/phon-class-counts). 
+
+Currently, we distinguish the following feature sets:
+
+1. Basic types: consonant, diphtong, marker, tone, vowel. A marker are symbols that we use for extended annotation, like morpheme boundaries, word boundaries.
+2. Each type has a different feature set. New features sets can only be added to the data if they create a unique feature vector that distinguishes the glyphs of a given class from all other glyphs. Testing will be done via a test suite (not yet implemented).
+3. For each identifier, further metadata can be provided, be it mappings to other datasets, like Fonetikode, Phoible, etc., or to frequently occurring aliases, etc., also information in terms of "notes" is something that would be possible.
