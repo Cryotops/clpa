@@ -1,0 +1,68 @@
+[
+  {
+    "accompaniment": "",
+    "aspirated": "",
+    "class": "consonant",
+    "glottalized": "",
+    "glyph": "",
+    "ipa_pbase": "",
+    "labialized": "",
+    "labialized_secondary": "",
+    "manner": "",
+    "manner_secondary": "",
+    "modification": "",
+    "palatalized": "",
+    "place": "",
+    "place_secondary": "",
+    "post_modification": "",
+    "pre_modification": "",
+    "voice": "",
+    "voice_secondary": ""
+  },
+  {
+    "class": "vowel",
+    "color": "",
+    "glottalized": "",
+    "glyph": "",
+    "height": "",
+    "ipa_pbase": "",
+    "length": "",
+    "nasalized": "",
+    "pharyngealized": "",
+    "phonation": "",
+    "retroflex": "",
+    "rounded": "",
+    "secondary": "",
+    "syllabic": ""
+  },
+  {
+    "class": "diphtong",
+    "color": "",
+    "color_secondary": "",
+    "glyph": "",
+    "height": "",
+    "height_secondary": "",
+    "ipa_pbase": "",
+    "nasalized": "",
+    "nasalized_secondary": "",
+    "phonation": "",
+    "rounded": "",
+    "rounded_secondary": "",
+    "secondary": ""
+  },
+  {
+    "chao_numbers": "",
+    "class": "tone",
+    "contour": "",
+    "end": "",
+    "glyph": "",
+    "ipa_pbase": "",
+    "mid": "",
+    "start": ""
+  },
+  {
+    "class": "marker",
+    "function": "",
+    "glyph": ""
+  }
+]

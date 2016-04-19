@@ -22,42 +22,53 @@ if __name__ == '__main__':
     idx = 1
     print('Existing Sounds')
     print("---------------")
-    for k in sorted(sounds):
+    print('| number | sound | clpa | frequency |')
+    print('| ------ | ----- | ---- | --------- |')
+
+    for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
         if k == sounds[k]['clpa']:
-            print('[{0}] Existing sound «{1}» (frequency: {2}) not known to CLPA.'.format(
+            print('| {0} | {1} | {2} | {3} |'.format(
+            #print('[{0}] Existing sound «{1}» (frequency: {2}) not known to CLPA.'.format(
                idx,
-               k, sounds[k]['frequency']))
+               k, sounds[k]['id'], sounds[k]['frequency']))
             idx += 1
 
     print('')
     print("Missing Sounds")
     print("--------------")
+    print('| number | sound | clpa | frequency |')
+    print('| ------ | ----- | ---- | --------- |')
     idx = 1
-    for k in sorted(sounds):
+    for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
         if sounds[k]['clpa'] == '?':
-            print('[{0}] Missing sound «{1}» (frequency: {2}) not known to CLPA.'.format(
+            print('| {0} | {1} | {2} | {3} |'.format(
                idx,
-               k, sounds[k]['frequency']))
+               k, sounds[k]['id'], sounds[k]['frequency']))
             idx += 1
     
     print('')
     print("Convertible Sounds")
     print("------------------")
+    print('| number | sound | ipa-equivalent | clpa | frequency |')
+    print('| ------ | ----- | -------------- | ---- | --------- |')
+    
     idx = 1
     # write them also to file!
     outfile = codecs.open(argv[1].replace('.tsv', '.converted.tsv'), 'w', 'utf-8')
-    for k in sorted(sounds):
+    for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
         check = sounds[k]['clpa']
         if sounds[k]['clpa'][0] in "'ˌˈ":
             check = sounds[k]['clpa'][1:]
         if k != check and check != '?':
-            print('[{0}] Sound «{1}» (frequency: {2}) is equivalent to «{3}» in CLPA'.format(
+            print('| {0} | {1} | {2} | {3} | {4} |'.format(
                         idx,
                         k,
+                        sounds[k]['clpa'],
+                        sounds[k]['id'],
                         sounds[k]['frequency'],
-                        sounds[k]['clpa']
                         ))
             idx += 1
             outfile.write(k+'\t'+sounds[k]['clpa']+'\n')
+
    
     write_wordlist(argv[1].replace('.tsv', '.mapped.tsv'), wordlist)
