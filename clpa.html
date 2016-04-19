@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>CLPA browser</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <script src="clpa.main.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="clpa.css" />
+</head>
+<body>
+  <h1>Does your phonetic data conform to CLPA?</h1>
+  <p>Just paste your text in the text-area field below to test it.</p>
+  <textarea onkeyup="document.getElementById('annotation').innerHTML='';convertCLPA(this.value)" id="input" cols="80" rows="20" 
+    placeholder="type your phonetic code here, separating sound segments by spaces"></textarea>
+  <div id="annotation"></div>
+
+<script>
+function convertCLPA(value) {
+  document.getElementById('annotation').innerHTML = '';
+  console.log(value);
+  var segments = value.split(/\s+/);
+  console.log("segments", segments);
+  var table = [];
+  var visited = [];
+  var freqs = {};
+  var symbols = [];
+  for (var i=0,segment; segment=segments[i]; i++) {
+    console.log(segment, CLPA.symbols[segment]);
+    if (segment in CLPA.symbols) {
+      if (visited.indexOf(segment) == -1) {
+	visited.push(segment);
+	freqs[segment] = 1;
+	var tmp = CLPA[CLPA.symbols[segment]];
+      	var cls = tmp['class'];
+      	var txt = [];
+      	for (var j=0, feature; feature=CLPA[cls+'_features'][j]; j++) {
+      	  if (tmp[feature]) {
+      	    txt.push(tmp[feature]);
+      	  }
+      	}
+      	txt = txt.join(" ");
+      	var tabletext = '<td>'+segment+'</td>';
+      	tabletext += '<td>'+CLPA.symbols[segment]+'</td>';
+      	tabletext += '<td>'+cls+'</td>';
+      	tabletext += '<td>'+txt+'</td>';
+      	table.push(tabletext);
+	symbols.push(segment);
+      }
+      else {
+	freqs[segment] += 1;
+      }
+    }
+    else if (typeof segment != 'undefined' && segment.length > 0 && segment.replace(/\s/g,'') != ''){
+      if (visited.indexOf(segment) == -1) {
+	visited.push(segment);
+	table.push('<td colspan="4" style="color:red;font-weight:bold">'+segment+'</td>');
+	freqs[segment] = 1;
+	symbols.push(segment);
+      }
+      else {
+	freqs[segment] += 1;
+      }
+    }
+  }
+  console.log(table, visited);
+  var ttext = '<table style="border:2px;">'
+    + '<tr>'
+    + '<th>SEGMENT</th><th>CLPA</th><th>CLASS</th><th>FEATURES</th><th>FREQUENCY</th></tr>';
+  for (var i=0,row; row=table[i]; i++) {
+    ttext += '<tr>'+table[i]+'<td>'+freqs[symbols[i]]+'</td></tr>';
+  }
+  ttext += '</table>';
+  if (table.length > 0) {
+    document.getElementById('annotation').innerHTML = ttext;
+  }
+}
+</script>
+
+</body>
+</html>
