@@ -34,58 +34,37 @@ def local_path(path):
     """Helper function to create a local path to the current directory of CLPA"""
     return os.path.join(
             os.path.split(__file__)[0],
+            'data',
             path
             )
+
+def load_CLPA():
+    """
+    Load the main data file.
+    """
+    _clpadata = json.load(codecs.open(local_path('clpa.main.json')))
+    
+    return _clpadata
+
+def write_CLPA(clpadata, path):
+    """
+    Basic function to write clpa-data.
+    """
+    old_clpa = load_CLPA()
+    json.dump(old_clpa, codecs.open(local_path(path+'.bak'), 'w', 'utf-8'))
+    json.dump(clpadata, codecs.open(local_path(path), 'w', 'utf-8'))
 
 def load_whitelist():
     """
     Basic function to load the CLPA whitelist.
     """
+    _clpadata = json.load(codecs.open(local_path('clpa.main.json')))
     whitelist = {}
-    visited_descriptions = {}
-    visited_sources = {}
-    with codecs.open(local_path('clpa.test.tsv'), 'r', 'utf-8') as handle:
-        head = False
-        for line in handle:
-            if line.strip():
-                if not head:
-                    head = line.split('\t')
-                else:
-                    if not line.startswith('#'):
-                        items = line.split('\t')
-                        idx = items[0]
-                        source = items[1]
-                        target = items
-                        description = tuple(items[3:-1])
-                        
-                        try:
-                            visited_sources[source] += [(idx,description)]
-                        except KeyError:
-                            visited_sources[source] = [(idx, description)]
-
-                        try:
-                            visited_descriptions[description] += [(idx, source)]
-                        except KeyError:
-                            visited_descriptions[description] = [(idx, source)]
-
-                    
-                    whitelist[source] = dict(zip(head, target))
-
-    for key,vals in visited_sources.items():
-        if len(vals) > 1:
-            print('[WARNING] Key «{0}» has {1} elements!'.format(key, len(vals)))
-            for val in vals:
-                print('...ID {0} ({1})'.format(val[0], ' '.join(val[1])))
-            print('')
-            input()
-    for key,vals in visited_descriptions.items():
-        if len(vals) > 1 and 'tone' not in key:
-            print('[WARNING] Description «{0}» has {1} elements!'.format(' '.join(key), len(vals)))
-            for val in vals:
-                print('...ID {0} ({1})'.format(val[0], val[1]))
-            print('')
-            input()
-
+    groups = ['consonants', 'vowels', 'markers', 'tones', 'diphtongs']
+    for group in groups:
+        for val in _clpadata[group]: 
+            whitelist[_clpadata[val]['glyph']] = _clpadata[val]
+            whitelist[_clpadata[val]['glyph']]["ID"] = val
 
     return whitelist
 
@@ -96,7 +75,6 @@ def load_alias(path):
     """
     if not os.path.isfile(path):
         path = local_path(path) 
-    print(path)
     
     alias = {}
     with codecs.open(path, 'r', 'utf-8') as handle:
@@ -132,6 +110,14 @@ def find_token(token, whitelist, alias, explicit, patterns, delete):
     if new_token in whitelist:
         return new_token
 
+    # third run, explicit match
+    if new_token in explicit:
+        new_token = explicit[new_token]
+        if new_token in whitelist:
+            return new_token
+        else:
+            raise ValueError("Explicit list does not point to whitelist with sound «{0}»".format(new_token))
+
     # second run, replace
     tokens = list(new_token)
     for i,t in enumerate(tokens):
@@ -142,14 +128,6 @@ def find_token(token, whitelist, alias, explicit, patterns, delete):
     new_token = ''.join(tokens)
     if new_token in whitelist:
         return new_token
-
-    # third run, explicit match
-    if new_token in explicit:
-        new_token = explicit[new_token]
-        if new_token in whitelist:
-            return new_token
-        else:
-            raise ValueError("Explicit list does not point to whitelist with sound «{0}»".format(new_token))
 
     # forth run, pattern matching
     for source, target in patterns.items():
@@ -164,9 +142,9 @@ def find_token(token, whitelist, alias, explicit, patterns, delete):
             return new_token
     return False
 
-def write_wordlist(path, wordlist, sep="\t", header=[]):
+def serialize_wordlist(wordlist, sep="\t", header=[]):
     """
-    Write a wordlist to file (for example, after having it checked).
+    Serialize wordlist to ease writing to terminal or to file.
     """
     if not header:
         header = wordlist[0]
@@ -174,10 +152,20 @@ def write_wordlist(path, wordlist, sep="\t", header=[]):
     out = '\t'.join(header)+'\n'
     for k in [x for x in wordlist if x != 0]:
         out += '\t'.join([wordlist[k][h] for h in header])+'\n'
+    return out
 
+def write_file(path, content):
+    with codecs.open(path, 'w', 'utf-8') as f:
+        f.write(content)
+
+def write_wordlist(path, wordlist, sep="\t", header=[]):
+    """
+    Write a wordlist to file (for example, after having it checked).
+    """
+    out = serialize_wordlist(wordlist, sep=sep, header=header)
+    
     with codecs.open(path, 'w', 'utf-8') as f:
         f.write(out)
-
 
 def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
         rules=False):
@@ -212,7 +200,7 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
     
     # store errors in dictionary
     sounds = {}
-    errors = {'convertable' : 0, 'non-convertable' : 1}
+    errors = {'convertable' : 0, 'non-convertable' : 0}
 
     # iterate over teh tokens
     for key in sorted([k for k in wordlist if k != 0]):
@@ -246,13 +234,6 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
                     sounds[token]['clpa'] = '?'
                     sounds[token]['id'] = '?'
                     errors['non-convertable'] += 1
-    if pprint:
-        print('Sounds: {0}'.format(len(sounds)))
-        print('Missing: {0}'.format(errors['convertable'] + errors['non-convertable'])
-                )
-        print("Convertable {0}".format(errors['convertable']))
-        print("Non-Convertable {0}".format(errors['non-convertable']))
-
     
     for key in sorted([x for x in wordlist if x != 0]):
         tokens = wordlist[key][column]
