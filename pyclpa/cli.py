@@ -1,3 +1,4 @@
+# coding: utf-8
 """
 Main command line interface to the pyclpa package.
 """
@@ -5,11 +6,11 @@ from __future__ import unicode_literals, print_function
 import sys
 from collections import defaultdict
 
-from clldutils.path import Path
 from clldutils.clilib import ArgumentParser, ParserError
-from clldutils.jsonlib import load
+from clldutils.path import Path
 
 from pyclpa import util as clpa_util
+
 
 def report(args):
     """
@@ -48,62 +49,67 @@ def report(args):
     # get the data
     sounds, errors, wordlist = clpa_util.check_wordlist(fname, rules=settings['rules'])
     
-    if settings['format'] in ['md', 'csv']:
-        md_template =""" # {0}
+    if settings['format'] not in ['md', 'csv']:
+        text = clpa_util.write_wordlist(settings['outfile'] or None, wordlist)
+        if not settings['outfile']:
+            print(text)
+        return
+
+    md_template =""" # {0}
 | number | sound | clpa | frequency |
 | ------ | ----- | ---- | --------- |
 """
-        md_line = "| {0[0]} | {0[1]} | {0[2]} | {0[3]} |\n"
-        csv_line = "{0[0]}\t{0[1]}\t{0[2]}\t{0[3]}\t{1}\n"
+    md_line = "| {0[0]} | {0[1]} | {0[2]} | {0[3]} |\n"
+    csv_line = "{0[0]}\t{0[1]}\t{0[2]}\t{0[3]}\t{1}\n"
 
-        text = ""
-        
-        # check existing sounds
-        if [s for s in sounds if sounds[s]['clpa'] == s]:
-            idx = 1
-            text += md_template.format('Existing sounds') if settings['format'] == 'md' else ''
-            for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
-                if k == sounds[k]['clpa']:
-                    _tmp = [idx, k, sounds[k]['id'], sounds[k]['frequency']]
-                    if settings['format'] == 'md':
-                        text += md_line.format(_tmp)
-                    else:
-                        text += csv_line.format(_tmp, 'existing')
-                    idx += 1
-        
-        if [s for s in sounds if sounds[s]['clpa'] == '?']:
-            idx = 1
-            text += md_template.format('Missing sounds') if settings['format'] == 'md' else ''
-            for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
-                if k != sounds[k]['clpa'] and sounds[k]['clpa'] == '?':
-                    _tmp = [idx, k, sounds[k]['id'], sounds[k]['frequency']]
-                    if settings['format'] == 'md':
-                        text += md_line.format(_tmp)
-                    else:
-                        text += csv_line.format(_tmp, 'missing')
-                    idx += 1
+    text = ""
 
-        if [s for s in sounds if sounds[s]['clpa'] != '?' and sounds[s]['clpa'] != s]:
-            idx = 1
-            text += md_template.format('Convertible sounds') if settings['format'] == 'md' else ''
-            for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
-                check = sounds[k]['clpa']
-                if sounds[k]['clpa'][0] in "'ˌˈ":
-                    check = sounds[k]['clpa'][1:]            
-                if k != check != '?':
-                    _tmp = [idx, k+' >> '+sounds[k]['clpa'], sounds[k]['id'], sounds[k]['frequency']]
-                    if settings['format'] == 'md':
-                        text += md_line.format(_tmp)
-                    else:
-                        text += csv_line.format(_tmp, 'convertible')
-                    idx += 1
-    else:
-        text = clpa_util.serialize_wordlist(wordlist)
+    # check existing sounds
+    if [s for s in sounds if sounds[s]['clpa'] == s]:
+        idx = 1
+        text += md_template.format('Existing sounds') if settings['format'] == 'md' else ''
+        for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
+            if k == sounds[k]['clpa']:
+                _tmp = [idx, k, sounds[k]['id'], sounds[k]['frequency']]
+                if settings['format'] == 'md':
+                    text += md_line.format(_tmp)
+                else:
+                    text += csv_line.format(_tmp, 'existing')
+                idx += 1
+
+    if [s for s in sounds if sounds[s]['clpa'] == '?']:
+        idx = 1
+        text += md_template.format('Missing sounds') if settings['format'] == 'md' else ''
+        for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
+            if k != sounds[k]['clpa'] and sounds[k]['clpa'] == '?':
+                _tmp = [idx, k, sounds[k]['id'], sounds[k]['frequency']]
+                if settings['format'] == 'md':
+                    text += md_line.format(_tmp)
+                else:
+                    text += csv_line.format(_tmp, 'missing')
+                idx += 1
+
+    if [s for s in sounds if sounds[s]['clpa'] != '?' and sounds[s]['clpa'] != s]:
+        idx = 1
+        text += md_template.format('Convertible sounds') if settings['format'] == 'md' else ''
+        for k in sorted(sounds, key=lambda x: sounds[x]['frequency'], reverse=True):
+            check = sounds[k]['clpa']
+            if sounds[k]['clpa'][0] in "'ˌˈ":
+                check = sounds[k]['clpa'][1:]
+            if k != check != '?':
+                _tmp = [idx, k+' >> '+sounds[k]['clpa'], sounds[k]['id'], sounds[k]['frequency']]
+                if settings['format'] == 'md':
+                    text += md_line.format(_tmp)
+                else:
+                    text += csv_line.format(_tmp, 'convertible')
+                idx += 1
 
     if settings['outfile']:
-        clpa_util.write_file(text)
+        with Path(settings['outfile']).open('w', encoding='utf8') as fp:
+            fp.write(text)
     else:
         print(text)
+
 
 def check(args):
     """
@@ -114,6 +120,7 @@ def check(args):
     check = clpa_util.check_string(args.args[0], clpa_util.load_whitelist())
     print('\t'.join(args.args[0].split(' ')))
     print('\t'.join(check))
+
 
 def main():  # pragma: no cover
     parser = ArgumentParser('pyclpa', report, check)
