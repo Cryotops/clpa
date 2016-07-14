@@ -43,11 +43,32 @@ symbols which do not occur in our whitelist. Here, we distinguish between:
 In order to test the current conversion procedure, run 
 
 ```shell
-
-python3 test.py INPUTFILE.tsv
+$ clpa report FILENAME
 ```
 
 in the shell. Your inputfile should be a tab-separated file in [LingPy-Wordlist format](http://lingpy.org/tutorial/lingpy.basic.wordlist.html), with your phonetic sequences being represented as space-segmented values in a column "TOKENS" of the input file. This is a mere proof-of-concept at the moment, and the script will be further enhanced. 
+
+If you specify further:
+
+```shell
+$ clpa report FILENAME outfile=NEWFILENAME
+```
+the data will also be written to file.
+
+Furthermore, choose between three attributes for the format, namely "csv", "md", and "cldf", for example:
+
+```shell
+$ clpa report FILENAME format=md
+```
+will write data in MarkDown format.
+
+To convert a single string and see how well it converts, just type:
+
+```shell
+$ clpa check 'm y s t r i n g'
+```
+
+Here, it is important to set your string in quotes, since it needs to be passed as one argument in space-separated form to the interpreter. As a result, an alignment will be returned in which a star indicates that the character is recognized in CLPA and a question mark indicates it is missing.
 
 ## The CLPA "Feature Set"
 
