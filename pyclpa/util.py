@@ -1,109 +1,92 @@
-import csv
-import codecs
+# coding: utf-8
+from __future__ import unicode_literals, print_function, division
 import unicodedata
-from collections import OrderedDict
-import json
-import os
 import re
+
+from clldutils.path import Path
+from clldutils.dsv import reader, UnicodeWriter
+from clldutils import jsonlib
+
 
 def load_wordlist(path, sep="\t", comment="#"):
     """
     Load a wordlist and make it easily parseable by turning it into a dictionary. 
     """
-    D = OrderedDict()
-    with codecs.open(path, 'r', 'utf-8') as handle:
-        header = False
-        for line in csv.reader(
-                [unicodedata.normalize(
-                    'NFC', 
-                    hline
-                    ) for hline in handle.readlines()], delimiter=sep):
-            if not line or line[0].startswith(comment):
-                pass
-            else:
-                if not header:
-                    header = [l for l in line]
-                    D[0] = header
-                else:
-                    D[line[0]] = OrderedDict()
-                    for k,v in zip(header, line):
-                        D[line[0]][k] = v
-    return D
+    with Path(path).open(encoding='utf-8') as handle:
+        lines = [unicodedata.normalize('NFC', hline) for hline in handle.readlines()
+                 if hline and not hline.startswith(comment)]
+    return list(reader(lines, dicts=True, delimiter=sep))
 
-def local_path(path):
+
+def local_path(*comps):
     """Helper function to create a local path to the current directory of CLPA"""
-    return os.path.join(
-            os.path.split(__file__)[0],
-            'data',
-            path
-            )
+    return Path(__file__).parent.joinpath('data', *comps)
+
 
 def load_CLPA():
     """
     Load the main data file.
     """
-    _clpadata = json.load(codecs.open(local_path('clpa.main.json')))
-    
-    return _clpadata
+    return jsonlib.load(local_path('clpa.main.json'))
+
 
 def write_CLPA(clpadata, path):
     """
     Basic function to write clpa-data.
     """
+    if isinstance(path, Path):
+        outdir, fname = path.parent, path.name
+    else:
+        outdir, fname = local_path(), path
     old_clpa = load_CLPA()
-    json.dump(old_clpa, codecs.open(local_path(path+'.bak'), 'w', 'utf-8'))
-    json.dump(clpadata, codecs.open(local_path(path), 'w', 'utf-8'))
+    jsonlib.dump(old_clpa, outdir.joinpath(fname + '.bak'))
+    jsonlib.dump(clpadata, outdir.joinpath(fname))
+
 
 def load_whitelist():
     """
     Basic function to load the CLPA whitelist.
     """
-    _clpadata = json.load(codecs.open(local_path('clpa.main.json')))
+    _clpadata = jsonlib.load(local_path('clpa.main.json'))
     whitelist = {}
-    groups = ['consonants', 'vowels', 'markers', 'tones', 'diphtongs']
-    for group in groups:
+    for group in ['consonants', 'vowels', 'markers', 'tones', 'diphtongs']:
         for val in _clpadata[group]: 
             whitelist[_clpadata[val]['glyph']] = _clpadata[val]
             whitelist[_clpadata[val]['glyph']]["ID"] = val
 
     return whitelist
 
-def load_alias(path):
+
+def load_alias(_path):
     """
     Alias are one-character sequences which we can convert on a step-by step
     basis by applying them successively to all subsegments of a segment.
     """
-    if not os.path.isfile(path):
-        path = local_path(path) 
-    
+    path = Path(_path)
+    if not path.is_file():
+        path = local_path(_path)
+
     alias = {}
-    with codecs.open(path, 'r', 'utf-8') as handle:
+    with path.open(encoding='utf-8') as handle:
         for line in handle:
             if not line.startswith('#') and line.strip():
                 source, target = line.strip().split('\t')
-                alias[eval('"'+source+'"')] = eval('r"'+target+'"')
+                alias[eval('"' + source + '"')] = eval('r"' + target + '"')
     return alias
 
-def check_string(seq, whitelist):
 
-    tokens = unicodedata.normalize('NFC', seq).split(' ')
-    out = []
-    for token in tokens:
-        if token in whitelist:
-            out += ['*']
-        else:
-            out += ['?']
-    return out
+def check_string(seq, whitelist):
+    return ['*' if t in whitelist else '?'
+            for t in unicodedata.normalize('NFC', seq).split(' ')]
+
 
 def find_token(token, whitelist, alias, explicit, patterns, delete):
-    
-    # check if token in whitelist
     if token in whitelist:
         return token
 
     # first run, delete useless stuff
     tokens = list(token)
-    for i,t in enumerate(tokens):
+    for i, t in enumerate(tokens):
         if t in delete:
             tokens[i] = ''
     new_token = ''.join(tokens)
@@ -115,16 +98,16 @@ def find_token(token, whitelist, alias, explicit, patterns, delete):
         new_token = explicit[new_token]
         if new_token in whitelist:
             return new_token
-        else:
-            raise ValueError("Explicit list does not point to whitelist with sound «{0}»".format(new_token))
+        raise ValueError(
+            "Explicit list does not point to whitelist with sound «{0}»".format(
+                new_token))
 
     # second run, replace
     tokens = list(new_token)
-    for i,t in enumerate(tokens):
-        try:
+    for i, t in enumerate(tokens):
+        if t in alias:
             tokens[i] = alias[t]
-        except KeyError:
-            pass
+
     new_token = ''.join(tokens)
     if new_token in whitelist:
         return new_token
@@ -133,51 +116,33 @@ def find_token(token, whitelist, alias, explicit, patterns, delete):
     for source, target in patterns.items():
         search = re.search(source, new_token)
         if search:
-            new_token = re.sub(
-                    source,
-                    target,
-                    new_token
-                    )
+            new_token = re.sub(source, target, new_token)
         if new_token in whitelist:
             return new_token
     return False
 
-def serialize_wordlist(wordlist, sep="\t", header=[]):
-    """
-    Serialize wordlist to ease writing to terminal or to file.
-    """
-    if not header:
-        header = wordlist[0]
 
-    out = '\t'.join(header)+'\n'
-    for k in [x for x in wordlist if x != 0]:
-        out += '\t'.join([wordlist[k][h] for h in header])+'\n'
-    return out
-
-def write_file(path, content):
-    with codecs.open(path, 'w', 'utf-8') as f:
-        f.write(content)
-
-def write_wordlist(path, wordlist, sep="\t", header=[]):
+def write_wordlist(path, wordlist, sep="\t"):
     """
     Write a wordlist to file (for example, after having it checked).
     """
-    out = serialize_wordlist(wordlist, sep=sep, header=header)
-    
-    with codecs.open(path, 'w', 'utf-8') as f:
-        f.write(out)
+    with UnicodeWriter(path, delimiter=sep) as writer:
+        for i, item in enumerate(wordlist):
+            if i == 0:
+                writer.writerow(list(item.keys()))
+            writer.writerow(list(item.values()))
+    if path is None:
+        return writer.read()
 
-def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
-        rules=False):
-    
+
+def check_wordlist(path, sep='\t', comment='#', column='TOKENS', rules=False):
     # whitelist is the basic list, which is in fact a dictionary
     whitelist = load_whitelist()
     # alias are segments of length 1 and they are parsed second in the app
     alias = load_alias('alias.tsv')
     # deleted items are those which we don't need once we have the tokens
     delete = ['\u0361', '\u035c', '\u0301']
-    # explicit are explicit aliases, applied to a full segment, not to its
-    # parts
+    # explicit are explicit aliases, applied to a full segment, not to its parts
     explicit = load_alias('explicit.tsv')
     # patterns are regexes which are difficult to state in separation
     patterns = load_alias('patterns.tsv')
@@ -185,26 +150,23 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
     # accents
     accents = "ˈˌ'"
 
-    # now, load teh wordlist
     wordlist = load_wordlist(path, sep=sep, comment=comment)
 
-    # check for rules
     if rules:
         rules = load_alias(rules)
-        for k,val in [(a,b) for a,b in wordlist.items() if a != 0]:
+        for val in wordlist:
             tokens = []
             for t in val['TOKENS'].split(' '):
-                nt = rules[t] if t in rules else t
-                tokens += [nt]
-            wordlist[k]['TOKENS'] = ' '.join(tokens)
+                tokens.append(rules[t] if t in rules else t)
+            val['TOKENS'] = ' '.join(tokens)
     
     # store errors in dictionary
     sounds = {}
-    errors = {'convertable' : 0, 'non-convertable' : 0}
+    errors = {'convertable': 0, 'non-convertable': 0}
 
     # iterate over teh tokens
-    for key in sorted([k for k in wordlist if k != 0]):
-        tokens = wordlist[key][column]
+    for item in wordlist:
+        tokens = item[column]
         
         for token in tokens.split(' '):
             accent = ''
@@ -222,8 +184,7 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
                     sounds[token]['id'] = whitelist[token]['ID']
 
             else:
-                check = find_token(
-                        token, whitelist, alias, explicit, patterns, delete)
+                check = find_token(token, whitelist, alias, explicit, patterns, delete)
                 sounds[token] = {}
                 sounds[token]['frequency'] = 1
                 if check:
@@ -234,9 +195,7 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
                     sounds[token]['clpa'] = '?'
                     sounds[token]['id'] = '?'
                     errors['non-convertable'] += 1
-    
-    for key in sorted([x for x in wordlist if x != 0]):
-        tokens = wordlist[key][column]
+
         new_tokens = []
         idxs = []
         for token in tokens.split(' '):
@@ -247,11 +206,7 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
 
             new_tokens += [accent + sounds[token]['clpa']]
             idxs += [sounds[token]['id']]
-        wordlist[key]['CLPA_TOKENS'] = ' '.join(new_tokens)
-        wordlist[key]['CLPA_IDS'] = ' '.join(idxs)
-
-    wordlist[0] += ["CLPA_TOKENS", "CLPA_IDS"]
+        item['CLPA_TOKENS'] = ' '.join(new_tokens)
+        item['CLPA_IDS'] = ' '.join(idxs)
 
     return sounds, errors, wordlist
-
-

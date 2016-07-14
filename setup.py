@@ -13,8 +13,9 @@ setup(
     author='Johann-Mattis List',
     author_email='mattis.list@lingpy.org',
     url='https://github.com/glottobank/cpa',
-    install_requires=[    
-        ],
+    install_requires=[
+        'clldutils',
+    ],
     license="GPL",
     zip_safe=False,
     keywords='',
