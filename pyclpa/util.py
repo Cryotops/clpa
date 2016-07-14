@@ -34,10 +34,9 @@ def local_path(path):
     """Helper function to create a local path to the current directory of CLPA"""
     return os.path.join(
             os.path.split(__file__)[0],
-            'clpa-data',
+            'data',
             path
             )
-
 
 def load_CLPA():
     """
@@ -47,13 +46,13 @@ def load_CLPA():
     
     return _clpadata
 
-def write_CLPA(clpadata):
+def write_CLPA(clpadata, path):
     """
     Basic function to write clpa-data.
     """
     old_clpa = load_CLPA()
-    json.dump(old_clpa, codecs.open(local_path('clpa.main.json.bak'), 'w', 'utf-8'))
-    json.dump(clpadata, codecs.open(local_path('clpa.main.json'), 'w', 'utf-8'))
+    json.dump(old_clpa, codecs.open(local_path(path+'.bak'), 'w', 'utf-8'))
+    json.dump(clpadata, codecs.open(local_path(path), 'w', 'utf-8'))
 
 def load_whitelist():
     """
@@ -130,7 +129,6 @@ def find_token(token, whitelist, alias, explicit, patterns, delete):
     if new_token in whitelist:
         return new_token
 
-
     # forth run, pattern matching
     for source, target in patterns.items():
         search = re.search(source, new_token)
@@ -144,9 +142,9 @@ def find_token(token, whitelist, alias, explicit, patterns, delete):
             return new_token
     return False
 
-def write_wordlist(path, wordlist, sep="\t", header=[]):
+def serialize_wordlist(wordlist, sep="\t", header=[]):
     """
-    Write a wordlist to file (for example, after having it checked).
+    Serialize wordlist to ease writing to terminal or to file.
     """
     if not header:
         header = wordlist[0]
@@ -154,10 +152,20 @@ def write_wordlist(path, wordlist, sep="\t", header=[]):
     out = '\t'.join(header)+'\n'
     for k in [x for x in wordlist if x != 0]:
         out += '\t'.join([wordlist[k][h] for h in header])+'\n'
+    return out
 
+def write_file(path, content):
+    with codecs.open(path, 'w', 'utf-8') as f:
+        f.write(content)
+
+def write_wordlist(path, wordlist, sep="\t", header=[]):
+    """
+    Write a wordlist to file (for example, after having it checked).
+    """
+    out = serialize_wordlist(wordlist, sep=sep, header=header)
+    
     with codecs.open(path, 'w', 'utf-8') as f:
         f.write(out)
-
 
 def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
         rules=False):
@@ -192,7 +200,7 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
     
     # store errors in dictionary
     sounds = {}
-    errors = {'convertable' : 0, 'non-convertable' : 1}
+    errors = {'convertable' : 0, 'non-convertable' : 0}
 
     # iterate over teh tokens
     for key in sorted([k for k in wordlist if k != 0]):
@@ -226,13 +234,6 @@ def check_wordlist(path, sep='\t', comment='#', column='TOKENS', pprint=False,
                     sounds[token]['clpa'] = '?'
                     sounds[token]['id'] = '?'
                     errors['non-convertable'] += 1
-    if pprint:
-        print('Sounds: {0}'.format(len(sounds)))
-        print('Missing: {0}'.format(errors['convertable'] + errors['non-convertable'])
-                )
-        print("Convertable {0}".format(errors['convertable']))
-        print("Non-Convertable {0}".format(errors['non-convertable']))
-
     
     for key in sorted([x for x in wordlist if x != 0]):
         tokens = wordlist[key][column]
