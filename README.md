@@ -37,6 +37,7 @@ symbols which do not occur in our whitelist. Here, we distinguish between:
 * symbols to be ignored (clpa/clpa-data/delete.tsv), which are symbols of length 1 which we ignore from the input data and then check whether we can find a mapping. As a an example, compare the combinging mark in the symbols [t͡s], which we delete in order to map to our [ts].
 * symbols to be converted as patterns (clpa/patterns.tsv): these are potentially riscant operations which we try to minimize as well as possible, but there are situations in which it is useful to apply changes on a pattern basis, as for example, in datasets in which "aspiration" is not marked by a superscript letter, where we would then turn every instance of plosive + h into plosive + ʰ
 
+
 ## Testing the conversion procedure
 
 In order to test the current conversion procedure, run 
