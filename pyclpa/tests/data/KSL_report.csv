@@ -1,0 +1,89 @@
+1	a	v130	414	existing
+2	i	v191	344	existing
+3	r	c151	296	existing
+4	n	c105	295	existing
+5	e	v200	271	existing
+6	k	c831	255	existing
+7	l	c548	252	existing
+8	u	v027	199	existing
+9	o	v042	189	existing
+10	d	c143	173	existing
+11	h	c401	162	existing
+12	s	c087	149	existing
+13	ʔ	c405	148	existing
+14	m	c239	146	existing
+15	ə	v155	125	existing
+16	ʃ	c677	115	existing
+17	b	c254	111	existing
+18	j	c564	96	existing
+19	p	c288	89	existing
+20	f	c447	85	existing
+21	g	c824	83	existing
+22	aː	v137	76	existing
+23	v	c446	71	existing
+24	z	c078	68	existing
+25	y	v166	56	existing
+26	w	c457	55	existing
+27	iː	v183	54	existing
+28	eː	v202	51	existing
+29	ɛ	v229	50	existing
+30	ai	d030	38	existing
+31	ɬ	c534	36	existing
+32	ɪ	v219	28	existing
+33	ɑ̃	v088	27	existing
+34	oː	v035	27	existing
+35	ɯ	v081	24	existing
+36	ɔ	v067	24	existing
+37	ɣ	c774	24	existing
+38	ʒ	c679	24	existing
+39	ð	c415	20	existing
+40	θ	c413	20	existing
+41	ø	v171	19	existing
+42	au	d026	19	existing
+43	ɑ	v089	14	existing
+44	ŋ	c795	14	existing
+45	x	c772	14	existing
+46	uː	v019	13	existing
+47	ɟ	c603	13	existing
+48	tˀ	c840	11	existing
+49	c	c600	11	existing
+50	ɛ̃	v231	9	existing
+51	ɔ̃	v066	9	existing
+52	rː	c160	8	existing
+53	ʊ	v056	7	existing
+54	kˀ	c841	7	existing
+55	ɲ	c589	7	existing
+56	tˡˀ	c120	7	existing
+57	œ	v178	6	existing
+58	ɥ	c453	5	existing
+59	õ	v038	4	existing
+60	ã	v147	3	existing
+61	ãː	v125	3	existing
+62	dˡ	c144	3	existing
+63	tˡ	c119	3	existing
+64	ĩː	v181	2	existing
+65	øː	v169	2	existing
+66	yː	v168	2	existing
+67	õː	v028	2	existing
+68	oi	d015	2	existing
+69	ẽː	v207	1	existing
+70	ĩ	v193	1	existing
+71	œ̃	v175	1	existing
+72	ʎ	c582	1	existing
+1	ay	?	36	missing
+2	ń	?	2	missing
+3	ɪi	?	1	missing
+4	DH	?	1	missing
+1	ʦ >> ts	c015	31	convertible
+2	ʧ >> tʃ	c645	25	convertible
+3	ʤ >> dʒ	c649	12	convertible
+4	ł >> lˠ	c543	10	convertible
+5	ã́ >> ã	v147	7	convertible
+6	ʧˀ >> tʃˀ	c646	7	convertible
+7	ʣ >> dz	c020	6	convertible
+8	ĩ́ >> ĩ	v193	4	convertible
+9	p͡f >> pf	c420	4	convertible
+10	ʦˀ >> tsˀ	c016	4	convertible
+11	ĩ́ː >> ĩː	v181	2	convertible
+12	kw >> kʷ	c827	2	convertible
+13	ã́ː >> ãː	v125	1	convertible
