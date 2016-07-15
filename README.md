@@ -9,7 +9,7 @@ The basic idea is to provide a fixed set of symbols for phonetic representation
 along with a full description regarding their pronunciation following the
 tradition of IPA. This list is essentially expandable, when new languages
 arise, and it can be linked to alternative datasets, like Mielke's (2008)
-P-Base, and Phoible.
+P-Base, and PHOIBLE.
 
 In addition to the mere description of symbols, we provide also a range of
 scripts that can be used in order to test how well a dataset reflects our
@@ -27,7 +27,9 @@ Our initial dataset (file clpa/clpa-data/clpa.main.json) currently consists of 1
 including consonants, vowels, diphtongs, tones, and three markers (for word and
 morpheme boundaries).  The original data is inspired by the IPA description
 used in the P-Base project, and we mostly follow their symbol conventions, but
-we added tone letters and symbols which were missing in their inventory and also re-arranged their descripting features into more classes which are now differently defined for the main classes of sounds.
+we added tone letters and symbols which were missing in their inventory and also re-arranged 
+their descripting features into more classes which are now differently defined for the main 
+classes of sounds.
 
 Additionally, the dataset contains sets of instructions for conversion of
 symbols which do not occur in our whitelist. Here, we distinguish between:
@@ -80,3 +82,11 @@ Currently, we distinguish the following feature sets:
 1. Basic types: consonant, diphtong, marker, tone, vowel. A marker are symbols that we use for extended annotation, like morpheme boundaries, word boundaries.
 2. Each type has a different feature set. New features sets can only be added to the data if they create a unique feature vector that distinguishes the glyphs of a given class from all other glyphs. Testing will be done via a test suite (not yet implemented).
 3. For each identifier, further metadata can be provided, be it mappings to other datasets, like Fonetikode, Phoible, etc., or to frequently occurring aliases, etc., also information in terms of "notes" is something that would be possible.
+
+
+## pyclpa
+
+[![Build Status](https://travis-ci.org/glottobank/pyclpa.svg?branch=master)](https://travis-ci.org/glottobank/pyclpa)
+[![codecov](https://codecov.io/gh/glottobank/pyclpa/branch/master/graph/badge.svg)](https://codecov.io/gh/glottobank/pyclpa)
+[![Requirements Status](https://requires.io/github/glottobank/pyclpa/requirements.svg?branch=master)](https://requires.io/github/glottobank/pyclpa/requirements/?branch=master)
+[![PyPI](https://img.shields.io/pypi/v/pyclpa.svg)](https://pypi.python.org/pypi/pyclpa)
