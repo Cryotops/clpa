@@ -86,7 +86,7 @@ Currently, we distinguish the following feature sets:
 
 ## pyclpa
 
-[![Build Status](https://travis-ci.org/glottobank/pyclpa.svg?branch=master)](https://travis-ci.org/glottobank/pyclpa)
-[![codecov](https://codecov.io/gh/glottobank/pyclpa/branch/master/graph/badge.svg)](https://codecov.io/gh/glottobank/pyclpa)
-[![Requirements Status](https://requires.io/github/glottobank/pyclpa/requirements.svg?branch=master)](https://requires.io/github/glottobank/pyclpa/requirements/?branch=master)
+[![Build Status](https://travis-ci.org/glottobank/clpa.svg?branch=master)](https://travis-ci.org/glottobank/clpa)
+[![codecov](https://codecov.io/gh/glottobank/clpa/branch/master/graph/badge.svg)](https://codecov.io/gh/glottobank/clpa)
+[![Requirements Status](https://requires.io/github/glottobank/clpa/requirements.svg?branch=master)](https://requires.io/github/glottobank/clpa/requirements/?branch=master)
 [![PyPI](https://img.shields.io/pypi/v/pyclpa.svg)](https://pypi.python.org/pypi/pyclpa)
