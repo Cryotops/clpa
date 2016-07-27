@@ -7,7 +7,7 @@ from clldutils.path import Path
 from clldutils.dsv import reader, UnicodeWriter
 
 from pyclpa.util import load_alias, load_whitelist, find_token, split, join
-
+from pyclpa.base import CLPA
 
 class Wordlist(list):
     @classmethod
@@ -31,18 +31,9 @@ class Wordlist(list):
         if path is None:
             return writer.read()
 
-    def check(self, column='TOKENS', rules=False):
-        # whitelist is the basic list, which is in fact a dictionary
-        whitelist = load_whitelist()
-        # alias are segments of length 1 and they are parsed second in the app
-        alias = load_alias('alias.tsv')
-        # deleted items are those which we don't need once we have the tokens
-        delete = ['\u0361', '\u035c', '\u0301']
-        # explicit are explicit aliases, applied to a full segment, not to its parts
-        explicit = load_alias('explicit.tsv')
-        # patterns are regexes which are difficult to state in separation
-        patterns = load_alias('patterns.tsv')
-        accents = "ˈˌ'"
+    def check(self, column='TOKENS', rules=False, clpa=None):
+        
+        clpa = clpa or CLPA()
 
         if rules:
             rules = load_alias(rules)
@@ -52,30 +43,12 @@ class Wordlist(list):
 
         sounds, errors = {}, Counter({'convertable': 0, 'non-convertable': 0})
         for item in self:
-            new_tokens, idxs = [], []
+            new_tokens, sounds, errors = clpa.check_sequence(split(item[column]), sounds=sounds,
+                    errors=errors)
+            idxs = [clpa.segment2clpa(t) for t in new_tokens]
 
-            for token in split(item[column]):
-                accent = ''
-                if token[0] in accents:
-                    accent, token = token[0], token[1:]
-
-                if token in whitelist or token in sounds:
-                    if token in sounds:
-                        sounds[token]['frequency'] += 1
-                    else:
-                        sounds[token] = dict(
-                            frequency=1, clpa=accent + token, id=whitelist[token]['ID'])
-                else:
-                    check = find_token(
-                        token, whitelist, alias, explicit, patterns, delete)
-                    sounds[token] = dict(
-                        frequency=1,
-                        clpa=accent + check if check else '?',
-                        id=whitelist[check]['ID'] if check else '?')
-                    errors.update(['convertable' if check else 'non-convertable'])
-
-                new_tokens.append(accent + sounds[token]['clpa'])
-                idxs.append(sounds[token]['id'])
+            #    new_tokens.append(accent + sounds[token]['clpa'])
+            #    idxs.append(sounds[token]['id'])
             item['CLPA_TOKENS'] = join(new_tokens)
             item['CLPA_IDS'] = join(idxs)
 

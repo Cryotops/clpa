@@ -72,8 +72,6 @@ def report(args):
             type_, symbol = 'missing', k
         else:
             check = sounds[k]['clpa']
-            if sounds[k]['clpa'][0] in "'ˌˈ":
-                check = sounds[k]['clpa'][1:]
             if k != check != '?':
                 type_, symbol = 'convertible', k + ' >> ' + sounds[k]['clpa']
         if type_ and symbol:
