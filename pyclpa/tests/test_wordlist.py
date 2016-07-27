@@ -4,8 +4,8 @@ from __future__ import unicode_literals, print_function, division
 from pyclpa.tests.util import TestCase
 from pyclpa.wordlist import Wordlist
 
-
 class Tests(TestCase):
+
     def _make_one(self, path=None):
         return Wordlist.from_file(path or self.data_path('KSL.tsv'))
 
