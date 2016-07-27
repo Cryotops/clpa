@@ -1,8 +1,10 @@
 # coding: utf-8
 from __future__ import unicode_literals, print_function, division
+from unittest import TestCase
+
 from pyclpa.base import CLPA
 
-class Tests():
+class Tests(TestCase):
 
     def setUp(self):
         self.clpa = CLPA()
