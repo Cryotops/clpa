@@ -11,11 +11,13 @@ def local_path(*comps):
     """Helper function to create a local path to the current directory of CLPA"""
     return Path(__file__).parent.joinpath('data', *comps)
 
+
 def load_CLPA():
     """
     Load the main data file.
     """
     return jsonlib.load(local_path('clpa.main.json'))
+
 
 def write_CLPA(clpadata, path):
     """

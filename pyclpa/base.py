@@ -1,15 +1,29 @@
 # coding: utf8
 from __future__ import unicode_literals, print_function, division
-import unicodedata
 from collections import Counter
 
-from pyclpa.util import load_alias, load_whitelist, find_token, split, join
+from pyclpa.util import load_alias, load_whitelist, find_token
+
+
+_clpa = None
+
+
+def get_clpa():
+    global _clpa
+    if not _clpa:
+        _clpa = CLPA()
+    return _clpa
+
 
 class CLPA(object):
-
-    def __init__(self, whitelist=None, alias=None, delete=None,
-            explicit=None, patterns=None, accents=None, rules=None):
-        
+    def __init__(self,
+                 whitelist=None,
+                 alias=None,
+                 delete=None,
+                 explicit=None,
+                 patterns=None,
+                 accents=None,
+                 rules=None):
         self.whitelist = whitelist or load_whitelist()
         self.alias = alias or load_alias('alias.tsv')
         self.delete = delete or ['\u0361', '\u035c', '\u0301']
@@ -26,11 +40,10 @@ class CLPA(object):
         if self.rules:
             new_seq = [self.rules[t] if t in self.rules else t for t in new_seq]
 
-        new_tokens, idxs = [], []
-        
+        new_tokens = []
         sounds = sounds or {}
         errors = errors or Counter({'convertable': 0, 'non-convertable': 0})
-        
+
         for token in new_seq:
             accent = ''
             if token[0] in self.accents:
@@ -61,6 +74,5 @@ class CLPA(object):
             new_segment = segment[1:]
         else:
             new_segment = segment
-        return self.whitelist[new_segment]['ID'] if new_segment in \
-                self.whitelist else '?'
-
+        return self.whitelist[new_segment]['ID'] \
+            if new_segment in self.whitelist else '?'

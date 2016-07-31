@@ -6,8 +6,9 @@ from collections import Counter
 from clldutils.path import Path
 from clldutils.dsv import reader, UnicodeWriter
 
-from pyclpa.util import load_alias, load_whitelist, find_token, split, join
-from pyclpa.base import CLPA
+from pyclpa.util import load_alias, split, join
+from pyclpa.base import get_clpa
+
 
 class Wordlist(list):
     @classmethod
@@ -32,8 +33,7 @@ class Wordlist(list):
             return writer.read()
 
     def check(self, column='TOKENS', rules=False, clpa=None):
-        
-        clpa = clpa or CLPA()
+        clpa = clpa or get_clpa()
 
         if rules:
             rules = load_alias(rules)
@@ -43,8 +43,8 @@ class Wordlist(list):
 
         sounds, errors = {}, Counter({'convertable': 0, 'non-convertable': 0})
         for item in self:
-            new_tokens, sounds, errors = clpa.check_sequence(split(item[column]), sounds=sounds,
-                    errors=errors)
+            new_tokens, sounds, errors = clpa.check_sequence(
+                split(item[column]), sounds=sounds, errors=errors)
             idxs = [clpa.segment2clpa(t) for t in new_tokens]
 
             #    new_tokens.append(accent + sounds[token]['clpa'])
