@@ -16,6 +16,7 @@ setup(
     install_requires=[
         'clldutils',
     ],
+    include_package_data = True,
     license="GPL",
     zip_safe=False,
     keywords='',
