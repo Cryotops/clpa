@@ -31,6 +31,9 @@ class Tests(TestCase):
         test9 = self.clpa.check_sequence('p h₂/x t e r')
         assert ' '.join(test9[0]) == 'p x t e r'
         assert 'h₂/x' in test9[1]
+        # test for bad custom characters
+        test10 = self.clpa.check_sequence('p / t e r')
+        assert ' '.join(test10[0]) == 'p ? t e r'
 
     def test_segment2clpa(self):
         assert self.clpa.segment2clpa('t') == 'c118'
