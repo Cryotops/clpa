@@ -63,6 +63,18 @@ def load_alias(_path):
                 alias[eval('"' + source + '"')] = eval('r"' + target + '"')
     return alias
 
+def load_normalized(_path):
+    """Normalization for quasi-identical strings which are often confused."""
+    path = Path(_path)
+    if not path.is_file():
+        path = local_path(_path)
+    norms = {}
+    with path.open(encoding='utf-8') as handle:
+        for line in handle:
+            if not line.startswith('#') and line.strip():
+                source, target = line.strip().split('\t')
+                norms[eval('"' + source + '"')] = eval('r"' + target + '"')
+    return norms
 
 def split(string):
     return string.split(' ')
@@ -80,6 +92,14 @@ def check_string(seq, whitelist):
 def find_token(token, whitelist, alias, explicit, patterns, delete):
     if token in whitelist:
         return token
+    
+    # custom symbols, indicated by "/", in the form "custom/value", if value is
+    # missing, this will be subsumed under "custom" in the count
+    if '/' in token and len(token) > 1:
+        custom, value = token.split('/')
+        if not value:
+            return token
+        token = value
 
     # first run, delete useless stuff
     tokens = list(token)
