@@ -2,7 +2,7 @@
 from __future__ import unicode_literals, print_function, division
 from collections import Counter
 
-from pyclpa.util import load_alias, load_whitelist, find_token
+from pyclpa.util import load_alias, load_whitelist, find_token, load_normalized
 
 
 _clpa = None
@@ -23,7 +23,8 @@ class CLPA(object):
                  explicit=None,
                  patterns=None,
                  accents=None,
-                 rules=None):
+                 rules=None,
+                 normalized=None):
         self.whitelist = whitelist or load_whitelist()
         self.alias = alias or load_alias('alias.tsv')
         self.delete = delete or ['\u0361', '\u035c', '\u0301']
@@ -31,6 +32,7 @@ class CLPA(object):
         self.patterns = patterns or load_alias('patterns.tsv')
         self.accents = accents or "ˈˌ'"
         self.rules = rules or []
+        self.normalized=normalized or load_normalized('normalized.tsv')
 
     def check_sequence(self, seq, sounds=None, errors=None):
         if not isinstance(seq, (list, tuple)):
@@ -42,7 +44,10 @@ class CLPA(object):
 
         new_tokens = []
         sounds = sounds or {}
-        errors = errors or Counter({'convertable': 0, 'non-convertable': 0})
+        errors = errors or Counter({
+            'convertable': 0, 
+            'non-convertable': 0,
+            'custom' : 0})
 
         for token in new_seq:
             accent = ''
@@ -55,6 +60,15 @@ class CLPA(object):
                 else:
                     sounds[token] = dict(
                         frequency=1, clpa=token, id=self.whitelist[token]['ID'])
+            elif token[-1] == '/' and len(token) > 1:
+                tkn = token[:-1]
+                if token in sounds:
+                    sounds[token]['frequency'] += 1
+                else:
+                    idf = 'custom:{0}'.format(tkn)
+                    sounds[token] = dict(
+                            frequency=1, clpa='*'+tkn, id=idf)
+                    errors.update(['custom'])
             else:
                 check = find_token(
                     token, self.whitelist, self.alias, self.explicit,
@@ -69,10 +83,13 @@ class CLPA(object):
         return new_tokens, sounds, errors
 
     def segment2clpa(self, segment):
-        """Convert a segment to it identifier"""
+        """Convert a segment to its identifier"""
         if segment[0] in self.accents:
             new_segment = segment[1:]
         else:
             new_segment = segment
         return self.whitelist[new_segment]['ID'] \
             if new_segment in self.whitelist else '?'
+
+    def normalize(self, string):
+        return ''.join([self.normalized.get(x, x) for x in string])
