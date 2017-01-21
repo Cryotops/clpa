@@ -30,17 +30,3 @@ class Tests(TestCase):
 
         check = check_string('m a tt i s', load_whitelist())
         assert check[2] == '?'
-
-    def test_find_token(self):
-        from pyclpa.util import find_token, load_whitelist, load_alias
-
-        wl = load_whitelist()
-        patterns = load_alias('patterns.tsv')
-        assert not find_token('t', {}, {}, {}, {}, [])
-        assert find_token('t', wl, {}, {}, {}, []) == 't'
-        assert find_token('th', wl, {'h': 'ʰ'}, {}, {}, []) == 'tʰ'
-        assert find_token('th', wl, {}, {'th': 'x'}, {}, []) == 'x'
-        with self.assertRaises(ValueError):
-            find_token('th', wl, {}, {'th': 'X'}, {}, [])
-        assert find_token('th', wl, {}, {}, patterns, []) == 'tʰ'
-        assert find_token('th', wl, {}, {}, {}, ['h']) == 't'

@@ -24,9 +24,9 @@ class Tests(TestCase):
     def test_check_wordlist(self):
         wl = self._make_one()
         sounds, errors = wl.check()
-        assert errors['convertable'] == 13
-        assert errors['non-convertable'] == 4
-        assert sounds['t']['frequency'] == 223
+        assert errors.convertible == 13
+        assert errors.non_convertible == 4
+        assert sounds['t'].frequency == 223
 
         sounds, errors = wl.check(rules=self.data_path('KSL.rules'))
-        assert errors['non-convertable'] == 3
+        assert errors.non_convertible == 3
