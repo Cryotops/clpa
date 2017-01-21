@@ -63,18 +63,6 @@ def load_alias(_path):
                 alias[eval('"' + source + '"')] = eval('r"' + target + '"')
     return alias
 
-def load_normalized(_path):
-    """Normalization for quasi-identical strings which are often confused."""
-    path = Path(_path)
-    if not path.is_file():
-        path = local_path(_path)
-    norms = {}
-    with path.open(encoding='utf-8') as handle:
-        for line in handle:
-            if not line.startswith('#') and line.strip():
-                source, target = line.strip().split('\t')
-                norms[eval('"' + source + '"')] = eval('r"' + target + '"')
-    return norms
 
 def split(string):
     return string.split(' ')
@@ -87,53 +75,3 @@ def join(tokens):
 def check_string(seq, whitelist):
     return [
         '*' if t in whitelist else '?' for t in split(unicodedata.normalize('NFC', seq))]
-
-
-def find_token(token, whitelist, alias, explicit, patterns, delete):
-    if token in whitelist:
-        return token
-    
-    # custom symbols, indicated by "/", in the form "custom/value", if value is
-    # missing, this will be subsumed under "custom" in the count
-    if '/' in token and len(token) > 1:
-        custom, value = token.split('/')
-        if not value:
-            return token
-        token = value
-
-    # first run, delete useless stuff
-    tokens = list(token)
-    for i, t in enumerate(tokens):
-        if t in delete:
-            tokens[i] = ''
-    new_token = ''.join(tokens)
-    if new_token in whitelist:
-        return new_token
-
-    # third run, explicit match
-    if new_token in explicit:
-        new_token = explicit[new_token]
-        if new_token in whitelist:
-            return new_token
-        raise ValueError(
-            "Explicit list does not point to whitelist with sound «{0}»".format(
-                new_token))
-
-    # second run, replace
-    tokens = list(new_token)
-    for i, t in enumerate(tokens):
-        if t in alias:
-            tokens[i] = alias[t]
-
-    new_token = ''.join(tokens)
-    if new_token in whitelist:
-        return new_token
-
-    # forth run, pattern matching
-    for source, target in patterns.items():
-        search = re.search(source, new_token)
-        if search:
-            new_token = re.sub(source, target, new_token)
-        if new_token in whitelist:
-            return new_token
-    return False

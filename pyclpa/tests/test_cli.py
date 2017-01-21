@@ -1,56 +1,45 @@
 # coding: utf8
 from __future__ import unicode_literals, print_function, division
 
-from mock import Mock
+from six import text_type
 from clldutils.testing import capture
-from clldutils.clilib import ParserError
 from clldutils.dsv import reader
 
 from pyclpa.tests.util import TestCase
+from pyclpa.cli import main
 
 
 class Tests(TestCase):
     def _read_tsv(self, path):
         return set(tuple(row[1:]) for row in reader(path, delimiter='\t'))
 
-    def test_report(self):
-        from pyclpa.cli import report
+    def _main(self, cmd, arg=None, text=None, **opts):
+        args = ['--{0}={1}'.format(k, v) for k, v in opts.items()] + [cmd]
+        if arg:
+            args.append(arg)
+        with capture(main, args=args) as out:
+            if text:
+                if not isinstance(out, text_type):
+                    out = out.decode('utf8')
+                self.assertIn(text, out)
 
-        with self.assertRaises(ParserError):
-            report(Mock(args=[]))
+    def test_main(self):
+        self._main('report', text='no input')
+        self._main('report', arg='xyz', text='invalid input')
+        self._main('report', arg=self.data_path('KSL.tsv').as_posix(), text='sounds')
 
-        with self.assertRaises(ParserError):
-            report(Mock(args=['format=csv']))
-
-        args = [self.data_path('KSL.tsv').as_posix()]
-
-        with capture(report, Mock(args=args)) as out:
-            self.assertIn('Convertible sounds', out)
-
+        infile = self.data_path('KSL.tsv').as_posix()
         out = self.tmp_path('test.csv')
-        report(Mock(args=args + ['format=csv', 'outfile=' + out.as_posix()]))
+        self._main('report', arg=infile, format='csv', text='existing')
+        self._main('report', arg=infile, output=out.as_posix(), format='csv')
         self.assertEqual(
             self._read_tsv(out), self._read_tsv(self.data_path('KSL_report.csv')))
 
-        with capture(report, Mock(args=args + ['format=csv'])) as out:
-            if hasattr(out, 'decode'):
-                out = out.decode('utf8')
-            self.assertIn('existing', out)
-
-        with capture(report, Mock(args=args + ['format=cldf'])) as out:
-            if hasattr(out, 'decode'):
-                out = out.decode('utf8')
-            self.assertIn('CLPA_TOKENS', out)
+        self._main('annotate', arg=infile, text='CLPA_TOKENS')
 
         out = self.tmp_path('test.md')
-        report(Mock(args=args + ['outfile=' + out.as_posix()]))
+        self._main('report', arg=infile, output=out.as_posix())
         self.assertTrue(out.exists())
 
-    def test_check(self):
-        from pyclpa.cli import check
-
-        with self.assertRaises(ParserError):
-            check(Mock(args=[]))
-
-        with capture(check, Mock(args=['abcd'])) as out:
-            self.assertIn('?', out)
+        self._main('check', text='only one')
+        self._main('check', arg='abcd', text='?')
