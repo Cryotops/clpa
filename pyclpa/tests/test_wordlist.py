@@ -23,10 +23,7 @@ class Tests(TestCase):
 
     def test_check_wordlist(self):
         wl = self._make_one()
-        sounds, errors = wl.check()
-        assert errors.convertible == 13
-        assert errors.non_convertible == 4
-        assert sounds['t'].frequency == 223
-
-        sounds, errors = wl.check(rules=self.data_path('KSL.rules'))
-        assert errors.non_convertible == 3
+        sounds = wl.check()
+        self.assertEqual(len([s for s in sounds if s.origin != s.clpa and s.clpa]), 10)
+        self.assertEqual(len([s for s in sounds if s.clpa is None]), 11)
+        self.assertEqual([s for s in sounds if s.origin == 't'][0].frequency, 221)

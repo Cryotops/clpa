@@ -3,10 +3,9 @@ from __future__ import unicode_literals, print_function, division
 import re
 import logging
 
-import attr
-from clldutils.text import strip_chars
+from clldutils.misc import UnicodeMixin
 
-from pyclpa.util import load_alias, load_whitelist, split
+from pyclpa.util import load_alias, load_whitelist, split, join
 
 
 _clpa = None
@@ -19,37 +18,50 @@ def get_clpa():
     return _clpa
 
 
-@attr.s
-class Sound(object):
-    id = attr.ib(convert=lambda v: v or '?')
-    clpa = attr.ib(convert=lambda v: v or '?')
-    frequency = attr.ib(default=1)
-    custom = attr.ib(default=False)
+class Token(UnicodeMixin):
+    def __init__(self, origin):
+        self.origin = origin
+
+    def __unicode__(self):
+        return self.origin  # pragma: no cover
 
 
-@attr.s
-class Errors(object):
-    convertible = attr.ib(default=0)
-    non_convertible = attr.ib(default=0)
+class Unknown(Token):
+    def __unicode__(self):
+        return '\ufffd'
+
+
+class Custom(Token):
+    def __unicode__(self):
+        return self.origin[:-1]
+
+
+class Sound(Token):
+    def __init__(self, origin, clpa):
+        Token.__init__(self, origin)
+        self.clpa = clpa
+
+    @property
+    def converted(self):
+        return self.origin != self.clpa.CLPA
+
+    def __unicode__(self):
+        return self.clpa.CLPA
 
 
 class CLPA(object):
     def __init__(self,
                  whitelist=None,
                  alias=None,
-                 delete=None,
                  explicit=None,
                  patterns=None,
                  accents=None,
-                 rules=None,
                  normalized=None):
         self.whitelist = load_whitelist() if whitelist is None else whitelist
         self.alias = load_alias('alias.tsv') if alias is None else alias
-        self.delete = ['\u0361', '\u035c', '\u0301'] if delete is None else delete
         self.explicit = load_alias('explicit.tsv') if explicit is None else explicit
         self.patterns = load_alias('patterns.tsv') if patterns is None else patterns
         self.accents = "ˈˌ'" if accents is None else accents
-        self.rules = rules or {}
         self.normalized = load_alias('normalized.tsv') \
             if normalized is None else normalized
 
@@ -58,69 +70,70 @@ class CLPA(object):
             if v not in self.whitelist:
                 log.debug('explicit token "{0}" not in whitelist'.format(v))
 
-    def check_sequence(self, seq, sounds=None, errors=None):
-        seq = seq if isinstance(seq, (list, tuple)) else split(seq)
+    def __call__(self, seq, sounds=None, text=False):
+        """
+        Convert a sequence to CLPA tokens.
+
+        Parameters
+        ----------
+        seq
+        sounds: To speed up lookup, a `dict` can be passed in to accumulate a sequence \
+        item to CLPA token mapping.
+
+        Returns
+        -------
+
+        """
         tokens = []
         sounds = {} if sounds is None else sounds
-        errors = errors or Errors()
 
-        for token in [self.rules.get(t, t) for t in seq]:
-            accent = ''
-            if token[0] in self.accents:
-                accent, token = token[0], token[1:]
+        for item in seq if isinstance(seq, (list, tuple)) else split(seq):
+            if item in sounds:
+                tokens.append(sounds[item])
+                continue
 
-            if token in sounds:
-                sounds[token].frequency += 1
-            elif token in self.whitelist:
-                sounds[token] = Sound(clpa=token, id=self.whitelist[token]['ID'])
-            elif token.endswith('/') and len(token) > 1:
-                sounds[token] = Sound(
-                    custom=True, clpa='*' + token[:-1], id='custom:%s' % token[:-1])
-            else:
-                tkn, id_ = self._find(token)
-                sounds[token] = Sound(clpa=tkn, id=id_)
-                if tkn:
-                    errors.convertible += 1
-                else:
-                    errors.non_convertible += 1
+            cls, clpa = self._cls_clpa(item)
+            tokens.append((cls, item, clpa))
+            sounds[item] = tokens[-1]
 
-            tokens.append(accent + sounds[token].clpa)
-        return tokens, sounds, errors
+        res = [class_(i) if c is None else class_(i, c) for class_, i, c in tokens]
+        if text:
+            return join(res)
+        return res
 
-    def segment2clpa(self, segment):
-        """Convert a segment to its identifier"""
-        segment = segment[1:] if segment[0] in self.accents else segment
-        return self.whitelist[segment]['ID'] if segment in self.whitelist else '?'
+    def _cls_clpa(self, token):
+        if token[0] in self.accents:
+            token = token[1:]
 
-    def normalize(self, string):
-        return ''.join([self.normalized.get(x, x) for x in string])
-
-    def _find(self, token):
-        # custom symbols, indicated by "/", in the form "custom/value", if value is
-        # missing, this will be subsumed under "custom" in the count
-        if '/' in token and len(token) > 1:
-            _, token = token.split('/', 1)
-            assert token  # note: the custom case "c/" has been dealt with already!
-
-        # first run, delete useless stuff
-        token = strip_chars(self.delete, token)
         if token in self.whitelist:
-            return token, self.whitelist[token]['ID']
+            return Sound, self.whitelist[token]
 
-        # second run, explicit match
+        if token.endswith('/') and len(token) > 1:
+            return Custom, None
+
+        if '/' in token and len(token) > 1:
+            token = token.split('/', 1)[-1]
+            if token in self.whitelist:
+                # Sound converted from right hand side of custom symbol.
+                return Sound, self.whitelist[token]
+
         if token in self.explicit:
             assert self.explicit[token] in self.whitelist
-            return self.explicit[token], self.whitelist[self.explicit[token]]['ID']
+            return Sound, self.whitelist[self.explicit[token]]
 
-        # third run, replace
         token = ''.join([self.alias.get(t, t) for t in token])
         if token in self.whitelist:
-            return token, self.whitelist[token]['ID']
+            return Sound, self.whitelist[token]
 
-        # forth run, pattern matching
         for source, target in self.patterns.items():
             token = re.sub(source, target, token)
             if token in self.whitelist:
-                return token, self.whitelist[token]['ID']
+                break
 
-        return None, None
+        if token in self.whitelist:
+            return Sound, self.whitelist[token]
+
+        return Unknown, None
+
+    def normalize(self, string):
+        return ''.join([self.normalized.get(x, x) for x in string])

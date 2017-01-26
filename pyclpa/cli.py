@@ -6,14 +6,16 @@ from __future__ import unicode_literals, print_function
 import sys
 from collections import OrderedDict
 import argparse
+import unicodedata
 
+from six import text_type
 from clldutils.clilib import ArgumentParser, ParserError, command
 from clldutils.path import Path
 from clldutils.dsv import UnicodeWriter
 from clldutils.markup import Table
 
-from pyclpa.util import check_string, load_whitelist
 from pyclpa.wordlist import Wordlist
+from pyclpa.base import get_clpa
 
 
 def _checked_wordlist_from_args(args):
@@ -25,8 +27,8 @@ def _checked_wordlist_from_args(args):
         raise ParserError('invalid input file specified')
 
     wordlist = Wordlist.from_file(fname, delimiter=args.delimiter)
-    sounds, errors = wordlist.check(rules=args.rules, column=args.column)
-    return wordlist, sounds, errors
+    segments = wordlist.check(column=args.column)
+    return wordlist, segments
 
 
 @command()
@@ -48,7 +50,7 @@ def annotate(args):
     * The resulting CSV is printed to <stdout> or to the file specified as --output.
 
     """
-    wordlist, _, _ = _checked_wordlist_from_args(args)
+    wordlist, _ = _checked_wordlist_from_args(args)
     res = wordlist.write(args.output)
     if args.output is None:
         print(res)
@@ -75,22 +77,18 @@ def report(args):
     * The report is printed to <stdout> or to the file specified as --output.
 
     """
-    wordlist, sounds, errors = _checked_wordlist_from_args(args)
+    wordlist, sounds = _checked_wordlist_from_args(args)
 
     segments = OrderedDict([('existing', []), ('missing', []), ('convertible', [])])
-    for k in sorted(
-            sounds, key=lambda x: (sounds[x].frequency, sounds[x].id), reverse=True):
-        type_, symbol = None, None
-        if k == sounds[k].clpa:
-            type_, symbol = 'existing', k
-        elif sounds[k].clpa == '?':
-            type_, symbol = 'missing', k
+
+    for s in sounds:
+        if s.clpa is None:
+            type_ = 'missing'
+        elif s.origin == s.clpa:
+            type_ = 'existing'
         else:
-            check = sounds[k].clpa
-            if k != check != '?':
-                type_, symbol = 'convertible', k + ' >> ' + sounds[k].clpa
-        if type_ and symbol:
-            segments[type_].append([symbol, sounds[k].id, sounds[k].frequency])
+            type_ = 'convertible'
+        segments[type_].append([s.origin, s.clpa or '', s.frequency])
 
     if args.format == 'csv':
         with UnicodeWriter(args.output, delimiter='\t') as writer:
@@ -123,9 +121,12 @@ def check(args):
     """
     if len(args.args) != 1:
         raise ParserError('only one argument allowed')
-    check = check_string(args.args[0], load_whitelist())
-    print('\t'.join(args.args[0].split(' ')))
-    print('\t'.join(check))
+    clpa = get_clpa()
+    seq = args.args[0]
+    if not isinstance(seq, text_type):
+        seq = seq.decode('utf8')  # pragma: no cover
+    print('\t'.join(seq.split(' ')))
+    print(clpa(unicodedata.normalize('NFC', seq), text=True).replace(' ', '\t'))
 
 
 def main(args=None):
@@ -137,10 +138,6 @@ def main(args=None):
     parser.add_argument(
         "-o", "--output",
         help="Output file.",
-        default=None)
-    parser.add_argument(
-        "-r", "--rules",
-        help="Rules file.",
         default=None)
     parser.add_argument(
         "-c", "--column",

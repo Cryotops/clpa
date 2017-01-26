@@ -1,12 +1,21 @@
 # coding: utf8
 from __future__ import unicode_literals, print_function, division
 import unicodedata
+from itertools import groupby
 
+import attr
 from clldutils.path import Path
 from clldutils.dsv import reader, UnicodeWriter
 
-from pyclpa.util import load_alias, split, join
-from pyclpa.base import get_clpa, Errors
+from pyclpa.util import split, join
+from pyclpa.base import get_clpa, Sound
+
+
+@attr.s
+class Segment(object):
+    origin = attr.ib()
+    clpa = attr.ib()
+    frequency = attr.ib()
 
 
 class Wordlist(list):
@@ -31,20 +40,24 @@ class Wordlist(list):
         if path is None:
             return writer.read()
 
-    def check(self, column='TOKENS', rules=False, clpa=None):
+    def check(self, column='TOKENS', clpa=None):
         clpa = clpa or get_clpa()
 
-        if rules:
-            rules = load_alias(rules)
-            for val in self:
-                tokens = [rules[t] if t in rules else t for t in split(val[column])]
-                val[column] = join(tokens)
-
-        sounds, errors = {}, Errors()
+        all, sounds = [], {}
         for item in self:
-            tokens, _, _ = clpa.check_sequence(
-                split(item[column]), sounds=sounds, errors=errors)
-            item['CLPA_TOKENS'] = join(tokens)
-            item['CLPA_IDS'] = join([clpa.segment2clpa(t) for t in tokens])
+            tokens = clpa(split(item[column]), sounds=sounds)
+            item['CLPA_TOKENS'] = join(['%s' % t for t in tokens])
+            item['CLPA_IDS'] = join(
+                [t.clpa.ID if hasattr(t, 'clpa') else '' for t in tokens])
+            all.extend(tokens)
 
-        return sounds, errors
+        res = []
+        for segment, sounds in groupby(
+                sorted(all, key=lambda t: t.origin), lambda t: t.origin):
+            sounds = list(sounds)
+            res.append(Segment(
+                origin=segment,
+                clpa=sounds[0].clpa.CLPA if isinstance(sounds[0], Sound) else None,
+                frequency=len(sounds)))
+
+        return sorted(res, key=lambda seg: seg.frequency, reverse=True)
