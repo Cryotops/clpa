@@ -7,7 +7,7 @@ def read(fname):
 
 setup(
     name='pyclpa',
-    version="0.4.0",
+    version="1.0.0",
     description='A python library to check phonetic transcriptions',
     long_description=read("README.md"),
     author='Johann-Mattis List',
