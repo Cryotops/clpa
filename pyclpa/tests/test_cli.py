@@ -42,4 +42,4 @@ class Tests(TestCase):
         self.assertTrue(out.exists())
 
         self._main('check', text='only one')
-        self._main('check', arg='abcd', text='?')
+        self._main('check', arg='abcd', text='\ufffd')
