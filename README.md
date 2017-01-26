@@ -57,17 +57,24 @@ $ clpa report FILENAME outfile=NEWFILENAME
 ```
 the data will also be written to file.
 
-Furthermore, choose between three attributes for the format, namely "csv", "md", and "cldf", for example:
+Furthermore, choose between two attributes for the format, namely "csv" and "md", for example:
 
 ```shell
-$ clpa report FILENAME format=md
+$ clpa report FILENAME format=csv
 ```
-will write data in MarkDown format.
+will write data in CSV format.
+
+To get your wordlist annotated with new columns `CLPA_TOKENS` and `CLPA_IDS` run
+```shell
+$ clpa annotate FILENAME
+```
 
 To convert a single string and see how well it converts, just type:
 
 ```shell
-$ clpa check 'm y s t r i n g'
+$ clpa check "a b ä/ x/y /"
+a	b	ä/	x/y	/
+a	b	ä	y	�
 ```
 
 Here, it is important to set your string in quotes, since it needs to be passed as one argument in space-separated form to the interpreter. As a result, an alignment will be returned in which a star indicates that the character is recognized in CLPA and a question mark indicates it is missing.
