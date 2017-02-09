@@ -2,21 +2,20 @@ Cross-Linguistic Phonetic Alphabet
 ==================================
 
 This is an attempt to create a cross-linguistic phonetic alphabet, realized as
-a dialect of IPA, which can be used for cross-linguistic approaches to language
-comparison.
+a dialect of IPA, for cross-linguistic approaches to language comparison.
 
 The basic idea is to provide a fixed set of symbols for phonetic representation
 along with a full description regarding their pronunciation following the
-tradition of IPA. This list is essentially expandable, when new languages
-arise, and it can be linked to alternative datasets, like Mielke's (2008)
+tradition of IPA. This list is essentially expandable, when new language data
+arises, and can be linked to alternative datasets, like Mielke's (2008)
 P-Base, and PHOIBLE.
 
 In addition to the mere description of symbols, we provide also a range of
 scripts that can be used in order to test how well a dataset reflects our
 cross-linguistic standard, and to which degree it diverges from it. In this
 way, linguists who want to publish their data in phonetic transcriptions that
-follow a strict standard, they can use our tools and map their data to CLPA. In
-this way, by conforming to our whitelist (and informing us in cases where we
+follow a strict standard, they can use our tools and map their data to CLPA. 
+By conforming to our whitelist (and informing us in cases where we
 miss important sounds that are essential for the description of a dataset so
 that we can expand the CLPA), the community can make sure that we have a
 maximal degree of comparability across lexical datasets. 
@@ -34,10 +33,10 @@ classes of sounds.
 Additionally, the dataset contains sets of instructions for conversion of
 symbols which do not occur in our whitelist. Here, we distinguish between:
 
-* explitic mappings (clpa/clpa-data/explicit.tsv), which are explicit mappings of input segments with output segments, which are taken in full. As an example, consider [ʔʲ] which we map to [ʔj], or [uu], which we map to [uː].
+* explicit mappings (clpa/clpa-data/explicit.tsv) of input segments to output segments. As an example, consider [ʔʲ] which we map to [ʔj], or [uu], which we map to [uː].
 * alias symbols (clpa/clpa-data/alias.tsv), which are one-to-more mappings of symbols of length 1 in unicode, and are regularly applied to a symbol if we can't find it in our whitelist. As an example, consider [ʦ] which we map to [ts].
 * symbols to be ignored (clpa/clpa-data/delete.tsv), which are symbols of length 1 which we ignore from the input data and then check whether we can find a mapping. As a an example, compare the combinging mark in the symbols [t͡s], which we delete in order to map to our [ts].
-* symbols to be converted as patterns (clpa/patterns.tsv): these are potentially riscant operations which we try to minimize as well as possible, but there are situations in which it is useful to apply changes on a pattern basis, as for example, in datasets in which "aspiration" is not marked by a superscript letter, where we would then turn every instance of plosive + h into plosive + ʰ
+* symbols to be converted as patterns (clpa/patterns.tsv): these are potentially risky operations which we try to minimize as well as possible, but there are situations in which it is useful to apply changes on a pattern basis, as for example, in datasets in which "aspiration" is not marked by a superscript letter, where we would then turn every instance of plosive + h into plosive + ʰ
 
 
 ## Testing the conversion procedure
