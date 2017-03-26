@@ -1,0 +1,7 @@
+GRAPHEME	FEATURE	VALUE	ALIAS
+¯	sandhi	sandhi	
++	boundary	morpheme	
+_	boundary	morpheme	
+/	annotation	user	
+→	boundary	morpheme	
+←	boundary	morpheme	
