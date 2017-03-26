@@ -44,6 +44,7 @@ class Clts(object):
     _diacritics = csv_as_list('diacritics.tsv')
     _tones = csv_as_list('tones.tsv')
     _markers = csv_as_list('markers.tsv')
+    _clicks = csv_as_list('clicks.tsv')
 
     # feature information
     _corder = dict(
@@ -54,22 +55,28 @@ class Clts(object):
     _vorder = dict(
             pre = ['nasalization', 'duration'],
             post = ['frication'])
+    _lorder = dict(
+            pre = ['preceding', 'phonation', 'place'],
+            post = [])
 
     # normalization data
     _normalize = {_norm(a): _norm(b) for a, b in
             csv_as_list('normalize.tsv')[1:]}
     
     # basic regular expressions
-    crex = '|'.join(sorted([x[0] for x in _consonants[1:]],
+    crex = '|'.join(sorted([y[0] for y in _consonants[1:]],
         key=lambda x: len(x),
         reverse=True))
-    vrex = '|'.join(sorted([x[0] for x in _vowels[1:]],
+    vrex = '|'.join(sorted([y[0] for y in _vowels[1:]],
         key=lambda x: len(x),
         reverse=True))
-    trex = '|'.join(sorted([x[0] for x in _tones[1:]],
+    trex = '|'.join(sorted([y[0] for y in _tones[1:]],
         key=lambda x: len(x),
         reverse=True))
     mrex = r'|'.join(sorted([re.escape(x[0]) for x in _markers[1:]]))
+    lrex = '|'.join(sorted([y[0] for y in _clicks[1:]],
+        key=lambda x: len(x),
+        reverse=True))
     
     @cached_property()
     def features(self):
@@ -82,37 +89,22 @@ class Clts(object):
         # retrieve values
         features = dict(consonant={}, vowel={})
         for line in self._consonants[1:]:
-            if not line[4] and not line[5]:
-                features[' '.join(line[1:4])] = line[0]
-            elif line[5]:
-                base = line[1:4]
-                tmp = {k: v for k, v in [x.split(':') for x in line[5].split(',')]}
-                for p in self._corder['pre']:
-                    if p in tmp:
-                        base = [tmp[p]] + base
-                for p in self._corder['post']:
-                    if p in tmp:
-                        base += [tmp[p]]
-                features[' '.join(base)] = line[0]
+            if not line[4]:
+                features[self.get_sound(line[0]).name] = line[0]
         for line in self._vowels[1:]:
-            if not line[4] and not line[5]:
-                features[' '.join(line[1:4])] = line[0]
-            elif line[5]:
-                base = line[1:4]
-                tmp = {k: v for k, v in [x.split(':') for x in line[5].split(',')]}
-                for p in self._vorder['pre']:
-                    if p in tmp:
-                        base = [tmp[p]] + base
-                for p in self._vorder['post']:
-                    if p in tmp:
-                        base += [tmp[p]]
-                features[' '.join(base)] = line[0]
+            if not line[4]:
+                features[self.get_sound(line[0]).name] = line[0]
         for line in self._tones[1:]:
             if not line[5]:
-                features[' '.join(line[1:5])] = line[0]
+                features[' '.join(line[1:5]+['tone'])] = line[0]
         for line in self._diacritics[1:]:
             if not line[4]:
                 features[line[1]][line[3]] = line[0]
+        # TODO: change lines in code in the click description
+        for line in self._clicks[1:]:
+            if not line[5]:
+                features[' '.join([line[1], line[2], line[4],
+                    line[3], 'click'])] = line[0]
         return features
 
     def _norm(self, string):
@@ -133,6 +125,8 @@ class Clts(object):
 
     def sound_type(self, string):
         """Quickly determine the type of the string."""
+        if re.search(self.lrex, _norm(string)):
+            return "click"
         if re.search(self.crex, _norm(string)):
             return 'consonant'
         if re.search(self.vrex, _norm(string)):
@@ -141,18 +135,34 @@ class Clts(object):
             return 'tone'
         if re.search(self.mrex, _norm(string)):
             return 'marker'
-
+    
+    @cached_property()
+    def clicks(self):
+        clck = {}
+        for line in self._clicks[1:]:
+            clck[line[0]] = dict(
+                    phonation=line[1], place=line[2], secondary=line[3],
+                    manner=line[4])
+            if line[5]:
+                clck[line[0]].update(
+                    {x: y for x, y in [itm.split(':') for itm in
+                        line[5].split(',')]})
+            if line[6]:
+                clck[line[0]]['alias'] = True
+            clck[line[0]]['type'] = 'click'
+        return clck
+    
     @cached_property()
     def consonants(self):
         cons = {}
         for line in self._consonants[1:]:
             cons[line[0]] = dict(
                     phonation=line[1], place=line[2], manner=line[3])
-            if line[5].strip():
+            if line[5]:
                 cons[line[0]].update(
                     {x: y for x, y in [itm.split(':') for itm in
                         line[5].split(',')]})
-            if line[4].strip():
+            if line[4]:
                 cons[line[0]]['alias'] = True
             cons[line[0]]['type'] = 'consonant'
         return cons
@@ -214,6 +224,9 @@ class Clts(object):
         "Return the diacritic features."
         return self.diacritics[stype].get(_nfd(string), {})
 
+    def click(self, string):
+        return self.clicks.get(_nfd(string), {})
+
     def parse_string(self, string):
         """Parse a string and return its features.
         
@@ -231,16 +244,23 @@ class Clts(object):
                     'base': re.split('('+self.mrex+')', nstring)[1]}
         if not stype: return {}
         rex = {"vowel": self.vrex, "consonant": self.crex, "tone":
-                self.trex}.get(stype, '')
+                self.trex, "click": self.lrex}.get(stype, '')
         pre, mid, post = re.split('('+rex+')', self._norm(nstring))
         base_features = getattr(self, stype, '')(mid).copy()
         base_features.update({'source': string, "base": mid})
+        unknown = []
         for p in pre:
-            base_features.update(
-                    self.diacritic(p+'◌', stype))
+            elm = self.diacritic(p+'◌', stype)
+            if not elm:
+                unknown += [p+'◌']
+            base_features.update(elm)
         for p in post:
-            base_features.update(
-                    self.diacritic('◌'+p, stype))
+            elm = self.diacritic('◌'+p, stype)
+            if not elm:
+                unknown += ['◌'+p]
+            base_features.update(elm)
+        if unknown:
+            base_features.update({'unknown': unknown})
         return base_features
 
     def get_sound(self, string):
@@ -257,6 +277,9 @@ class Clts(object):
                 return Tone(**data)
             elif data['type'] == 'marker':
                 return Marker(**data)
+            elif data['type'] == 'click':
+                return Click(**data)
+            
         # here, we should take over to handle also dipthongs
         except ValueError:
             return UnknownSound(source=string)
@@ -286,6 +309,7 @@ class Sound(object):
     base = attr.ib(default=None)
     clts = attr.ib(default=None) # pass clts object to save time
     alias = attr.ib(default=None)
+    unknown = attr.ib(default=None)
 
     type = attr.ib(default=None)
     source = attr.ib(default=None)
@@ -303,11 +327,14 @@ class Sound(object):
         # determine base values to avoid that we type the same diacritic
         # multiple times
         base_vals = getattr(self.clts, self.type)(self.base)
+        base_str = clts.features.get(
+                clts.get_sound(self.base).name,
+                '?')
         out = ''
         for p in [x for x in self.write_order['pre'] if x not in base_vals]:
             out += _norm(self.clts.features[self.type].get(
                 getattr(self, p, ''), ''))
-        out += self.base
+        out += base_str
         for p in [x for x in self.write_order['post'] if x not in base_vals]:
             out += _norm(self.clts.features[self.type].get(
                         getattr(self, p, ''), ''))
@@ -331,12 +358,27 @@ class Sound(object):
         return self.clts.features.get(desc, '')
 
 @attr.s
+class Click(Sound):
+    manner = attr.ib(default=None)
+    place = attr.ib(default=None)
+    phonation = attr.ib(default=None)
+    secondary = attr.ib(default=None)
+    preceding = attr.ib(default=None)
+
+    write_order = dict(
+            pre = ['preceding'],
+            post = ['phonation'])
+    name_order = ['preceding', 'phonation', 'place', 'manner', 'secondary']
+
+
+@attr.s
 class Marker():
     type = attr.ib(default=None)
     source = attr.ib(default=None)
     base = attr.ib(default=None)
     alias = attr.ib(default=None)
     clts = attr.ib(default=None)
+    unknown = attr.ib(default=None)
 
     @property
     def name(self):
@@ -438,6 +480,8 @@ if __name__ == "__main__":
         if not hasattr(test2, 'clpa'):
             errors2 += [sound]
         if test.type == 'unknown':
+            errors += [sound]
+        elif test.unknown:
             errors += [sound]
         else:
             if test.source != str(test):
