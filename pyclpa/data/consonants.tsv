@@ -4,8 +4,10 @@ GRAPHEME	PHONATION	PLACE	MANNER	ALIAS	EXTRA
 ʜ	voiceless	epiglottal	fricative		
 dʐ	voiced	retroflex	affricate	+	
 dz	voiced	alveolar	affricate		
+dːz	voiced	alveolar	affricate		duration:long
 ʣ	voiced	alveolar	affricate	+	
 ts	voiceless	alveolar	affricate		
+tːs	voiceless	alveolar	affricate		duration:long
 ʦ	voiceless	alveolar	affricate	+	
 dːʑ	voiced	alveolo-palatal	affricate		duration:long
 tːɕ	voiceless	alveolopalatal	affricate		duration:long
@@ -84,16 +86,16 @@ f	voiceless	labiodental	fricative
 ẋ	voiceless	uvular	fricative	+	
 ɣ	voiced	velar	fricative		
 x	voiceless	velar	fricative		
-sʼ	voiceless	alveolar	fricative-ejective		
-sˈ	voiceless	alveolar	fricative-ejective	+	
-fʼ	voiceless	labiodental	fricative-ejective		
-fˈ	voiceless	labiodental	fricative-ejective	+	
-ʃʼ	voiceless	postalveolar	fricative-ejective		
-ʃˈ	voiceless	postalveolar	fricative-ejective	+	
-χʼ	voiceless	uvular	fricative-ejective		
-χ	voiceless	uvular	fricative-ejective	+	
-xʼ	voiceless	velar	fricative-ejective		
-xˈ	voiceless	velar	fricative-ejective	+	
+sʼ	voiceless	alveolar	ejective-fricative		
+sˈ	voiceless	alveolar	ejective-fricative	+	
+fʼ	voiceless	labiodental	ejective-fricative		
+fˈ	voiceless	labiodental	ejective-fricative	+	
+ʃʼ	voiceless	postalveolar	ejective-fricative		
+ʃˈ	voiceless	postalveolar	ejective-fricative	+	
+χʼ	voiceless	uvular	ejective-fricative		
+χ	voiceless	uvular	ejective-fricative	+	
+xʼ	voiceless	velar	ejective-fricative		
+xˈ	voiceless	velar	ejective-fricative	+	
 ɓ	voiced	bilabial	implosive		
 ɗ	voiced	dental	implosive		
 ʄ	voiced	palatal	implosive		
@@ -136,16 +138,16 @@ t̠	voiceless	postalveolar	plosive
 q	voiceless	uvular	plosive		
 g	voiced	velar	plosive		
 k	voiceless	velar	plosive		
-tʼ	voiceless	alveolar	plosive-ejective		
-tˈ	voiceless	alveolar	plosive-ejective	+	
-pʼ	voiceless	bilabial	plosive-ejective		
-pˈ	voiceless	bilabial	plosive-ejective	+	
-cʼ	voiceless	palatal	plosive-ejective		
-cˈ	voiceless	palatal	plosive-ejective	+	
-qʼ	voiceless	uvular	plosive-ejective		
-qˈ	voiceless	uvular	plosive-ejective	+	
-kʼ	voiceless	velar	plosive-ejective		
-kˈ	voiceless	velar	plosive-ejective	+	
+tʼ	voiceless	alveolar	ejective-plosive		
+tˈ	voiceless	alveolar	ejective-plosive	+	
+pʼ	voiceless	bilabial	ejective-plosive		
+pˈ	voiceless	bilabial	ejective-plosive	+	
+cʼ	voiceless	palatal	ejective-plosive		
+cˈ	voiceless	palatal	ejective-plosive	+	
+qʼ	voiceless	uvular	ejective-plosive		
+qˈ	voiceless	uvular	ejective-plosive	+	
+kʼ	voiceless	velar	ejective-plosive		
+kˈ	voiceless	velar	ejective-plosive	+	
 ɾ	devoiced	alveolar	tap		
 r̥	devoiced	alveolar	trill		
 r	voiced	alveolar	trill		

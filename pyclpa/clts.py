@@ -6,6 +6,8 @@ CLTS module for consistent IPA handling.
 from clldutils.dsv import UnicodeReader
 import re
 from clldutils.path import Path
+from clldutils.misc import UnicodeMixin
+
 from clldutils.misc import cached_property
 import attr
 import unicodedata
@@ -34,6 +36,11 @@ def csv_as_dict(path):
     return {line[0]: dict(zip(data[0][1:], line[1:])) for line in data[1:]}
 
 
+def codepoint(s):
+    "Return unicode codepoint(s) for a character set."
+    return ' '.join(['U+'+('000'+hex(ord(x))[2:])[-4:] for x in s])
+
+
 class Clts(object):
     """
     Basic object to store the data.
@@ -45,19 +52,6 @@ class Clts(object):
     _tones = csv_as_list('tones.tsv')
     _markers = csv_as_list('markers.tsv')
     _clicks = csv_as_list('clicks.tsv')
-
-    # feature information
-    _corder = dict(
-            pre = ['preceding', 'phonation', 'syllabicity', 'nasalization', 
-                'palatalization', 'labialization', 'aspiration', 
-                'velarization', 'pharyngalization', 'duration'],
-            post = ['release'])
-    _vorder = dict(
-            pre = ['nasalization', 'duration'],
-            post = ['frication'])
-    _lorder = dict(
-            pre = ['preceding', 'phonation', 'place'],
-            post = [])
 
     # normalization data
     _normalize = {_norm(a): _norm(b) for a, b in
@@ -247,6 +241,8 @@ class Clts(object):
                 self.trex, "click": self.lrex}.get(stype, '')
         pre, mid, post = re.split('('+rex+')', self._norm(nstring))
         base_features = getattr(self, stype, '')(mid).copy()
+        if pre or post:
+            base_features['generated'] = True
         base_features.update({'source': string, "base": mid})
         unknown = []
         for p in pre:
@@ -297,12 +293,13 @@ class UnknownSound(object):
     source = attr.ib(default=None)
     type = attr.ib(default='unknown')
     name = None
+    generated = False
     
     def __str__(self):
         return self.source
 
 @attr.s
-class Sound(object):
+class Sound(UnicodeMixin):
     """
     Sound object stores basic features of the individual sound objects.
     """
@@ -310,6 +307,7 @@ class Sound(object):
     clts = attr.ib(default=None) # pass clts object to save time
     alias = attr.ib(default=None)
     unknown = attr.ib(default=None)
+    generated = attr.ib(default=None)
 
     type = attr.ib(default=None)
     source = attr.ib(default=None)
@@ -323,13 +321,24 @@ class Sound(object):
     def items(self):
         return attr.asdict(self).items()
 
-    def __str__(self):
-        # determine base values to avoid that we type the same diacritic
-        # multiple times
-        base_vals = getattr(self.clts, self.type)(self.base)
-        base_str = clts.features.get(
-                clts.get_sound(self.base).name,
-                '?')
+    @cached_property()
+    def codepoints(self):
+        return codepoint(str(self))
+    
+    def __unicode__(self):
+        # search for best base-string
+        elements = self._structure.copy()
+        while elements:
+
+            base_str = self.clts.features.get(' '.join(
+                [getattr(self, elm, '') for elm in elements] + [self.type]))
+            if base_str:
+                break
+            else:
+                elements.pop[0]
+
+        base_str = base_str or '?'
+        base_vals = elements[:-1]
         out = ''
         for p in [x for x in self.write_order['pre'] if x not in base_vals]:
             out += _norm(self.clts.features[self.type].get(
@@ -339,13 +348,21 @@ class Sound(object):
             out += _norm(self.clts.features[self.type].get(
                         getattr(self, p, ''), ''))
         return out
-    
-    @property
+
+    @cached_property()
     def name(self):
         out = []
         for p in self.name_order:
             out += [getattr(self, p, '')]
         return ' '.join([x for x in out if x]+[self.type])
+    
+    @cached_property()
+    def _structure(self):
+        out = []
+        for p in self.name_order:
+            if getattr(self, p, None):
+                out += [p]
+        return out
 
     @classmethod
     def from_string(cls, string, clts=None):
@@ -379,6 +396,7 @@ class Marker():
     alias = attr.ib(default=None)
     clts = attr.ib(default=None)
     unknown = attr.ib(default=None)
+    generated = False
 
     @property
     def name(self):
@@ -474,9 +492,12 @@ if __name__ == "__main__":
     errors = []
     errors2 = []
     modified = []
+    generated = []
     for sound in sounds:
         test = clts.get_sound(sound)
         test2 = clpa(sound)[0]
+        if test.generated:
+            generated += [sound]
         if not hasattr(test2, 'clpa'):
             errors2 += [sound]
         if test.type == 'unknown':
