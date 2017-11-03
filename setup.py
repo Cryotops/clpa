@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 def read(fname):
-    with open(fname) as fp:
+    with open(fname, encoding='utf-8') as fp:
         return fp.read().split('\n\n\n')[0]
 
 setup(
